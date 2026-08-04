@@ -1,0 +1,1514 @@
+<!DOCTYPE html>
+<html lang="en-ZA">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>IOL Black Friday 2026 — The Deals Desk</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   IOL · BLACK FRIDAY 2026 — "THE DEALS DESK"
+   Bespoke identity. Masthead = standard IOL. Below = campaign / sponsor.
+   ============================================================ */
+:root{
+  --ink:#0C0C0E; --ink-2:#17171B; --ink-3:#22222A;
+  --paper:#FBF9F5; --paper-2:#F3EEE6; --line:#E6DFD3; --line-2:#D8CFBF;
+  --iol:#D42128; --iol-2:#A5151B; --iol-tint:#FBEAEA;
+  --amber:#F6B23C; --amber-2:#E2951C; --amber-tint:#FBE9C7;
+  --red:#E8402E; --red-2:#C22C1C;
+  --green:#1E9E6A; --green-tint:#E0F2EA;
+  --txt:#111114; --txt-soft:#54525A; --txt-mute:#8B8892;
+  --shadow-s:0 1px 2px rgba(16,14,10,.06),0 2px 8px rgba(16,14,10,.05);
+  --shadow-m:0 6px 24px rgba(16,14,10,.10),0 2px 6px rgba(16,14,10,.06);
+  --shadow-l:0 24px 70px rgba(10,8,6,.28);
+  --r-s:8px; --r-m:14px; --r-l:22px;
+  --wrap:1300px;
+  --dsp:"Poppins",Arial,Helvetica,sans-serif;
+  --ui:"Poppins",Arial,Helvetica,sans-serif;
+  --mono:"Poppins",Arial,Helvetica,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--ui); color:var(--txt); background:var(--paper);
+  -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+  line-height:1.55; overflow-x:hidden;
+}
+img{display:block;max-width:100%}
+button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
+a{color:inherit;text-decoration:none}
+::selection{background:var(--amber);color:var(--ink)}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 32px}
+.eyebrow{font:700 12px/1 var(--ui);letter-spacing:.22em;text-transform:uppercase}
+h1,h2,h3,h4{font-family:var(--dsp);font-weight:600;line-height:1.02;letter-spacing:-.01em}
+.mono{font-family:var(--mono);font-variant-numeric:tabular-nums}
+.hide{display:none!important}
+
+/* ===== IOL MASTHEAD (official layout: centred logo · date + socials + Google badges right) ===== */
+.masthead{background:#fff;position:relative;z-index:60}
+.mast-grid{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:20px;padding:16px 34px}
+.iol-logo{display:flex;align-items:center;justify-self:center;line-height:1}
+.iolmark{height:52px;width:auto;display:block;color:#111}
+.mast-logo-img{height:58px;width:auto;display:block}
+.iol-logo b,.iol-logo .dot{display:none}
+.mast-right{justify-self:end;display:flex;align-items:center;gap:22px}
+.mast-meta{display:flex;flex-direction:column;align-items:flex-end;gap:10px}
+.mast-date{font:700 12.5px/1 var(--ui);letter-spacing:.05em;color:#1b1b1b}
+.mast-social{display:flex;align-items:center;gap:15px}
+.mast-social a{color:#111;display:grid;place-items:center;transition:.15s}
+.mast-social a:hover{color:var(--iol)}
+.mast-social svg{width:17px;height:17px}
+.mast-badges{display:flex;align-items:center;gap:10px}
+.gbwrap{display:flex;align-items:center}
+.gbimg{height:44px;width:auto;display:block}
+.gbadge{display:none;align-items:center;gap:8px;border-radius:9px;padding:8px 12px;font:600 11px/1.25 var(--ui);white-space:nowrap}
+.gbadge.dark{background:#111;color:#fff}
+.gbadge.light{background:#fff;color:#3c4043;border:1px solid #dadce0}
+.gbadge b{font-weight:800}
+
+/* ===== IOL PRIMARY NAV (BLACK FRIDAY replaces FIFA World Cup 2026) ===== */
+.iolnav{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line);position:relative;z-index:55}
+.iolnav-inner{display:flex;align-items:center;gap:2px;height:50px;padding:0 30px;overflow-x:auto;scrollbar-width:none}
+.iolnav-inner::-webkit-scrollbar{display:none}
+.iolnav a{display:flex;align-items:center;gap:6px;padding:0 14px;height:100%;font-weight:500;font-size:13.5px;letter-spacing:.03em;color:#1c1c1c;text-transform:uppercase;white-space:nowrap}
+.iolnav a .cv{font-size:9px;color:#9a9a9a;font-weight:700;transform:translateY(1px)}
+.iolnav a:hover{color:var(--iol)}
+.iolnav a.bf{color:var(--iol);font-weight:700}
+.iolnav a.bf .tag{width:7px;height:7px;border-radius:50%;background:var(--iol);box-shadow:0 0 0 3px rgba(212,33,40,.18);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+
+/* ===== BLACK FRIDAY STICKY SUB-NAV (Destinations) ===== */
+.bfsub{position:sticky;top:0;z-index:50;background:var(--ink);border-bottom:1px solid #2A2A32}
+.bfsub-inner{max-width:var(--wrap);margin:0 auto;display:flex;align-items:center;gap:0;height:54px;padding:0 14px}
+.bfsub .brand{display:flex;align-items:center;gap:9px;padding-right:16px;margin-right:6px;border-right:1px solid #2E2E38;flex:none}
+.bfsub .brand .bolt{color:var(--amber);font-size:17px}
+.bfsub .brand span{font:800 13px/1 var(--ui);color:#fff;letter-spacing:.03em}
+.bfscroll{flex:1;overflow:hidden;position:relative}
+.bftabs{display:flex;gap:3px;overflow-x:auto;scroll-behavior:smooth;scrollbar-width:none;padding:0 4px}
+.bftabs::-webkit-scrollbar{display:none}
+.bftab{flex:none;white-space:nowrap;padding:8px 14px;border-radius:100px;font-weight:600;font-size:13.5px;color:#B9B7C0;transition:.18s;position:relative}
+.bftab:hover{color:#fff;background:#22222B}
+.bftab.on{background:var(--amber);color:var(--ink);font-weight:700}
+.bftab .lock{font-size:10px;opacity:.6;margin-left:5px}
+.bftab.owned::after{content:"";position:absolute;top:6px;right:9px;width:5px;height:5px;border-radius:50%;background:var(--green)}
+.bfarrow{flex:none;width:34px;height:34px;border-radius:50%;background:#22222B;color:#fff;display:grid;place-items:center;font-size:15px;margin:0 2px}
+.bfarrow:hover{background:#33333F}
+
+/* ===== FLOATING PROTOTYPE CONTROLS ===== */
+.proto{position:fixed;right:20px;bottom:20px;z-index:200;display:flex;flex-direction:column;gap:9px;align-items:flex-end}
+.proto-panel{background:var(--ink);color:#fff;border-radius:16px;padding:15px 16px;box-shadow:var(--shadow-l);width:264px;border:1px solid #2C2C36}
+.proto-panel h5{font:800 11px/1 var(--ui);letter-spacing:.18em;text-transform:uppercase;color:var(--amber);margin-bottom:12px}
+.proto-row{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:7px 0;font-size:13px;color:#D7D5DD;border-top:1px solid #26262F}
+.proto-row:first-of-type{border-top:none}
+.switch{width:40px;height:22px;border-radius:100px;background:#3A3A46;position:relative;transition:.2s;flex:none}
+.switch::after{content:"";position:absolute;top:2px;left:2px;width:18px;height:18px;border-radius:50%;background:#fff;transition:.2s}
+.switch.on{background:var(--green)}
+.switch.on::after{left:20px}
+.proto-toggle{background:var(--amber);color:var(--ink);font-weight:800;font-size:12.5px;padding:11px 16px;border-radius:100px;box-shadow:var(--shadow-l);display:flex;align-items:center;gap:8px;letter-spacing:.02em}
+.proto-toggle .g{width:8px;height:8px;border-radius:50%;background:var(--ink)}
+
+/* ad-zone overlay labels */
+.adzone{position:relative}
+body.zones .adzone{outline:1.5px dashed rgba(232,64,46,.6);outline-offset:2px}
+.adtag{position:absolute;top:0;left:0;z-index:8;background:var(--red);color:#fff;font:700 10px/1 var(--ui);letter-spacing:.1em;text-transform:uppercase;padding:5px 8px;border-radius:0 0 7px 0;display:none}
+body.zones .adtag{display:block}
+
+/* ============================================================
+   HUB (Black Friday landing) — default IOL campaign identity
+   ============================================================ */
+.hub-hero{position:relative;background:var(--ink);color:#fff;overflow:hidden}
+.hub-hero::before{content:"";position:absolute;inset:0;background:
+   radial-gradient(120% 90% at 82% -10%,rgba(246,178,60,.30),transparent 55%),
+   radial-gradient(90% 80% at 8% 120%,rgba(212,33,40,.42),transparent 60%);}
+.hub-hero::after{content:"";position:absolute;inset:0;opacity:.5;background-image:radial-gradient(rgba(255,255,255,.05) 1px,transparent 1px);background-size:4px 4px;mix-blend-mode:overlay}
+.hub-hero .wrap{position:relative;z-index:2;padding:56px 32px 46px}
+.hero-top{display:flex;align-items:center;gap:14px;margin-bottom:26px}
+.hero-badge{display:flex;align-items:center;gap:9px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);border-radius:100px;padding:8px 15px;font:700 11px/1 var(--ui);letter-spacing:.18em;text-transform:uppercase}
+.hero-badge .v{color:var(--green);font-size:13px}
+.hero-live{display:flex;align-items:center;gap:8px;font:600 12px/1 var(--ui);letter-spacing:.12em;text-transform:uppercase;color:#E7E5EC}
+.hero-live .d{width:8px;height:8px;border-radius:50%;background:var(--red);animation:pulse 1.4s infinite}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:end}
+.hero-kicker{font-family:var(--dsp);font-style:italic;font-weight:500;font-size:22px;color:var(--amber);margin-bottom:8px}
+.hero-h1{font-size:clamp(56px,7vw,104px);font-weight:900;line-height:.9;letter-spacing:-.03em}
+.hero-h1 em{font-style:italic;font-weight:500;color:var(--amber)}
+.hero-sub{max-width:620px;color:#CFCDD5;font-size:17px;margin-top:20px;line-height:1.5}
+
+/* countdown */
+.countdown{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.13);border-radius:var(--r-l);padding:26px 26px 22px;backdrop-filter:blur(4px)}
+.cd-label{font:700 11px/1 var(--ui);letter-spacing:.2em;text-transform:uppercase;color:var(--amber);display:flex;align-items:center;gap:8px;margin-bottom:18px}
+.cd-clock{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.cd-cell{background:var(--ink-2);border:1px solid #2C2C36;border-radius:var(--r-m);padding:16px 6px;text-align:center}
+.cd-cell .n{font-family:var(--mono);font-weight:600;font-size:38px;color:#fff;line-height:1}
+.cd-cell .u{font:700 10px/1 var(--ui);letter-spacing:.16em;text-transform:uppercase;color:var(--txt-mute);margin-top:9px}
+.cd-foot{margin-top:18px;padding-top:16px;border-top:1px solid #26262F;display:flex;align-items:center;justify-content:space-between;font-size:12.5px;color:#B9B7C0}
+.cd-foot b{color:var(--amber)}
+
+/* deals ticker */
+.ticker{background:var(--amber);color:var(--ink);overflow:hidden;border-top:2px solid var(--ink);border-bottom:2px solid var(--ink)}
+.ticker-track{display:flex;gap:0;white-space:nowrap;animation:tick 42s linear infinite;will-change:transform}
+.ticker:hover .ticker-track{animation-play-state:paused}
+@keyframes tick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.tick-item{display:inline-flex;align-items:center;gap:10px;padding:11px 24px;font-weight:700;font-size:13px;border-right:1px solid rgba(12,12,14,.15)}
+.tick-item .down{color:var(--red-2);font-family:var(--mono);font-weight:600}
+.tick-item .old{text-decoration:line-through;opacity:.5;font-family:var(--mono);font-weight:500}
+.tick-item .new{font-family:var(--mono);font-weight:600}
+
+/* section shell */
+.sec{padding:64px 0}
+.sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;margin-bottom:30px}
+.sec-head .l{max-width:640px}
+.sec-eye{color:var(--amber-2);display:flex;align-items:center;gap:9px;margin-bottom:12px}
+.sec-eye::before{content:"";width:26px;height:2px;background:var(--amber-2)}
+.sec-title{font-size:clamp(30px,3.4vw,44px);color:var(--ink)}
+.sec-desc{color:var(--txt-soft);font-size:15.5px;margin-top:10px;max-width:600px}
+.sec-link{font-weight:700;font-size:13.5px;color:var(--iol);display:flex;align-items:center;gap:6px;white-space:nowrap}
+.sec-link:hover{gap:10px}
+
+/* verified stamp */
+.verified{display:inline-flex;align-items:center;gap:6px;font:700 10.5px/1 var(--ui);letter-spacing:.08em;text-transform:uppercase;color:var(--green);background:var(--green-tint);border:1px solid rgba(30,158,106,.28);padding:5px 9px;border-radius:100px}
+.verified .tick{width:13px;height:13px;background:var(--green);color:#fff;border-radius:50%;display:grid;place-items:center;font-size:9px;font-weight:800}
+/* FACTUAL price-tracking badge (editorial deals only — NOT an endorsement) */
+.tracked{display:inline-flex;align-items:center;gap:7px;font:700 10px/1 var(--ui);letter-spacing:.06em;text-transform:uppercase;color:var(--txt-soft);background:var(--paper-2);border:1px solid var(--line);padding:5px 10px;border-radius:100px}
+.tracked svg{width:12px;height:12px;color:var(--iol)}
+.tracked.dark{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.16);color:#CFCDD5}
+.tracked.dark svg{color:var(--amber)}
+/* clear commercial labelling — church/state separation */
+.ad-label{display:inline-flex;align-items:center;gap:6px;font:700 9.5px/1 var(--ui);letter-spacing:.14em;text-transform:uppercase;color:var(--txt-mute);border:1px solid var(--line);padding:5px 9px;border-radius:5px;background:#fff}
+.ad-label.solid{background:var(--ink);color:#fff;border-color:var(--ink)}
+.integrity{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-top:22px;padding:14px 18px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:100px;font-size:12.5px;color:#C7C5CE;max-width:640px}
+.integrity .k{display:inline-flex;align-items:center;gap:7px;font-weight:700;color:#fff}
+.integrity .sep{width:1px;height:16px;background:rgba(255,255,255,.18)}
+.integrity .ed{width:9px;height:9px;border-radius:50%;background:var(--iol)}
+.integrity .sp{width:9px;height:9px;border-radius:2px;background:var(--amber)}
+
+/* SVG product-art wells */
+.art{position:relative;overflow:hidden;background:linear-gradient(135deg,var(--iol-tint),#fff);display:grid;place-items:center}
+.art svg{width:64%;height:64%}
+.art.dark{background:linear-gradient(140deg,#1B1B21,#0E0E12)}
+.art .disc{position:absolute;top:12px;right:12px;background:var(--red);color:#fff;font:700 13px/1 var(--mono);padding:8px 10px;border-radius:100px;box-shadow:var(--shadow-m)}
+/* universal fill art well */
+.fill{position:absolute;inset:0;display:grid;place-items:center;overflow:hidden;background:linear-gradient(135deg,color-mix(in srgb,var(--k,#D42128) 15%,#fff),#fff)}
+.fill svg{width:56%;height:56%;color:var(--k,#D42128)}
+.fill.dk{background:linear-gradient(140deg,#1B1B22,#0D0D11)}
+.fill.dk svg{opacity:.92}
+.fill .disc{position:absolute;top:10px;right:10px;background:var(--red);color:#fff;font:700 12px/1 var(--mono);padding:6px 9px;border-radius:100px;z-index:2}
+.fill::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 30% 20%,rgba(255,255,255,.4),transparent 60%);mix-blend-mode:soft-light}
+
+/* featured deal carousel */
+.carousel{position:relative}
+.car-view{overflow:hidden;border-radius:var(--r-l)}
+.car-track{display:flex;transition:transform .55s cubic-bezier(.6,.02,.1,1)}
+.car-slide{min-width:100%;display:grid;grid-template-columns:1.05fr 1fr}
+.car-art{position:relative;min-height:420px;overflow:hidden}
+.car-art .art{position:absolute;inset:0}
+.car-body{background:var(--ink);color:#fff;padding:44px 46px;display:flex;flex-direction:column;justify-content:center}
+.car-body .retailer{font:700 12px/1 var(--ui);letter-spacing:.14em;text-transform:uppercase;color:var(--amber);margin-bottom:16px}
+.car-meta{font-size:12.5px;color:#9E9CA6;margin-bottom:20px;font-weight:500}
+.tick-item .tk{color:var(--red-2);margin-right:2px}
+.car-body h3{font-size:clamp(28px,3vw,40px);line-height:1.02;margin-bottom:14px}
+.car-body p{color:#C7C5CE;font-size:15px;max-width:440px;margin-bottom:22px}
+.price-row{display:flex;align-items:flex-end;gap:16px;margin-bottom:8px}
+.price-now{font-family:var(--mono);font-weight:600;font-size:44px;color:#fff;line-height:1}
+.price-was{display:flex;flex-direction:column;gap:4px}
+.price-was .w{font-family:var(--mono);text-decoration:line-through;color:var(--txt-mute);font-size:16px}
+.price-was .s{font:700 12px/1 var(--ui);letter-spacing:.06em;color:var(--red);text-transform:uppercase}
+.spark{display:flex;align-items:flex-end;gap:3px;height:34px;margin:14px 0 22px}
+.spark span{width:7px;background:rgba(255,255,255,.16);border-radius:2px}
+.spark span.hi{background:var(--green)}
+.car-cta{display:flex;gap:12px;align-items:center}
+.btn-amber{background:var(--amber);color:var(--ink);font-weight:800;padding:14px 26px;border-radius:100px;font-size:14px;box-shadow:0 8px 24px rgba(246,178,60,.3)}
+.btn-amber:hover{background:#fff}
+.btn-ghost{border:1px solid rgba(255,255,255,.25);color:#fff;font-weight:600;padding:13px 22px;border-radius:100px;font-size:13.5px}
+.btn-ghost:hover{background:rgba(255,255,255,.1)}
+.car-nav{position:absolute;top:50%;transform:translateY(-50%);width:52px;height:52px;border-radius:50%;background:#fff;color:var(--ink);display:grid;place-items:center;font-size:20px;box-shadow:var(--shadow-m);z-index:5}
+.car-nav:hover{background:var(--amber)}
+.car-prev{left:-16px}.car-next{right:-16px}
+.car-dots{display:flex;gap:8px;justify-content:center;margin-top:20px}
+.car-dot{width:8px;height:8px;border-radius:50%;background:var(--line-2)}
+.car-dot.on{background:var(--ink);width:26px;border-radius:100px}
+
+/* editor picks — asymmetric editorial grid */
+.picks{display:grid;grid-template-columns:1.5fr 1fr 1fr;grid-template-rows:auto auto;gap:22px}
+.pick{background:#fff;border:1px solid var(--line);border-radius:var(--r-l);overflow:hidden;display:flex;flex-direction:column;transition:.25s}
+.pick:hover{transform:translateY(-4px);box-shadow:var(--shadow-m)}
+.pick.lead{grid-row:span 2}
+.pick.lead .p-art{aspect-ratio:16/10}
+.pick .p-art{aspect-ratio:16/9;position:relative}
+.pick.lead .p-body{padding:26px 28px}
+.pick .p-body{padding:20px 22px;flex:1;display:flex;flex-direction:column}
+.p-cat{font:700 11px/1 var(--ui);letter-spacing:.12em;text-transform:uppercase;color:var(--iol);margin-bottom:11px;display:flex;gap:9px;align-items:center}
+.pick.lead h3{font-size:30px;line-height:1.04;margin-bottom:12px}
+.pick h4{font-family:var(--dsp);font-weight:600;font-size:19px;line-height:1.1;margin-bottom:10px;color:var(--ink)}
+.pick.lead p{color:var(--txt-soft);font-size:15px;margin-bottom:16px}
+.p-meta{margin-top:auto;display:flex;align-items:center;gap:10px;font-size:12px;color:var(--txt-mute);flex-wrap:wrap}
+.p-byline{font-weight:600;color:var(--txt-soft)}
+
+/* savings + trending split */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+.savings-list{display:flex;flex-direction:column}
+.sv{display:grid;grid-template-columns:74px 1fr auto;gap:18px;align-items:center;padding:18px 0;border-top:1px solid var(--line)}
+.sv:first-child{border-top:none}
+.sv-art{width:74px;height:74px;border-radius:var(--r-m);overflow:hidden;position:relative}
+.sv h5{font-family:var(--ui);font-weight:700;font-size:15px;line-height:1.2;margin-bottom:5px;color:var(--ink)}
+.sv .r{font-size:12px;color:var(--txt-mute)}
+.sv-price{text-align:right}
+.sv-price .n{font-family:var(--mono);font-weight:600;font-size:19px;color:var(--ink)}
+.sv-price .w{font-family:var(--mono);font-size:12px;text-decoration:line-through;color:var(--txt-mute)}
+.sv-price .p{font:700 11px/1 var(--ui);color:var(--red);margin-top:3px}
+
+.trend-list{display:flex;flex-direction:column;gap:2px}
+.tr{display:flex;align-items:center;gap:18px;padding:16px 4px;border-bottom:1px solid var(--line)}
+.tr .rank{font-family:var(--dsp);font-weight:900;font-size:34px;color:var(--line-2);width:42px;flex:none;line-height:1}
+.tr:hover .rank{color:var(--amber)}
+.tr h5{font-family:var(--ui);font-weight:600;font-size:15.5px;line-height:1.25;color:var(--ink)}
+.tr .m{font-size:12px;color:var(--txt-mute);margin-top:4px}
+
+/* ============================================================
+   INSIGHTS PANEL
+   ============================================================ */
+.insights{background:var(--iol);color:#fff;position:relative;overflow:hidden}
+.insights::before{content:"";position:absolute;inset:0;background:radial-gradient(70% 90% at 100% 0%,rgba(246,178,60,.22),transparent 55%)}
+.insights .wrap{position:relative;z-index:2;padding:66px 32px}
+.ins-head{max-width:660px;margin-bottom:40px}
+.ins-head .eye{color:var(--amber);margin-bottom:14px}
+.ins-head .eye::before{background:var(--amber)}
+.ins-head h2{font-size:clamp(30px,3.4vw,46px);color:#fff}
+.ins-head p{color:#F4DEDB;font-size:15.5px;margin-top:12px}
+.ins-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:rgba(255,255,255,.14);border-radius:var(--r-l);overflow:hidden}
+.ins-cell{background:var(--iol);padding:30px 28px}
+.ins-cell.hot{background:var(--iol-2)}
+.ins-cell .stat{font-family:var(--dsp);font-weight:900;font-size:52px;line-height:.9;color:var(--amber)}
+.ins-cell .lbl{font:700 12px/1 var(--ui);letter-spacing:.1em;text-transform:uppercase;color:#fff;margin:14px 0 8px}
+.ins-cell .txt{font-size:13.5px;color:#F4DEDB;line-height:1.45}
+.ins-foot{margin-top:26px;font-size:12px;color:#E0AEAA;display:flex;align-items:center;gap:8px}
+
+/* ============================================================
+   SPONSORSHIP PACKAGES
+   ============================================================ */
+.packs{background:var(--ink);color:#fff;position:relative;overflow:hidden}
+.packs::before{content:"";position:absolute;inset:0;background:radial-gradient(90% 70% at 10% 0%,rgba(212,33,40,.4),transparent 55%),radial-gradient(70% 80% at 100% 100%,rgba(246,178,60,.14),transparent 55%)}
+.packs .wrap{position:relative;z-index:2;padding:70px 32px}
+.packs-head{text-align:center;max-width:680px;margin:0 auto 46px}
+.packs-head .eye{color:var(--amber);justify-content:center;margin-bottom:14px}
+.packs-head .eye::before{display:none}
+.packs-head h2{font-size:clamp(32px,4vw,52px);color:#fff}
+.packs-head p{color:#C7C5CE;font-size:16px;margin-top:14px}
+.packs-grid{display:grid;grid-template-columns:1.15fr 1fr;gap:24px;align-items:stretch}
+.pack{border-radius:var(--r-l);padding:40px 40px 34px;position:relative;overflow:hidden;display:flex;flex-direction:column}
+.pack.hero-pack{background:linear-gradient(155deg,#1A1A22,#0D0D11);border:1px solid #33333F}
+.pack.hero-pack::after{content:"";position:absolute;top:-40%;right:-20%;width:70%;height:120%;background:radial-gradient(circle,rgba(246,178,60,.16),transparent 65%)}
+.pack.std-pack{background:rgba(255,255,255,.03);border:1px solid #2A2A34}
+.pack-tag{align-self:flex-start;font:700 11px/1 var(--ui);letter-spacing:.16em;text-transform:uppercase;padding:8px 13px;border-radius:100px;margin-bottom:22px;position:relative;z-index:2}
+.hero-pack .pack-tag{background:var(--amber);color:var(--ink)}
+.std-pack .pack-tag{background:rgba(255,255,255,.09);color:#fff;border:1px solid rgba(255,255,255,.15)}
+.pack h3{font-size:clamp(26px,2.6vw,34px);line-height:1.02;margin-bottom:10px;position:relative;z-index:2}
+.pack .who{color:#B9B7C0;font-size:14px;margin-bottom:26px;position:relative;z-index:2}
+.pack-price{display:flex;align-items:flex-end;gap:14px;margin-bottom:6px;position:relative;z-index:2}
+.pack-price .amt{font-family:var(--mono);font-weight:600;font-size:clamp(30px,3.4vw,42px);color:#fff;line-height:1}
+.pack-price .ex{font-size:12px;color:var(--txt-mute);margin-bottom:6px}
+.pack-value{position:relative;z-index:2;display:inline-flex;align-items:center;gap:8px;font-size:13px;color:var(--green);margin-bottom:28px}
+.pack-value .save{background:var(--green-tint);color:var(--green);font-weight:700;font-size:11px;padding:4px 9px;border-radius:100px}
+.pack-list{list-style:none;position:relative;z-index:2;flex:1}
+.pack-list li{display:flex;gap:13px;padding:12px 0;border-top:1px solid rgba(255,255,255,.08);font-size:14.5px;color:#E1DFE7;line-height:1.4}
+.pack-list li .ck{flex:none;width:20px;height:20px;border-radius:50%;background:var(--amber);color:var(--ink);display:grid;place-items:center;font-size:11px;font-weight:800;margin-top:1px}
+.std-pack .pack-list li .ck{background:var(--iol);color:#fff}
+.pack-list li b{color:#fff}
+.pack-cta{margin-top:26px;position:relative;z-index:2;display:flex;gap:12px}
+.hero-pack .pack-cta .btn-amber{flex:1;text-align:center}
+.std-pack-cta{flex:1;text-align:center;background:#fff;color:var(--ink);font-weight:800;padding:14px;border-radius:100px;font-size:14px}
+.std-pack-cta:hover{background:var(--amber)}
+.pack-demo{position:relative;z-index:2;margin-top:20px;padding-top:18px;border-top:1px solid rgba(255,255,255,.08);font-size:12.5px;color:#9E9CA6;display:flex;align-items:center;gap:9px}
+.pack-demo a{color:var(--amber);font-weight:700}
+
+/* commercial inventory */
+.inv{background:var(--paper-2)}
+.inv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.inv-card{background:#fff;border:1px solid var(--line);border-radius:var(--r-m);padding:22px 22px 20px;transition:.2s}
+.inv-card:hover{border-color:var(--ink);box-shadow:var(--shadow-s)}
+.inv-card .num{font-family:var(--mono);font-size:12px;color:var(--amber-2);font-weight:600;margin-bottom:12px}
+.inv-card h5{font-family:var(--ui);font-weight:700;font-size:16px;color:var(--ink);margin-bottom:7px}
+.inv-card p{font-size:13px;color:var(--txt-soft);line-height:1.45}
+.inv-card .spec{margin-top:12px;font-family:var(--mono);font-size:11.5px;color:var(--txt-mute)}
+
+/* most read */
+.mostread{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.mr{display:flex;flex-direction:column}
+.mr-art{aspect-ratio:5/4;border-radius:var(--r-m);overflow:hidden;position:relative;margin-bottom:14px}
+.mr .c{font:700 11px/1 var(--ui);letter-spacing:.1em;text-transform:uppercase;color:var(--iol);margin-bottom:9px}
+.mr h5{font-family:var(--dsp);font-weight:600;font-size:18px;line-height:1.12;color:var(--ink);margin-bottom:9px}
+.mr .m{margin-top:auto;font-size:12px;color:var(--txt-mute)}
+
+/* footer */
+.foot{background:var(--ink);color:#B9B7C0;padding:52px 0 34px}
+.foot-top{display:flex;justify-content:space-between;align-items:flex-start;gap:40px;padding-bottom:32px;border-bottom:1px solid #26262F;flex-wrap:wrap}
+.foot .iol-logo{color:#fff;font-size:32px}
+.foot-logo{display:inline-flex;align-items:center;justify-content:center;background:#fff;border-radius:10px;padding:11px 16px}
+.foot-logo-img{height:30px;width:auto;display:block}
+.foot-cols{display:flex;gap:56px}
+.foot-col h6{color:#fff;font:700 12px/1 var(--ui);letter-spacing:.1em;text-transform:uppercase;margin-bottom:14px}
+.foot-col a{display:block;font-size:13.5px;padding:5px 0;color:#B9B7C0}
+.foot-col a:hover{color:var(--amber)}
+.foot-bottom{padding-top:26px;font-size:12px;color:#7E7C86;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.disc{background:#141419;border:1px solid #26262F;border-radius:var(--r-m);padding:14px 18px;font-size:11.5px;color:#8B8892;line-height:1.5;margin-top:22px}
+.disc b{color:#B9B7C0}
+
+/* ============================================================
+   CATEGORY PAGE  (default IOL identity)
+   .sponsored  ->  sponsor takeover theme (AMPD: ink + electric lime)
+   ============================================================ */
+.cat{--c-bg:var(--paper);--c-card:#fff;--c-ink:var(--ink);--c-line:var(--line);
+     --c-txt:var(--txt);--c-soft:var(--txt-soft);--c-mute:var(--txt-mute);
+     --c-accent:var(--iol);--c-accent-2:var(--iol-2);--c-hero:var(--ink);
+     --c-on-accent:#fff;background:var(--c-bg);transition:background .4s}
+.cat.sponsored{--c-bg:#0B0C0F;--c-card:#131519;--c-ink:#fff;--c-line:#23262E;
+     --c-txt:#EDEEF0;--c-soft:#A9ADB6;--c-mute:#71757F;
+     --c-accent:#D4FF3F;--c-accent-2:#B9E62E;--c-hero:#0B0C0F;--c-on-accent:#0B0C0F}
+
+/* sponsor identity strip (only shown when sponsored) */
+.spon-strip{background:#0B0C0F;color:#fff;border-bottom:1px solid #23262E}
+.spon-strip .wrap{display:flex;align-items:center;justify-content:space-between;height:52px}
+.spon-strip .lockup{display:flex;align-items:center;gap:14px}
+.spon-strip .presented{font:600 10px/1 var(--ui);letter-spacing:.18em;text-transform:uppercase;color:#71757F}
+.spon-strip .ampd{display:flex;align-items:center;gap:8px;font-family:var(--dsp);font-weight:900;font-size:24px;letter-spacing:-.03em;color:#fff}
+.spon-strip .ampd .b{color:#D4FF3F;font-size:20px}
+.spon-strip .stag{font-size:12.5px;color:#A9ADB6;border-left:1px solid #2A2D36;padding-left:14px}
+.spon-strip .available{display:flex;align-items:center;gap:8px;font:600 11px/1 var(--ui);letter-spacing:.1em;text-transform:uppercase;color:#D4FF3F}
+
+/* category hero */
+.cat-hero{background:var(--c-hero);color:#fff;position:relative;overflow:hidden;transition:background .4s}
+.cat-hero::before{content:"";position:absolute;inset:0;opacity:.85;
+  background:radial-gradient(90% 90% at 85% -10%,color-mix(in srgb,var(--c-accent) 26%,transparent),transparent 55%),
+  radial-gradient(80% 80% at 0% 120%,rgba(212,33,40,.35),transparent 60%)}
+.cat.sponsored .cat-hero::before{background:radial-gradient(90% 90% at 85% -10%,rgba(212,255,63,.22),transparent 55%),radial-gradient(80% 80% at 0% 120%,rgba(212,255,63,.08),transparent 60%)}
+.cat-hero .wrap{position:relative;z-index:2;padding:50px 32px}
+.cat-hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center}
+.cat-eye{display:inline-flex;align-items:center;gap:10px;font:700 12px/1 var(--ui);letter-spacing:.16em;text-transform:uppercase;color:var(--c-accent);margin-bottom:18px}
+.cat-hero h1{font-size:clamp(42px,5.2vw,74px);font-weight:900;line-height:.92;letter-spacing:-.03em}
+.cat-hero h1 em{font-style:italic;font-weight:500;color:var(--c-accent)}
+.cat-hero p{max-width:520px;color:#CFCDD5;font-size:16px;margin-top:18px}
+.cat.sponsored .cat-hero p{color:#A9ADB6}
+.cat-hero-cta{display:flex;gap:12px;margin-top:26px;align-items:center}
+.hero-art-well{aspect-ratio:5/4;border-radius:var(--r-l);position:relative;overflow:hidden;box-shadow:var(--shadow-l)}
+.hero-art-well .disc{position:absolute;top:16px;right:16px;background:var(--red);color:#fff;font:700 15px/1 var(--mono);padding:10px 13px;border-radius:100px;z-index:3}
+.hero-art-well .cap{position:absolute;left:0;right:0;bottom:0;padding:20px 22px;background:linear-gradient(transparent,rgba(0,0,0,.82));color:#fff;z-index:3}
+.hero-art-well .cap .t{font-family:var(--dsp);font-weight:600;font-size:19px}
+.hero-art-well .cap .pr{font-family:var(--mono);font-weight:600;font-size:22px;margin-top:6px}
+.hero-art-well .cap .pr s{color:#B9B7C0;font-weight:400;font-size:14px;margin-left:8px}
+
+/* generic category section utilities */
+.cat .csec{padding:56px 0}
+.cat .csec.alt{background:var(--c-card);border-top:1px solid var(--c-line);border-bottom:1px solid var(--c-line)}
+.cat .csec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;margin-bottom:28px}
+.cat .csec-head h2{font-size:clamp(26px,3vw,38px);color:var(--c-ink)}
+.cat .csec-head .eye{color:var(--c-accent-2);display:flex;align-items:center;gap:9px;margin-bottom:11px;font:700 12px/1 var(--ui);letter-spacing:.16em;text-transform:uppercase}
+.cat .csec-head .eye::before{content:"";width:24px;height:2px;background:currentColor}
+.cat .csec-head p{color:var(--c-soft);font-size:15px;margin-top:9px;max-width:560px}
+.cat .clink{font-weight:700;font-size:13px;color:var(--c-accent-2);white-space:nowrap}
+.cat.sponsored .clink{color:var(--c-accent)}
+
+/* top deals grid */
+.deals-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.deal{background:var(--c-card);border:1px solid var(--c-line);border-radius:var(--r-m);overflow:hidden;transition:.2s;display:flex;flex-direction:column}
+.deal:hover{transform:translateY(-4px);box-shadow:var(--shadow-m);border-color:var(--c-accent)}
+.deal-art{aspect-ratio:4/3;position:relative}
+.deal-art .d{position:absolute;top:10px;left:10px;background:var(--red);color:#fff;font:700 12px/1 var(--mono);padding:6px 9px;border-radius:7px;z-index:2}
+.deal-body{padding:14px 15px 16px;flex:1;display:flex;flex-direction:column}
+.deal .rt{font:700 10px/1 var(--ui);letter-spacing:.1em;text-transform:uppercase;color:var(--c-accent-2);margin-bottom:8px}
+.cat.sponsored .deal .rt{color:var(--c-accent)}
+.deal h5{font:600 14px/1.25 var(--ui);color:var(--c-ink);margin-bottom:auto;min-height:36px}
+.deal-price{display:flex;align-items:baseline;gap:9px;margin-top:12px}
+.deal-price .n{font-family:var(--mono);font-weight:600;font-size:18px;color:var(--c-ink)}
+.deal-price .w{font-family:var(--mono);font-size:12px;text-decoration:line-through;color:var(--c-mute)}
+.deal .cta{margin-top:12px;background:var(--c-accent);color:var(--c-on-accent);font-weight:700;font-size:12.5px;padding:10px;border-radius:100px;text-align:center}
+.deal .cta:hover{filter:brightness(1.08)}
+
+/* buying guide tabs */
+.bg-tabs{display:flex;gap:8px;margin-bottom:24px;flex-wrap:wrap}
+.bg-tab{padding:10px 18px;border-radius:100px;font-weight:600;font-size:13.5px;background:var(--c-card);border:1px solid var(--c-line);color:var(--c-soft)}
+.bg-tab.on{background:var(--c-ink);color:var(--c-bg);border-color:var(--c-ink)}
+.cat.sponsored .bg-tab.on{background:var(--c-accent);color:var(--c-on-accent);border-color:var(--c-accent)}
+.bg-panel{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:20px}
+.bg-lead{grid-row:span 2;background:var(--c-card);border:1px solid var(--c-line);border-radius:var(--r-l);overflow:hidden;display:flex;flex-direction:column}
+.bg-lead .a{aspect-ratio:16/10;position:relative}
+.bg-lead .bd{padding:26px 28px;flex:1;display:flex;flex-direction:column}
+.bg-lead h3{font-size:26px;line-height:1.05;margin-bottom:12px;color:var(--c-ink)}
+.bg-lead p{color:var(--c-soft);font-size:14.5px;margin-bottom:16px}
+.bg-side{background:var(--c-card);border:1px solid var(--c-line);border-radius:var(--r-m);padding:18px 20px;display:flex;gap:16px;align-items:center;transition:.2s}
+.bg-side:hover{border-color:var(--c-accent);transform:translateX(3px)}
+.bg-side .a{width:64px;height:64px;border-radius:10px;overflow:hidden;position:relative;flex:none}
+.bg-side h5{font:600 14.5px/1.2 var(--ui);color:var(--c-ink);margin-bottom:6px}
+.bg-side .m{font-size:12px;color:var(--c-mute)}
+.byl{display:flex;align-items:center;gap:9px;margin-top:auto;font-size:12.5px;color:var(--c-mute)}
+.byl b{color:var(--c-soft)}
+
+/* price comparison table */
+.compare{background:var(--c-card);border:1px solid var(--c-line);border-radius:var(--r-l);overflow:hidden}
+.compare-row{display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;align-items:center;padding:16px 24px;border-top:1px solid var(--c-line);font-size:14px}
+.compare-row.h{background:color-mix(in srgb,var(--c-ink) 5%,transparent);border-top:none;font:700 11px/1 var(--ui);letter-spacing:.1em;text-transform:uppercase;color:var(--c-mute)}
+.compare-row .prod{font-weight:600;color:var(--c-ink);display:flex;align-items:center;gap:12px}
+.compare-row .prod .a{width:40px;height:40px;border-radius:8px;overflow:hidden;position:relative;flex:none}
+.compare-row .price{font-family:var(--mono);color:var(--c-soft)}
+.compare-row .best{font-family:var(--mono);font-weight:600;color:var(--green)}
+.compare-row .best::after{content:" ✓";color:var(--green)}
+
+/* reviews / editors choice */
+.reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.review{background:var(--c-card);border:1px solid var(--c-line);border-radius:var(--r-l);padding:26px 26px;display:flex;flex-direction:column}
+.review .score{font-family:var(--dsp);font-weight:900;font-size:44px;color:var(--c-accent-2);line-height:1;display:flex;align-items:baseline;gap:4px}
+.cat.sponsored .review .score{color:var(--c-accent)}
+.review .score s{font-size:18px;color:var(--c-mute);font-family:var(--mono);text-decoration:none}
+.review h4{font-size:20px;margin:14px 0 10px;color:var(--c-ink)}
+.review p{color:var(--c-soft);font-size:14px;margin-bottom:16px;flex:1}
+.review .stars{color:var(--amber);font-size:15px;letter-spacing:2px}
+.rev-by{font-size:12px;color:var(--c-mute);margin-top:14px;font-weight:600}
+
+/* "what IOL delivers" clarity strip on category pages */
+.deliver-note{display:flex;align-items:center;gap:14px;flex-wrap:wrap;background:var(--c-card);border:1px solid var(--c-line);border-radius:var(--r-m);padding:14px 20px;margin:0 0 4px;font-size:13px;color:var(--c-soft)}
+.deliver-note .dn-k{display:inline-flex;align-items:center;gap:8px;font-weight:700;color:var(--c-ink)}
+.deliver-note .dn-k .ed{width:9px;height:9px;border-radius:50%;background:var(--iol)}
+.cat.sponsored .deliver-note .dn-k .ed{background:var(--c-accent)}
+.deliver-note .dn-k .op{width:9px;height:9px;border-radius:2px;border:1.5px dashed var(--c-mute)}
+.deliver-note .dn-sep{width:1px;height:16px;background:var(--c-line)}
+
+/* optional showcase pillar (the one "what we could do" module) */
+.opt-wrap{position:relative;border:1.5px dashed var(--c-line);border-radius:var(--r-l);padding:22px}
+.opt-flag{display:inline-flex;align-items:center;gap:9px;background:var(--c-ink);color:var(--c-bg);font:700 10.5px/1 var(--ui);letter-spacing:.12em;text-transform:uppercase;padding:7px 12px;border-radius:100px;margin-bottom:6px}
+.cat.sponsored .opt-flag{background:var(--c-accent);color:var(--c-on-accent)}
+.opt-note{font-size:13px;color:var(--c-soft);max-width:640px;margin:10px 0 20px;line-height:1.5}
+.opt-note b{color:var(--c-ink)}
+
+/* editor's choice banner */
+.echoice{background:var(--c-ink);color:var(--c-bg);border-radius:var(--r-l);overflow:hidden;display:grid;grid-template-columns:1fr 1.2fr}
+.cat.sponsored .echoice{background:linear-gradient(150deg,#14161B,#0B0C0F);color:#fff;border:1px solid var(--c-line)}
+.echoice .a{position:relative;min-height:300px}
+.echoice .bd{padding:44px 46px;display:flex;flex-direction:column;justify-content:center}
+.echoice .ribbon{align-self:flex-start;background:var(--c-accent);color:var(--c-on-accent);font:800 11px/1 var(--ui);letter-spacing:.14em;text-transform:uppercase;padding:8px 14px;border-radius:100px;margin-bottom:18px}
+.echoice h3{font-size:clamp(26px,3vw,38px);line-height:1.02;margin-bottom:14px}
+.cat:not(.sponsored) .echoice h3,.cat:not(.sponsored) .echoice .bd{color:var(--paper)}
+.echoice p{opacity:.82;font-size:15px;margin-bottom:22px;max-width:440px}
+
+/* videos */
+.videos{display:grid;grid-template-columns:2fr 1fr 1fr;gap:18px}
+.video{position:relative;border-radius:var(--r-m);overflow:hidden;aspect-ratio:16/9;background:linear-gradient(140deg,#1B1B21,#0E0E12)}
+.video.lead{grid-row:span 2;aspect-ratio:auto}
+.video .play{position:absolute;inset:0;margin:auto;width:60px;height:60px;border-radius:50%;background:rgba(255,255,255,.16);backdrop-filter:blur(4px);border:1.5px solid rgba(255,255,255,.5);display:grid;place-items:center;color:#fff;font-size:20px}
+.video:hover .play{background:var(--c-accent);color:var(--c-on-accent);border-color:var(--c-accent)}
+.video .vcap{position:absolute;left:0;right:0;bottom:0;padding:18px 20px;background:linear-gradient(transparent,rgba(0,0,0,.8));color:#fff}
+.video .vcap .t{font:600 15px/1.2 var(--ui)}
+.video .vcap .d{font-family:var(--mono);font-size:11px;opacity:.7;margin-top:5px}
+.video svg{position:absolute;inset:0;margin:auto;width:38%;height:38%;color:rgba(255,255,255,.14)}
+
+/* shopping tips */
+.tips{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.tip{background:var(--c-card);border:1px solid var(--c-line);border-radius:var(--r-m);padding:24px 22px}
+.tip .n{font-family:var(--dsp);font-weight:900;font-size:34px;color:var(--c-accent-2);line-height:1}
+.cat.sponsored .tip .n{color:var(--c-accent)}
+.tip h5{font:600 16px/1.2 var(--ui);color:var(--c-ink);margin:12px 0 8px}
+.tip p{font-size:13.5px;color:var(--c-soft);line-height:1.5}
+
+/* retailer promo blocks */
+.promos{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.promo{border-radius:var(--r-m);padding:26px 26px;color:#fff;position:relative;overflow:hidden;min-height:150px;display:flex;flex-direction:column;justify-content:space-between}
+.promo .rn{font:800 18px/1 var(--ui);letter-spacing:-.01em}
+.promo .off{font-family:var(--dsp);font-weight:900;font-size:30px;margin-top:6px}
+.promo .cta2{align-self:flex-start;margin-top:14px;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.3);color:#fff;font-weight:700;font-size:12px;padding:9px 16px;border-radius:100px}
+.promo .cta2:hover{background:#fff;color:#111}
+
+/* partnered content */
+.partnered{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.part{background:var(--c-card);border:1px solid var(--c-line);border-radius:var(--r-m);overflow:hidden;display:flex;flex-direction:column}
+.part .a{aspect-ratio:16/9;position:relative}
+.part .flag{position:absolute;top:10px;left:10px;background:var(--c-ink);color:var(--c-bg);font:700 9.5px/1 var(--ui);letter-spacing:.1em;text-transform:uppercase;padding:5px 8px;border-radius:5px;z-index:2}
+.cat.sponsored .part .flag{background:var(--c-accent);color:var(--c-on-accent)}
+.part .bd{padding:18px 20px;flex:1;display:flex;flex-direction:column}
+.part h5{font-family:var(--dsp);font-weight:600;font-size:17px;line-height:1.15;color:var(--c-ink);margin-bottom:9px}
+.part .m{margin-top:auto;font-size:12px;color:var(--c-mute)}
+
+/* newsletter */
+.news-panel{background:var(--c-ink);color:var(--c-bg);border-radius:var(--r-l);padding:44px 48px;display:grid;grid-template-columns:1.1fr 1fr;gap:40px;align-items:center;position:relative;overflow:hidden}
+.cat.sponsored .news-panel{background:linear-gradient(140deg,#14161B,#0B0C0F);border:1px solid var(--c-line);color:#fff}
+.cat:not(.sponsored) .news-panel h3,.cat:not(.sponsored) .news-panel p{color:var(--paper)}
+.news-panel .eye{font:700 11px/1 var(--ui);letter-spacing:.16em;text-transform:uppercase;color:var(--c-accent);margin-bottom:14px}
+.cat:not(.sponsored) .news-panel .eye{color:var(--amber)}
+.news-panel h3{font-size:30px;line-height:1.05;margin-bottom:12px}
+.news-panel p{opacity:.82;font-size:14.5px}
+.news-form{display:flex;gap:10px}
+.news-form input{flex:1;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:100px;padding:15px 22px;color:#fff;font:500 14px var(--ui);outline:none}
+.news-form input::placeholder{color:rgba(255,255,255,.55)}
+.news-form button{background:var(--c-accent);color:var(--c-on-accent);font-weight:800;padding:0 26px;border-radius:100px}
+
+/* popular searches + related */
+.pop-wrap{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+.pop-tags{display:flex;flex-wrap:wrap;gap:10px}
+.pop-tag{background:var(--c-card);border:1px solid var(--c-line);border-radius:100px;padding:11px 18px;font-weight:600;font-size:13.5px;color:var(--c-txt)}
+.pop-tag:hover{border-color:var(--c-accent);color:var(--c-accent-2)}
+.cat.sponsored .pop-tag:hover{color:var(--c-accent)}
+.rel-list .rel{display:flex;gap:16px;padding:15px 0;border-top:1px solid var(--c-line);align-items:center}
+.rel-list .rel:first-child{border-top:none}
+.rel .a{width:80px;height:60px;border-radius:8px;overflow:hidden;position:relative;flex:none}
+.rel h5{font:600 14.5px/1.25 var(--ui);color:var(--c-ink)}
+.rel .m{font-size:12px;color:var(--c-mute);margin-top:4px}
+
+/* trending products strip */
+.tprod{display:grid;grid-template-columns:repeat(6,1fr);gap:12px}
+.tp{background:var(--c-card);border:1px solid var(--c-line);border-radius:var(--r-m);padding:14px 12px;text-align:center;transition:.2s}
+.tp:hover{transform:translateY(-3px);border-color:var(--c-accent)}
+.tp .a{aspect-ratio:1;border-radius:10px;overflow:hidden;position:relative;margin-bottom:10px}
+.tp h6{font:600 12px/1.25 var(--ui);color:var(--c-ink);margin-bottom:6px;min-height:30px}
+.tp .n{font-family:var(--mono);font-weight:600;font-size:13px;color:var(--c-accent-2)}
+.cat.sponsored .tp .n{color:var(--c-accent)}
+
+/* inline ad wells inside category */
+.ad-slot{background:repeating-linear-gradient(45deg,color-mix(in srgb,var(--c-ink) 4%,transparent),color-mix(in srgb,var(--c-ink) 4%,transparent) 12px,transparent 12px,transparent 24px);border:1px dashed var(--c-line);border-radius:var(--r-m);display:grid;place-items:center;text-align:center;color:var(--c-mute)}
+.ad-slot .lab{font:700 11px/1 var(--ui);letter-spacing:.14em;text-transform:uppercase}
+.ad-slot .dim{font-family:var(--mono);font-size:11px;margin-top:6px}
+.ad-lead{height:110px;margin:0 auto}
+.ad-mpu{aspect-ratio:1/1;max-width:300px}
+
+/* available-for-sponsorship banner (non-owned categories) */
+.claim{background:linear-gradient(135deg,var(--iol),var(--iol-2));color:#fff;border-radius:var(--r-l);padding:40px 44px;display:grid;grid-template-columns:1.3fr 1fr;gap:30px;align-items:center;position:relative;overflow:hidden}
+.claim::before{content:"";position:absolute;inset:0;background:radial-gradient(70% 90% at 100% 0%,rgba(246,178,60,.24),transparent 55%)}
+.claim>*{position:relative;z-index:2}
+.claim .eye{font:700 11px/1 var(--ui);letter-spacing:.16em;text-transform:uppercase;color:var(--amber);margin-bottom:14px}
+.claim h3{font-size:clamp(26px,3vw,38px);line-height:1.02;margin-bottom:12px}
+.claim p{color:#F4DEDB;font-size:15px}
+.claim .price{font-family:var(--mono);font-weight:600;font-size:32px;margin-top:16px}
+.claim .price s{font-size:14px;color:#E0AEAA;margin-left:10px;font-weight:400}
+
+/* destinations grid (hub) */
+.dgrid{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
+.dcard{background:#fff;border:1px solid var(--line);border-radius:var(--r-m);overflow:hidden;text-align:left;transition:.22s;display:flex;flex-direction:column}
+.dcard:hover{transform:translateY(-5px);box-shadow:var(--shadow-m);border-color:var(--ink)}
+.dcard-art{aspect-ratio:5/4;position:relative}
+.dcard-b{padding:15px 16px 17px}
+.dcard-t{font:600 15px/1.2 var(--ui);color:var(--ink);margin-bottom:9px;min-height:36px}
+.dstatus{font:700 10.5px/1 var(--ui);letter-spacing:.08em;text-transform:uppercase;color:var(--txt-mute)}
+.dstatus.owned{color:var(--green)}
+
+/* ============================================================
+   RETAILERS VIEW
+   ============================================================ */
+.ret-hero{background:var(--ink);color:#fff;padding:56px 0 46px;position:relative;overflow:hidden}
+.ret-hero::before{content:"";position:absolute;inset:0;background:radial-gradient(80% 90% at 90% 0%,rgba(246,178,60,.2),transparent 55%)}
+.ret-hero .wrap{position:relative;z-index:2}
+.ret-hero .eye{color:var(--amber);margin-bottom:14px}
+.ret-hero .eye::before{background:var(--amber)}
+.ret-hero h1{font-size:clamp(40px,5vw,72px);font-weight:900;line-height:.92}
+.ret-hero p{max-width:640px;color:#C7C5CE;font-size:16px;margin-top:16px}
+.ret-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.ret-card{background:#fff;border:1px solid var(--line);border-radius:var(--r-l);overflow:hidden;transition:.22s;display:flex;flex-direction:column}
+.ret-card:hover{transform:translateY(-5px);box-shadow:var(--shadow-m)}
+.ret-band{height:88px;display:flex;align-items:center;justify-content:center;position:relative}
+.ret-band .wm{font:800 22px/1 var(--ui);color:#fff;letter-spacing:-.01em;padding:0 16px;text-align:center}
+.ret-card .bd{padding:18px 20px 20px;flex:1;display:flex;flex-direction:column}
+.ret-card .cat{font:700 10px/1 var(--ui);letter-spacing:.1em;text-transform:uppercase;color:var(--txt-mute);margin-bottom:10px}
+.ret-card .live{display:flex;align-items:baseline;gap:8px;margin-bottom:auto}
+.ret-card .live .n{font-family:var(--mono);font-weight:600;font-size:24px;color:var(--ink)}
+.ret-card .live .l{font-size:12px;color:var(--txt-soft)}
+.ret-card .go{margin-top:16px;background:var(--paper-2);border:1px solid var(--line);color:var(--ink);font-weight:700;font-size:12.5px;padding:11px;border-radius:100px;text-align:center}
+.ret-card .go:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
+
+@media(max-width:1180px){ .mast-badges{display:none} }
+@media(max-width:1080px){
+  .mast-grid{grid-template-columns:auto 1fr;gap:14px;padding:14px 20px}
+  .mast-left{display:none}.iol-logo{justify-self:start}
+  .iolnav-inner{padding:0 16px}
+  .cat-hero-grid,.echoice,.news-panel,.pop-wrap,.claim{grid-template-columns:1fr;gap:28px}
+  .deals-grid,.tips{grid-template-columns:1fr 1fr}
+  .bg-panel{grid-template-columns:1fr}.bg-lead{grid-row:auto}
+  .reviews,.partnered,.promos,.videos{grid-template-columns:1fr 1fr}
+  .tprod{grid-template-columns:repeat(3,1fr)}.ret-grid{grid-template-columns:1fr 1fr}
+  .video.lead{grid-row:auto}
+  .hero-grid,.split,.packs-grid{grid-template-columns:1fr;gap:32px}
+  .picks{grid-template-columns:1fr 1fr}.pick.lead{grid-row:auto}
+  .ins-grid,.mostread{grid-template-columns:1fr 1fr}
+  .inv-grid{grid-template-columns:1fr 1fr}
+  .car-slide{grid-template-columns:1fr}
+}
+/* ============================================================
+   RESPONSIVE — tablet & mobile
+   ============================================================ */
+@media(max-width:900px){
+  .wrap{padding:0 22px}
+  .sec{padding:48px 0}
+  .cat .csec{padding:44px 0}
+  .picks{grid-template-columns:1fr 1fr}
+  .dgrid{grid-template-columns:repeat(3,1fr)}
+  .mostread{grid-template-columns:1fr 1fr}
+  .ret-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:680px){
+  .wrap{padding:0 16px}
+  .sec{padding:38px 0}
+  .cat .csec{padding:34px 0}
+  .sec-head,.cat .csec-head{flex-direction:column;align-items:flex-start;gap:10px}
+  .sec-title{font-size:26px}
+  .hero-top,.car-cta,.cat-hero-cta,.chips{flex-wrap:wrap}
+  /* masthead */
+  .mast-grid{grid-template-columns:auto 1fr;gap:10px;padding:12px 16px}
+  .mast-meta{gap:7px}.mast-date{font-size:11px}
+  .mast-social{gap:12px}.mast-social svg{width:16px;height:16px}
+  .iolmark,.mast-logo-img{height:40px}
+  .iolnav a{font-size:12.5px;padding:0 11px}
+  /* hero */
+  .hub-hero .wrap{padding:34px 16px 30px}
+  .hero-kicker{font-size:18px}.hero-sub{font-size:15px}
+  .countdown{padding:20px 16px 18px}
+  .cd-cell{padding:12px 4px}.cd-cell .n{font-size:30px}
+  .integrity{flex-direction:column;align-items:flex-start;gap:6px;border-radius:16px;padding:14px 16px}
+  .integrity .sep{display:none}
+  /* grids */
+  .dgrid{grid-template-columns:1fr 1fr;gap:12px}
+  .picks{grid-template-columns:1fr}.pick.lead h3{font-size:24px}
+  .ins-grid{grid-template-columns:1fr}.ins-cell .stat{font-size:44px}
+  .inv-grid{grid-template-columns:1fr}
+  .mostread{grid-template-columns:1fr 1fr;gap:14px}
+  .reviews,.partnered,.promos,.videos,.tips{grid-template-columns:1fr}
+  .deals-grid{grid-template-columns:1fr 1fr}
+  .bg-panel{grid-template-columns:1fr}
+  .ret-grid{grid-template-columns:1fr 1fr;gap:12px}
+  .video.lead{grid-row:auto;aspect-ratio:16/9}
+  /* carousel */
+  .car-body{padding:26px 22px}.car-body h3{font-size:23px}
+  .car-nav{width:40px;height:40px;font-size:16px}.car-prev{left:6px}.car-next{right:6px}
+  /* category */
+  .cat-hero .wrap{padding:34px 16px}
+  .cat-hero h1{font-size:38px}
+  .echoice .bd{padding:26px 22px}
+  .news-panel{padding:30px 22px}
+  .deals-rail{grid-template-columns:1fr}
+  .deals-rail .ad-mpu{height:200px!important}
+  .opt-wrap{padding:14px}
+  .spon-strip{padding:0}
+  .spon-strip .wrap{flex-direction:column;align-items:flex-start;gap:6px;height:auto;padding:10px 0}
+  .deliver-note{flex-direction:column;align-items:flex-start;gap:8px}
+  .deliver-note .dn-sep{display:none}
+  .claim{padding:30px 22px}
+  /* packages / insights */
+  .packs .wrap{padding:48px 16px}.insights .wrap{padding:44px 16px}
+  .pack{padding:30px 24px}.pack-price .amt{font-size:34px}
+  /* proto panel */
+  .proto{right:12px;bottom:12px}
+  .proto-panel{width:min(280px,calc(100vw - 24px))}
+  /* footer */
+  .foot-top{flex-direction:column;gap:26px}
+  .foot-cols{gap:32px;flex-wrap:wrap}
+}
+@media(max-width:420px){
+  .dgrid{grid-template-columns:1fr 1fr}
+  .deals-grid,.mostread,.ret-grid{grid-template-columns:1fr}
+  .cd-cell .n{font-size:26px}
+  .hero-h1{font-size:44px}
+  .cat-hero h1{font-size:31px}
+  .mast-social{gap:9px}
+}
+</style>
+</head>
+<body>
+
+<!-- ══════════════ IOL MASTHEAD — OFFICIAL LAYOUT (always standard IOL) ══════════════ -->
+<header class="masthead">
+  <div class="mast-grid">
+    <div class="mast-left"></div>
+    <a class="iol-logo" href="#" aria-label="IOL home"><img class="mast-logo-img" src="https://iol.co.za/_next/static/media/iol.2d0c9660.svg" alt="IOL" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><svg class="iolmark" style="display:none" viewBox="0 0 122 40" xmlns="http://www.w3.org/2000/svg"><path d="M2 0 L12 0 L2 21 Z" fill="#ED1C24"/><path d="M2 40 L2 24 L14 0 L22 0 L22 40 Z" fill="currentColor"/><rect x="32" y="0" width="40" height="40" rx="20" fill="currentColor"/><rect x="43" y="9" width="18" height="22" rx="9" fill="var(--logo-bg,#fff)"/><path d="M82 0 H100 V26 H120 V40 H82 Z" fill="currentColor"/></svg></a>
+    <div class="mast-right">
+      <div class="mast-meta">
+        <div class="mast-date" id="todayDate">MONDAY, AUGUST 3, 2026</div>
+        <div class="mast-social">
+          <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.7-3.9 1.1 0 2.2.2 2.2.2v2.4h-1.2c-1.2 0-1.6.8-1.6 1.5V12h2.7l-.4 2.9h-2.3v7A10 10 0 0 0 22 12Z"/></svg></a>
+          <a href="#" aria-label="X"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 3h3l-6.6 7.5L21.8 21h-6l-4.3-5.7L6.4 21h-3l7-8L2.4 3h6.1l3.9 5.2L17.5 3Zm-1 16h1.6L7.6 4.7H5.9L16.5 19Z"/></svg></a>
+          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r="1.1" fill="currentColor" stroke="none"/></svg></a>
+          <a href="#" aria-label="TikTok"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.5 3c.3 2.1 1.6 3.6 3.5 3.8v2.7c-1.3 0-2.6-.4-3.5-1.1v5.5c0 3-2.3 5.1-5 5.1s-5-2.3-5-5.1 2.4-5.3 5.5-5v2.8c-.4-.1-.9-.2-1.3-.2-1.3 0-2.4 1.1-2.4 2.5s1 2.5 2.4 2.5 2.3-1.1 2.3-2.5V3h3Z"/></svg></a>
+          <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 8.2s-.2-1.5-.8-2.1c-.8-.8-1.6-.8-2-.9C16.4 5 12 5 12 5s-4.4 0-7.2.2c-.4 0-1.2.1-2 .9C2.2 6.7 2 8.2 2 8.2S1.8 9.9 1.8 11.7v.6c0 1.8.2 3.5.2 3.5s.2 1.5.8 2.1c.8.8 1.8.8 2.3.9 1.7.2 7 .2 7 .2s4.4 0 7.2-.2c.4 0 1.2-.1 2-.9.6-.6.8-2.1.8-2.1s.2-1.7.2-3.5v-.6c0-1.8-.2-3.5-.2-3.5ZM9.9 14.9V9.4l5.3 2.8-5.3 2.7Z"/></svg></a>
+          <a href="#" aria-label="Search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3" stroke-linecap="round"/></svg></a>
+        </div>
+      </div>
+      <div class="mast-badges">
+        <a class="gbwrap" href="https://google.com/preferences/source?q=https%3A%2F%2Fiol.co.za" target="_blank" rel="noopener"><img class="gbimg" src="https://iol.co.za/_next/static/media/iol-google-prefered-black.1cf25725.webp" alt="Add IOL as a preferred source on Google" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="gbadge dark"><svg width="15" height="15" viewBox="0 0 24 24"><path fill="#4285F4" d="M23 12.3c0-.8-.1-1.6-.2-2.3H12v4.5h6.2a5.3 5.3 0 0 1-2.3 3.5v2.9h3.7c2.2-2 3.4-5 3.4-8.6Z"/><path fill="#34A853" d="M12 24c3.1 0 5.7-1 7.6-2.8l-3.7-2.9c-1 .7-2.3 1.1-3.9 1.1-3 0-5.5-2-6.4-4.7H1.8v3C3.7 21.4 7.6 24 12 24Z"/><path fill="#FBBC05" d="M5.6 14.7A7.2 7.2 0 0 1 5.2 12c0-.8.1-1.5.4-2.2v-3H1.8A12 12 0 0 0 .5 12c0 1.9.5 3.7 1.3 5.2l3.8-2.5Z"/><path fill="#EA4335" d="M12 4.8c1.7 0 3.2.6 4.4 1.7l3.3-3.3A12 12 0 0 0 12 0C7.6 0 3.7 2.6 1.8 6.3l3.8 3C6.5 6.8 9 4.8 12 4.8Z"/></svg>Add <b>IOL</b> as a preferred<br>source on Google</span></a>
+        <a class="gbwrap" href="https://news.google.com/publications/CAAqIggKIhxDQklTRHdnTWFnc0tDV2x2YkM1amJ5NTZZU2dBUAE?ceid=ZA:en&oc=3" target="_blank" rel="noopener"><img class="gbimg" src="https://iol.co.za/_next/static/media/iol-google-news-follow.6c774fa8.webp" alt="Follow IOL on Google News" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="gbadge light"><svg width="15" height="15" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2.5" fill="#fff" stroke="#dadce0"/><rect x="6" y="7.5" width="7.5" height="2" rx="1" fill="#4285F4"/><rect x="6" y="11.5" width="7.5" height="1.6" rx=".8" fill="#5f6368"/><rect x="6" y="14.5" width="5.5" height="1.6" rx=".8" fill="#5f6368"/><rect x="15.5" y="7.5" width="3.5" height="4.5" rx="1" fill="#EA4335"/></svg>Follow <b>IOL</b> on<br>Google News</span></a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ══════════════ IOL PRIMARY NAV — BLACK FRIDAY replaces FIFA World Cup 2026 ══════════════ -->
+<nav class="iolnav">
+  <div class="iolnav-inner">
+    <a href="#">News <span class="cv">⌄</span></a>
+    <a class="bf" href="#" onclick="showView('hub');return false"><span class="tag"></span>Black Friday</a>
+    <a href="#">Politics <span class="cv">⌄</span></a>
+    <a href="#">Opinion <span class="cv">⌄</span></a>
+    <a href="#">Business <span class="cv">⌄</span></a>
+    <a href="#">Entertainment <span class="cv">⌄</span></a>
+    <a href="#">Lifestyle <span class="cv">⌄</span></a>
+    <a href="#">Travel <span class="cv">⌄</span></a>
+    <a href="#">Tech <span class="cv">⌄</span></a>
+    <a href="#">Sport <span class="cv">⌄</span></a>
+    <a href="#">Motoring <span class="cv">⌄</span></a>
+  </div>
+</nav>
+
+<!-- ══════════════ BLACK FRIDAY STICKY SUB-NAV ══════════════ -->
+<div class="bfsub">
+  <div class="bfsub-inner">
+    <div class="brand"><span class="bolt">◈</span><span>BLACK FRIDAY</span></div>
+    <button class="bfarrow" onclick="scrollTabs(-1)">‹</button>
+    <div class="bfscroll"><div class="bftabs" id="bftabs"></div></div>
+    <button class="bfarrow" onclick="scrollTabs(1)">›</button>
+  </div>
+</div>
+
+<!-- ══════════════ MAIN ══════════════ -->
+<main id="app"></main>
+
+<!-- ══════════════ FLOATING PROTOTYPE CONTROLS ══════════════ -->
+<div class="proto">
+  <div class="proto-panel hide" id="protoPanel">
+    <h5>Prototype Controls</h5>
+    <div class="proto-row">Show commercial zones <div class="switch" id="swZones" onclick="toggleZones()"></div></div>
+    <div class="proto-row">Sponsor takeover (Electronics) <div class="switch on" id="swSpon" onclick="toggleSponsor()"></div></div>
+    <div class="proto-row">Spotlight: product deal <div class="switch" id="swMode" onclick="toggleMode()"></div></div>
+    <div class="proto-row" style="cursor:pointer" onclick="showView('category','consumer-electronics')">Open sponsored category →</div>
+    <div class="proto-row" style="cursor:pointer" onclick="showView('hub');setTimeout(()=>document.getElementById('packages').scrollIntoView({behavior:'smooth'}),60)">Jump to packages →</div>
+  </div>
+  <button class="proto-toggle" onclick="document.getElementById('protoPanel').classList.toggle('hide')"><span class="g"></span>Prototype</button>
+</div>
+
+<script>
+/* ============================================================
+   DATA
+   ============================================================ */
+const DESTS = [
+  {key:'deals', label:'Deals', view:'hub'},
+  {key:'retailers', label:'Retailers', view:'retailers'},
+  {key:'groceries-fmcg', label:'Groceries & FMCG'},
+  {key:'consumer-electronics', label:'Consumer Electronics', owned:true},
+  {key:'beauty-personal-care', label:'Beauty & Personal Care'},
+  {key:'major-appliances', label:'Major Appliances'},
+  {key:'small-kitchen-appliances', label:'Small Kitchen Appliances'},
+  {key:'fashion-apparel', label:'Fashion & Apparel'},
+  {key:'health-wellness-pharmacy', label:'Health, Wellness & Pharmacy'},
+  {key:'gaming', label:'Gaming'},
+  {key:'homeware-home-organisation', label:'Homeware & Home Organisation'},
+  {key:'mobile-phones-telecoms', label:'Mobile Phones & Telecoms'},
+];
+
+/* inline SVG product art (self-contained, no external images) */
+const ART = {
+  tv:`<svg viewBox="0 0 100 100" fill="none"><rect x="14" y="20" width="72" height="46" rx="4" stroke="currentColor" stroke-width="3"/><rect x="22" y="28" width="56" height="30" rx="2" fill="currentColor" opacity=".22"/><path d="M38 74h24M50 66v8" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg>`,
+  laptop:`<svg viewBox="0 0 100 100" fill="none"><rect x="22" y="24" width="56" height="38" rx="3" stroke="currentColor" stroke-width="3"/><rect x="28" y="30" width="44" height="26" rx="1" fill="currentColor" opacity=".2"/><path d="M14 70h72l-6-8H20l-6 8Z" fill="currentColor" opacity=".3"/><path d="M14 70h72" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg>`,
+  phone:`<svg viewBox="0 0 100 100" fill="none"><rect x="34" y="14" width="32" height="72" rx="6" stroke="currentColor" stroke-width="3"/><rect x="39" y="22" width="22" height="48" rx="1" fill="currentColor" opacity=".2"/><circle cx="50" cy="78" r="3" fill="currentColor"/></svg>`,
+  headphone:`<svg viewBox="0 0 100 100" fill="none"><path d="M24 56V50a26 26 0 0 1 52 0v6" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><rect x="18" y="52" width="14" height="26" rx="6" fill="currentColor" opacity=".3"/><rect x="68" y="52" width="14" height="26" rx="6" fill="currentColor" opacity=".3"/><rect x="18" y="52" width="14" height="26" rx="6" stroke="currentColor" stroke-width="3"/><rect x="68" y="52" width="14" height="26" rx="6" stroke="currentColor" stroke-width="3"/></svg>`,
+  airfryer:`<svg viewBox="0 0 100 100" fill="none"><path d="M30 40h40l-4 42a4 4 0 0 1-4 4H38a4 4 0 0 1-4-4L30 40Z" stroke="currentColor" stroke-width="3"/><rect x="26" y="30" width="48" height="12" rx="3" fill="currentColor" opacity=".25"/><circle cx="50" cy="24" r="6" stroke="currentColor" stroke-width="3"/><path d="M42 58h16M42 68h16" stroke="currentColor" stroke-width="3" opacity=".5" stroke-linecap="round"/></svg>`,
+  coffee:`<svg viewBox="0 0 100 100" fill="none"><path d="M28 40h38v20a19 19 0 0 1-38 0V40Z" stroke="currentColor" stroke-width="3"/><path d="M66 44h8a8 8 0 0 1 0 16h-8" stroke="currentColor" stroke-width="3"/><path d="M38 24c0 4-4 4-4 8m12-8c0 4-4 4-4 8m12-8c0 4-4 4-4 8" stroke="currentColor" stroke-width="3" stroke-linecap="round" opacity=".5"/><rect x="30" y="74" width="34" height="6" rx="3" fill="currentColor" opacity=".3"/></svg>`,
+  fridge:`<svg viewBox="0 0 100 100" fill="none"><rect x="32" y="14" width="36" height="72" rx="5" stroke="currentColor" stroke-width="3"/><path d="M32 44h36" stroke="currentColor" stroke-width="3"/><path d="M40 26v8M40 52v14" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg>`,
+  chair:`<svg viewBox="0 0 100 100" fill="none"><path d="M36 22h20a6 6 0 0 1 6 6v22H30V28a6 6 0 0 1 6-6Z" stroke="currentColor" stroke-width="3"/><rect x="30" y="50" width="32" height="10" rx="3" fill="currentColor" opacity=".25"/><path d="M46 60v10m0 0-10 14m10-14 10 14" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg>`,
+  lipstick:`<svg viewBox="0 0 100 100" fill="none"><rect x="40" y="46" width="20" height="34" rx="3" stroke="currentColor" stroke-width="3"/><path d="M42 46V32a8 8 0 0 1 16 0v14" fill="currentColor" opacity=".25"/><path d="M42 46V32a8 8 0 0 1 16 0v14" stroke="currentColor" stroke-width="3"/><path d="M50 20v-4" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg>`,
+  shirt:`<svg viewBox="0 0 100 100" fill="none"><path d="M38 24 26 34l6 10 6-4v32h24V40l6 4 6-10-12-10-6 6h-6l-6-6Z" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/></svg>`,
+  controller:`<svg viewBox="0 0 100 100" fill="none"><path d="M32 40h36a14 14 0 0 1 14 14v2a10 10 0 0 1-18 6H36a10 10 0 0 1-18-6v-2a14 14 0 0 1 14-14Z" stroke="currentColor" stroke-width="3"/><path d="M32 50v10m-5-5h10" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><circle cx="66" cy="52" r="2.5" fill="currentColor"/><circle cx="72" cy="58" r="2.5" fill="currentColor"/></svg>`,
+  pill:`<svg viewBox="0 0 100 100" fill="none"><rect x="26" y="42" width="48" height="16" rx="8" transform="rotate(45 50 50)" stroke="currentColor" stroke-width="3"/><path d="M50 34 66 50" stroke="currentColor" stroke-width="3"/></svg>`,
+  lamp:`<svg viewBox="0 0 100 100" fill="none"><path d="M36 22h28l6 24H30l6-24Z" stroke="currentColor" stroke-width="3"/><path d="M50 46v26m-12 0h24" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg>`,
+  router:`<svg viewBox="0 0 100 100" fill="none"><rect x="24" y="52" width="52" height="20" rx="4" stroke="currentColor" stroke-width="3"/><path d="M42 52V34m16 18V34" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><circle cx="34" cy="62" r="2.5" fill="currentColor"/><path d="M38 30a10 10 0 0 1 0-0M60 30a10 10 0 0 0 0-0" stroke="currentColor" stroke-width="3"/></svg>`,
+  soundbar:`<svg viewBox="0 0 100 100" fill="none"><rect x="18" y="42" width="64" height="16" rx="8" stroke="currentColor" stroke-width="3"/><circle cx="32" cy="50" r="4" fill="currentColor" opacity=".4"/><circle cx="50" cy="50" r="4" fill="currentColor" opacity=".4"/><circle cx="68" cy="50" r="4" fill="currentColor" opacity=".4"/></svg>`,
+  watch:`<svg viewBox="0 0 100 100" fill="none"><rect x="36" y="36" width="28" height="28" rx="7" stroke="currentColor" stroke-width="3"/><path d="M42 36l2-14h12l2 14M42 64l2 14h12l2-14" stroke="currentColor" stroke-width="3"/><path d="M50 46v6l4 2" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg>`,
+};
+
+/* editorial ticker headlines (within IOL's control — no live price feed) */
+const TICKER = [
+  'Guide: How to buy a TV this Black Friday without overpaying',
+  'Roundup: The 30 best deals our editors rate',
+  'Best under R500: 23 genuinely good gift ideas',
+  'Explainer: How to spot a fake “was” price',
+  'Buying guide: Air fryers, ranked',
+  'Comparison: iPhone vs Samsung — the smarter upgrade',
+  'From the Deals Desk: what to expect on the day',
+  'Editor’s pick of the day — updated through November',
+];
+
+/* featured carousel — editorial features (buying guides & roundups) */
+const FEATURED = [
+  {ret:'Deal Roundup',art:'controller',color:'#D42128',title:'The 30 best Black Friday deals in South Africa, ranked',copy:'Our Deals Desk sifts the “specials” from the genuinely good buys — an independent, editor-curated shortlist, updated through November.',byline:'IOL Deals Desk',meta:'12 min read'},
+  {ret:'Buying Guide',art:'tv',color:'#111114',title:'How to buy a TV this Black Friday without overpaying',copy:'What actually matters — panel, size, smart platform — and the traps to avoid when a “half price” TV isn’t. Expert, independent advice.',byline:'IOL Tech Desk',meta:'9 min read'},
+  {ret:'Best Under R500',art:'headphone',color:'#D42128',title:'23 genuinely good gifts for under R500',copy:'Thoughtful, useful and actually affordable — our editors’ pick of the best small buys for every person on your list.',byline:'IOL Lifestyle',meta:'7 min read'},
+];
+
+/* editor picks */
+const PICKS = {
+  lead:{cat:'Deal Roundup',art:'controller',color:'#D42128',title:'The 30 best Black Friday deals in South Africa, chosen by our editors',copy:'Our Deals Desk sifts the noise to surface the genuinely good buys — independently chosen, never sponsored. Refreshed through November.',byline:'IOL Deals Desk',meta:'12 min read'},
+  items:[
+    {cat:'Buying Guide',art:'tv',color:'#E2951C',title:'Which TV should you actually buy this Black Friday?',byline:'Tech Desk',meta:'Expert guide'},
+    {cat:'Best Under R500',art:'headphone',color:'#1E9E6A',title:'23 genuinely good gifts for under R500',byline:'Lifestyle',meta:'Roundup'},
+    {cat:'Comparison',art:'airfryer',color:'#D42128',title:'Air fryer face-off: 6 models, one clear winner',byline:'Reviews',meta:'Head-to-head'},
+    {cat:'Editor’s Pick',art:'laptop',color:'#111114',title:'The gaming laptop we’d actually buy this month',byline:'Reviews',meta:'Recommended'},
+  ]
+};
+
+/* today's biggest savings */
+const SAVINGS = [
+  {art:'fridge',color:'#123FA6',t:'Double-Door Frost-Free Fridge 400L',r:'Major Appliances',now:'R9 999',was:'R14 499',p:'-31%'},
+  {art:'laptop',color:'#E2951C',t:'14" Ultrabook · 16GB · 512GB SSD',r:'Consumer Electronics',now:'R10 499',was:'R16 999',p:'-38%'},
+  {art:'coffee',color:'#1E9E6A',t:'Automatic Bean-to-Cup Coffee Machine',r:'Small Kitchen Appliances',now:'R5 499',was:'R8 999',p:'-39%'},
+  {art:'watch',color:'#123FA6',t:'Fitness Smartwatch · GPS + AMOLED',r:'Consumer Electronics',now:'R1 899',was:'R3 499',p:'-46%'},
+  {art:'chair',color:'#E8402E',t:'Ergonomic Gaming Chair · Lumbar Pro',r:'Gaming',now:'R2 799',was:'R4 999',p:'-44%'},
+];
+
+/* trending */
+const TRENDING = [
+  {t:'Takealot vs Makro: who really has the cheapest electronics?',m:'Price Comparison · 4.2k reading now'},
+  {t:'"Fake" Black Friday deals to avoid — spotted by our Deals Desk',m:'Investigation · 3.8k reading now'},
+  {t:'Best premium picks: splurge-worthy buys that are actually discounted',m:'Roundup · 2.9k reading now'},
+  {t:'Checkers Sixty60 grocery deals: the R500 basket challenge',m:'Groceries & FMCG · 2.4k reading now'},
+  {t:'iPhone vs Samsung: the smarter Black Friday upgrade',m:'Buying Guide · 2.1k reading now'},
+];
+
+/* retailers */
+const RETAILERS = [
+  {n:'Takealot',c:'#0A9CE0',cat:'Everything'},{n:'Checkers Sixty60',c:'#E2231A',cat:'Groceries'},
+  {n:'Makro',c:'#00539F',cat:'Bulk & Electronics'},{n:'Game',c:'#E30613',cat:'General'},
+  {n:'iStore',c:'#111114',cat:'Apple'},{n:'HiFi Corp',c:'#ED1C24',cat:'Electronics'},
+  {n:'Incredible Connection',c:'#00A650',cat:'Tech'},{n:'Clicks',c:'#00539B',cat:'Beauty & Pharmacy'},
+  {n:'Dis-Chem',c:'#EC008C',cat:'Health & Wellness'},{n:'Woolworths',c:'#111114',cat:'Food & Fashion'},
+  {n:'Superbalist',c:'#111114',cat:'Fashion'},{n:'Vodacom',c:'#E60000',cat:'Telecoms'},
+];
+
+/* ============================================================
+   RENDER ENGINE
+   ============================================================ */
+const $=(s,r=document)=>r.querySelector(s);
+const app=$('#app');
+let STATE={view:'hub',cat:null,sponsored:true,sponsorMode:'brand',carIndex:0};
+
+const rand=(a,b)=>Math.floor(Math.random()*(b-a+1))+a;
+const R=n=>'R'+n.toLocaleString('en-ZA');
+
+function fill(art,color,{disc,dark,cls=''}={}){
+  return `<div class="fill ${dark?'dk':''} ${cls}" style="--k:${color}">${ART[art]||''}${disc?`<div class="disc">${disc}</div>`:''}</div>`;
+}
+const TRACK_ICON=`<svg viewBox="0 0 24 24" fill="none"><path d="M12 20h9" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><path d="M16.5 3.5a2 2 0 0 1 3 3L7 19l-4 1 1-4 12.5-12.5Z" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/></svg>`;
+function tracked(_label,dark){return `<span class="tracked ${dark?'dark':''}">${TRACK_ICON} IOL Deals Desk</span>`;}
+
+/* ---------- BUILD STICKY SUB-NAV TABS ---------- */
+function buildTabs(){
+  $('#bftabs').innerHTML=DESTS.map(d=>{
+    const on=(d.view==='hub'&&STATE.view==='hub')||(d.view==='retailers'&&STATE.view==='retailers')||(STATE.view==='category'&&STATE.cat===d.key);
+    const owned=d.owned?'owned':'';
+    const lock=(!d.view&&!d.owned)?'<span class="lock">◇</span>':'';
+    const action=d.view==='hub'?"showView('hub')":d.view==='retailers'?"showView('retailers')":`showView('category','${d.key}')`;
+    return `<button class="bftab ${on?'on':''} ${owned}" onclick="${action}">${d.label}${lock}</button>`;
+  }).join('');
+}
+function scrollTabs(dir){$('#bftabs').scrollBy({left:dir*280,behavior:'smooth'});}
+
+/* ============================================================
+   HUB (Black Friday landing)
+   ============================================================ */
+function renderHub(){
+  const destCards=DESTS.filter(d=>!d.view).map(d=>{
+    const artmap={'groceries-fmcg':'coffee','consumer-electronics':'tv','beauty-personal-care':'lipstick','major-appliances':'fridge','small-kitchen-appliances':'airfryer','fashion-apparel':'shirt','health-wellness-pharmacy':'pill','gaming':'controller','homeware-home-organisation':'lamp','mobile-phones-telecoms':'phone'};
+    const status=d.owned?`<span class="dstatus owned">● Sponsored</span>`:`<span class="dstatus">◇ Available</span>`;
+    return `<button class="dcard" onclick="showView('category','${d.key}')">
+      <div class="dcard-art">${fill(artmap[d.key],d.owned?'#D4FF3F':'#D42128',{dark:d.owned})}</div>
+      <div class="dcard-b"><div class="dcard-t">${d.label}</div>${status}</div>
+    </button>`;
+  }).join('');
+
+  const ticker=[...TICKER,...TICKER].map(t=>`<span class="tick-item"><span class="tk">◆</span> ${t}</span>`).join('');
+
+  const car=FEATURED.map((f,i)=>`
+    <div class="car-slide">
+      <div class="car-art">${fill(f.art,f.color)}</div>
+      <div class="car-body">
+        <div class="retailer">${f.ret}</div>
+        <h3>${f.title}</h3>
+        <p>${f.copy}</p>
+        <div style="margin:6px 0 22px">${tracked('',true)}</div>
+        <div class="car-meta">By ${f.byline} · ${f.meta}</div>
+        <div class="car-cta"><button class="btn-amber">Read the guide</button><button class="btn-ghost">More from the Deals Desk</button></div>
+      </div>
+    </div>`).join('');
+
+  const picks=`
+    <div class="pick lead">
+      <div class="p-art">${fill(PICKS.lead.art,PICKS.lead.color)}</div>
+      <div class="p-body">
+        <div class="p-cat">${PICKS.lead.cat} ${tracked('updated hourly')}</div>
+        <h3>${PICKS.lead.title}</h3><p>${PICKS.lead.copy}</p>
+        <div class="p-meta"><span class="p-byline">By ${PICKS.lead.byline}</span><span>•</span><span>${PICKS.lead.meta}</span></div>
+      </div>
+    </div>
+    ${PICKS.items.map(p=>`<div class="pick">
+      <div class="p-art">${fill(p.art,p.color)}</div>
+      <div class="p-body"><div class="p-cat">${p.cat}</div><h4>${p.title}</h4>
+        <div class="p-meta"><span class="p-byline">${p.byline}</span><span>•</span><span>${p.meta}</span></div></div>
+    </div>`).join('')}`;
+
+  const savings=SAVINGS.map(s=>`<div class="sv">
+    <div class="sv-art">${fill(s.art,s.color)}</div>
+    <div><h5>${s.t}</h5><div class="r">${s.r}</div></div>
+    <div class="sv-price"><div class="n">${s.now}</div><div class="w">${s.was}</div><div class="p">${s.p}</div></div>
+  </div>`).join('');
+
+  const trend=TRENDING.map((t,i)=>`<div class="tr"><div class="rank">${i+1}</div><div><h5>${t.t}</h5><div class="m">${t.m}</div></div></div>`).join('');
+
+  const mostread=[
+    {c:'Comparison',art:'tv',color:'#D42128',t:'Big-screen showdown: the 3 best value TVs this November'},
+    {c:'Best Under R500',art:'headphone',color:'#111114',t:'21 clever gifts that punch above R500'},
+    {c:'Buying Guide',art:'coffee',color:'#D42128',t:'How to buy a coffee machine you won\'t regret'},
+    {c:'Investigation',art:'phone',color:'#111114',t:'The "was-price" trick: how to read a real discount'},
+  ].map(m=>`<div class="mr"><div class="mr-art">${fill(m.art,m.color)}</div><div class="c">${m.c}</div><h5>${m.t}</h5><div class="m">IOL Deals Desk</div></div>`).join('');
+
+  app.innerHTML=`
+  <!-- HERO -->
+  <section class="hub-hero">
+    <div class="wrap">
+      <div class="hero-top">
+        <div class="hero-badge">◈ IOL Black Friday 2026</div>
+        <div class="hero-live"><span class="d"></span>Live now · deals refreshing</div>
+      </div>
+      <div class="hero-grid">
+        <div>
+          <div class="hero-kicker">The Deals Desk presents</div>
+          <h1 class="hero-h1">Black&nbsp;Friday,<br><em>read like news.</em></h1>
+          <p class="hero-sub">South Africa's shopping season, covered by a newsroom. Independent deal journalism, expert reviews and honest buying guides — so you spend on the strength of the facts, not the hype.</p>
+          <div class="integrity">
+            <span class="k"><span class="ed"></span>Editorial</span><span>independently chosen, never sponsored</span>
+            <span class="sep"></span>
+            <span class="k"><span class="sp"></span>Sponsored</span><span>clearly labelled, always</span>
+          </div>
+        </div>
+        <div class="countdown">
+          <div class="cd-label">◷ Black Friday countdown</div>
+          <div class="cd-clock">
+            <div class="cd-cell"><div class="n" id="cdD">00</div><div class="u">Days</div></div>
+            <div class="cd-cell"><div class="n" id="cdH">00</div><div class="u">Hrs</div></div>
+            <div class="cd-cell"><div class="n" id="cdM">00</div><div class="u">Min</div></div>
+            <div class="cd-cell"><div class="n" id="cdS">00</div><div class="u">Sec</div></div>
+          </div>
+          <div class="cd-foot"><span>Doors open <b>Fri 27 Nov</b></span><span>Hub live all November</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TICKER -->
+  <div class="ticker adzone"><span class="adtag">Retailer Promotion Blocks</span><div class="ticker-track">${ticker}</div></div>
+
+  <!-- DESTINATIONS -->
+  <section class="sec"><div class="wrap">
+    <div class="sec-head"><div class="l">
+      <div class="sec-eye eyebrow">Shopping Destinations</div>
+      <h2 class="sec-title">Ten editorial destinations,<br>each an exclusive home for one brand.</h2>
+      <p class="sec-desc">Every destination is its own newsroom-grade shopping section — and its own single-sponsor opportunity. Consumer Electronics is shown fully sponsored below.</p>
+    </div><button class="sec-link" onclick="showView('category','consumer-electronics')">See a sponsored destination →</button></div>
+    <div class="dgrid">${destCards}</div>
+  </div></section>
+
+  <!-- FEATURED CAROUSEL -->
+  <section class="sec" style="padding-top:8px"><div class="wrap">
+    <div class="sec-head"><div class="l"><div class="sec-eye eyebrow">The Deals Desk · Featured</div>
+      <h2 class="sec-title">Featured this Black Friday</h2>
+      <p class="sec-desc">Our editors' buying guides and roundups — independent journalism to help you spend well, whatever the retailers are advertising.</p></div></div>
+    <div class="carousel"><div class="car-view"><div class="car-track" id="carTrack">${car}</div></div>
+      <button class="car-nav car-prev" onclick="moveCar(-1)">‹</button>
+      <button class="car-nav car-next" onclick="moveCar(1)">›</button>
+      <div class="car-dots" id="carDots">${FEATURED.map((_,i)=>`<span class="car-dot ${i===0?'on':''}" onclick="goCar(${i})"></span>`).join('')}</div>
+    </div>
+  </div></section>
+
+  <!-- EDITOR PICKS -->
+  <section class="sec" style="padding-top:8px"><div class="wrap">
+    <div class="sec-head"><div class="l"><div class="sec-eye eyebrow">Editor's Picks</div>
+      <h2 class="sec-title">What our editors would buy</h2></div>
+      <button class="sec-link">All shopping stories →</button></div>
+    <div class="picks">${picks}</div>
+  </div></section>
+
+  <!-- EDITOR'S DEAL PICKS + TRENDING -->
+  <section class="sec" style="padding-top:8px"><div class="wrap"><div class="split">
+    <div><div class="sec-head" style="margin-bottom:14px"><div class="l"><div class="sec-eye eyebrow">Editor's Deal Picks</div><h2 class="sec-title" style="font-size:30px">Hand-picked by the Deals Desk</h2></div></div>
+      <p style="font-size:12.5px;color:var(--txt-mute);margin:-2px 0 14px">A small, curated set our editors have spotted and stand behind. Prices correct at time of publishing.</p>
+      <div class="savings-list">${savings}</div></div>
+    <div><div class="sec-head" style="margin-bottom:18px"><div class="l"><div class="sec-eye eyebrow">Trending Offers</div><h2 class="sec-title" style="font-size:30px">Most-read right now</h2></div></div>
+      <div class="trend-list">${trend}</div></div>
+  </div></div></section>
+
+  <!-- INSIGHTS -->
+  <section class="insights"><div class="wrap">
+    <div class="ins-head"><div class="eye eyebrow">Shopping Insights · Why these ten</div>
+      <h2>The destinations are built on real 2025 behaviour</h2>
+      <p>These aren't arbitrary categories. Each editorial destination maps to how South Africans actually shopped last Black Friday — so sponsors buy audience intent, not guesswork.</p></div>
+    <div class="ins-grid">
+      <div class="ins-cell hot"><div class="stat">+35–38%</div><div class="lbl">Online retail growth</div><div class="txt">SA online retail grew roughly 35–38% year-on-year across the 2025 Black Friday period.</div></div>
+      <div class="ins-cell"><div class="stat">+15%</div><div class="lbl">vs January payday</div><div class="txt">Black Friday spend rose about 15% compared with the traditional January payday peak.</div></div>
+      <div class="ins-cell"><div class="stat">#1</div><div class="lbl">Groceries &amp; FMCG</div><div class="txt">Delivered the highest shopping frequency of any category — repeat, habitual buying.</div></div>
+      <div class="ins-cell"><div class="stat">Top</div><div class="lbl">Consumer Electronics</div><div class="txt">Achieved the highest average basket values — the premium-spend destination.</div></div>
+      <div class="ins-cell"><div class="stat">▲</div><div class="lbl">Beauty &amp; Personal Care</div><div class="txt">Experienced strong online growth as gifting and self-care shifted to digital.</div></div>
+      <div class="ins-cell hot"><div class="stat">Fastest</div><div class="lbl">Mobile &amp; Telecoms</div><div class="txt">Became one of the fastest-growing in-store categories of the season.</div></div>
+    </div>
+    <div class="ins-foot">◇ Source: 2025 South African Black Friday retail research, aggregated. Illustrative figures shown for prototype.</div>
+  </div></section>
+
+  <!-- SPONSORSHIP PACKAGES -->
+  <section class="packs" id="packages"><div class="wrap">
+    <div class="packs-head"><div class="eye eyebrow">Commercial Opportunity</div>
+      <h2>Own Black Friday on IOL</h2>
+      <p>Two ways to lead the season — the whole destination, or one category you dominate outright.</p></div>
+    <div class="packs-grid">
+      <div class="pack hero-pack">
+        <span class="pack-tag">Option 1 · Flagship</span>
+        <h3>Exclusive Black Friday Hub Sponsorship</h3>
+        <div class="who">Own the entire Black Friday destination across all ten shopping categories.</div>
+        <div class="pack-price"><span class="amt">R1 500 000</span><span class="ex">excl. VAT</span></div>
+        <div class="pack-value"><span class="save">58% below rate</span> Total value R3 600 000</div>
+        <ul class="pack-list">
+          <li><span class="ck">✓</span><span>Ownership of the <b>entire Black Friday destination</b></span></li>
+          <li><span class="ck">✓</span><span>Branding across <b>all 10 shopping destinations</b></span></li>
+          <li><span class="ck">✓</span><span><b>7.5 million</b> ROS display impressions</span></li>
+          <li><span class="ck">✓</span><span><b>3 partnered content articles per category</b> (30 total)</span></li>
+          <li><span class="ck">✓</span><span>Takeover branding across <b>all category pages</b></span></li>
+        </ul>
+        <div class="pack-cta"><button class="btn-amber">Book the flagship</button></div>
+        <div class="pack-demo">◈ One identity, applied consistently across every destination.</div>
+      </div>
+      <div class="pack std-pack">
+        <span class="pack-tag">Option 2 · Category</span>
+        <h3>Exclusive Shopping Destination Sponsorship</h3>
+        <div class="who">Own one category outright — e.g. Consumer Electronics.</div>
+        <div class="pack-price"><span class="amt">R150 000</span><span class="ex">excl. VAT</span></div>
+        <div class="pack-value"><span class="save">58% below rate</span> Total value R360 000</div>
+        <ul class="pack-list">
+          <li><span class="ck">✓</span><span>Exclusive branding of <b>one shopping destination</b></span></li>
+          <li><span class="ck">✓</span><span><b>750 000</b> ROS display impressions</span></li>
+          <li><span class="ck">✓</span><span><b>3 partnered content articles</b></span></li>
+          <li><span class="ck">✓</span><span><b>Category takeover branding</b></span></li>
+        </ul>
+        <div class="pack-cta"><button class="std-pack-cta" onclick="showView('category','consumer-electronics')">See it live on Electronics →</button></div>
+        <div class="pack-demo">◇ Illustrated by the <a onclick="showView('category','consumer-electronics')">Consumer Electronics takeover</a>.</div>
+      </div>
+    </div>
+    <div style="max-width:820px;margin:30px auto 0;text-align:center;font-size:13.5px;color:#B9B7C0;line-height:1.6">
+      <b style="color:#fff">What's included is what we control:</b> editorial coverage, sponsor branding, ROS impressions, partnered articles and newsletter — all delivered by IOL, no client feed required.
+      <br><span style="color:#9E9CA6">Optional add-on for e-commerce partners who can supply a product feed: a live, filterable <b style="color:#D9D7DF">Product Deals</b> module (shown as an example on the Consumer Electronics page).</span>
+    </div>
+  </div></section>
+
+  <!-- COMMERCIAL INVENTORY -->
+  <section class="sec inv"><div class="wrap">
+    <div class="sec-head"><div class="l"><div class="sec-eye eyebrow">Commercial Inventory</div>
+      <h2 class="sec-title">Advertising that lives inside the story</h2>
+      <p class="sec-desc">Every placement is designed to sit naturally within premium editorial. Toggle “Show commercial zones” to see them mapped across the hub.</p></div>
+      <button class="sec-link" onclick="if(!document.body.classList.contains('zones'))toggleZones();$('#swZones').classList.add('on')">Highlight ad zones →</button></div>
+    <div class="inv-grid">
+      ${[['01','Leaderboard','Full-width unit above the fold on every hub and category page.','728×90 / 970×250'],
+         ['02','Billboard','High-impact takeover slot anchoring the landing hero.','970×250'],
+         ['03','MPU','Mid-page rectangle woven between editorial modules.','300×250'],
+         ['04','Sticky Sidebar','Persistent rail unit that travels with the reader.','300×600'],
+         ['05','In-Article Display','Native break inside long-form buying guides.','Responsive'],
+         ['06','Native Sponsored Modules','Editorial-styled cards, clearly labelled as sponsored.','Custom'],
+         ['07','Retailer Promotion Blocks','Sponsor-supplied branded promotional strips within category pages.','Custom'],
+         ['08','Sponsored Recommendation Widget','Brand-owned “recommended deals” rail placed within editorial.','Custom'],
+         ['09','Sponsored Newsletter Panel','Own the daily Black Friday deal email capture.','Custom']
+        ].map(x=>`<div class="inv-card"><div class="num mono">${x[0]}</div><h5>${x[1]}</h5><p>${x[2]}</p><div class="spec">${x[3]}</div></div>`).join('')}
+    </div>
+  </div></section>
+
+  <!-- MOST READ -->
+  <section class="sec"><div class="wrap">
+    <div class="sec-head"><div class="l"><div class="sec-eye eyebrow">Most Read Shopping Stories</div>
+      <h2 class="sec-title">Trusted by South African shoppers</h2></div></div>
+    <div class="mostread">${mostread}</div>
+  </div></section>
+
+  ${FOOTER()}
+  `;
+  startCountdown(); STATE.carIndex=0;
+}
+
+/* ============================================================
+   CATEGORY PAGE
+   ============================================================ */
+function catMeta(key){
+  const d=DESTS.find(x=>x.key===key)||{label:key};
+  const map={
+    'consumer-electronics':{art:'tv',hero:'The screens, sound and tech worth the spend.',pop:['65" TV','Soundbar','Laptop','Wireless Earbuds','Smartwatch','Projector','Monitor','Tablet']},
+    'groceries-fmcg':{art:'coffee',hero:'The trolley-fillers and pantry stock-ups that add up.',pop:['Coffee','Cleaning Bulk','Snacks','Baby','Pet Food','Beverages']},
+    'beauty-personal-care':{art:'lipstick',hero:'Skincare, fragrance and gifting, beautifully discounted.',pop:['Skincare','Fragrance','Haircare','Gift Sets','Makeup']},
+    'major-appliances':{art:'fridge',hero:'Fridges, washers and the big-ticket upgrades.',pop:['Fridge','Washing Machine','Dishwasher','Tumble Dryer','Freezer']},
+    'small-kitchen-appliances':{art:'airfryer',hero:'Air fryers, coffee and countertop favourites.',pop:['Air Fryer','Coffee Machine','Blender','Kettle','Microwave']},
+    'fashion-apparel':{art:'shirt',hero:'Wardrobe refreshes and footwear steals.',pop:['Sneakers','Denim','Activewear','Outerwear','Kids']},
+    'health-wellness-pharmacy':{art:'pill',hero:'Supplements, wellness and pharmacy essentials.',pop:['Vitamins','Fitness','Oral Care','First Aid','Wellness']},
+    'gaming':{art:'controller',hero:'Consoles, chairs and titles for the win.',pop:['Console','Gaming Chair','Headset','Titles','Graphics Card']},
+    'homeware-home-organisation':{art:'lamp',hero:'Lighting, storage and the calm, sorted home.',pop:['Lighting','Storage','Bedding','Décor','Cookware']},
+    'mobile-phones-telecoms':{art:'phone',hero:'Handsets, contracts and connectivity deals.',pop:['iPhone','Samsung','Router','Contract','Prepaid']},
+  };
+  return {...d,...(map[key]||{art:'tv',hero:'The season\'s best, editorially chosen.',pop:['Deals']})};
+}
+
+function renderCategory(key){
+  const m=catMeta(key);
+  const isCE=key==='consumer-electronics';
+  const sponsored=isCE&&STATE.sponsored;
+  const accent=sponsored?'#D4FF3F':'#D42128';
+  const artc=sponsored?'#D4FF3F':'#D42128';
+  const dk=sponsored;
+
+  // sponsor strip vs available strip
+  const strip=sponsored?`
+    <div class="spon-strip"><div class="wrap">
+      <div class="lockup"><span class="presented">This destination presented by</span>
+        <span class="ampd"><span class="b">◈</span>AMPD</span>
+        <span class="stag">South Africa's electronics authority</span></div>
+      <span class="ad-label solid">Category Sponsor · Paid Partnership</span>
+    </div></div>`:`
+    <div class="spon-strip"><div class="wrap">
+      <div class="lockup"><span class="presented">Exclusive sponsorship</span>
+        <span class="ampd" style="font-size:18px;color:#71757F">Your brand here</span></div>
+      <span class="available">◇ This destination is available — R150 000</span>
+    </div></div>`;
+
+  // buying guides tabs (CE gets full set)
+  const guides={
+    'Best TVs':[['tv','#0ea5e9','The 5 best TVs to buy this Black Friday','Tech Desk · 9 min'],['tv','#8b5cf6','OLED vs QLED: which is worth it?','Reviews · 6 min'],['soundbar','#f59e0b','Best soundbars to pair with a new TV','Audio · 5 min']],
+    'Laptop Buying Guide':[['laptop','#10b981','Which laptop for which person?','Tech Desk · 8 min'],['laptop','#6366f1','Best student laptops under R12 000','Guides · 5 min'],['laptop','#ef4444','Gaming laptops: the real-world picks','Gaming · 7 min']],
+    'Phone Deals':[['phone','#0ea5e9','iPhone vs Samsung: the upgrade call','Mobile · 7 min'],['phone','#22c55e','Best mid-range phones on deal','Mobile · 5 min'],['router','#f59e0b','Contract vs prepaid: the maths','Telecoms · 6 min']],
+    'Headphone Deals':[['headphone','#8b5cf6','Best noise-cancelling headphones','Audio · 6 min'],['headphone','#0ea5e9','True-wireless earbuds, ranked','Audio · 5 min'],['soundbar','#ef4444','Budget audio that punches up','Reviews · 4 min']],
+  };
+  const gk=Object.keys(guides);
+  const bgTabs=gk.map((g,i)=>`<button class="bg-tab ${i===0?'on':''}" onclick="switchGuide(this,'${key}',${i})">${g}</button>`).join('');
+  function bgPanel(idx){const set=guides[gk[idx]];const g=gk[idx];return `
+    <div class="bg-lead"><div class="a">${fill(set[0][0],set[0][1])}</div>
+      <div class="bd"><div style="margin-bottom:12px">${tracked('this week')}</div><h3>${set[0][2]}</h3>
+      <p>Our editors test, compare and rank — then tell you the one to buy and the ones to skip. Independent of any sponsor.</p>
+      <div class="byl"><b>By ${set[0][3].split(' · ')[0]}</b> • ${set[0][3].split(' · ')[1]}</div></div></div>
+    ${set.slice(1).map(s=>`<a class="bg-side"><div class="a">${fill(s[0],s[1])}</div><div><h5>${s[2]}</h5><div class="m">${s[3]}</div></div></a>`).join('')}
+    <a class="bg-side"><div class="a">${fill(set[0][0],set[0][1])}</div><div><h5>More ${g.toLowerCase()}</h5><div class="m">See the full list →</div></div></a>
+    <a class="bg-side"><div class="a">${fill(set[1][0],set[1][1])}</div><div><h5>${g}: editor's shortlist</h5><div class="m">Ranked picks</div></div></a>`;
+  }
+
+  // top deals
+  const dealsHTML=(isCE?[
+    ['tv','65" QLED 4K Smart TV','AMPD','R11 999','R18 999','-37%'],
+    ['laptop','14" Ultrabook 16GB/512GB','AMPD','R10 499','R16 999','-38%'],
+    ['headphone','Noise-Cancelling Headphones','AMPD','R1 649','R3 299','-50%'],
+    ['watch','GPS Fitness Smartwatch','AMPD','R1 899','R3 499','-46%'],
+  ]:[
+    [m.art,m.label+' Pick of the Day','—','R1 099','R2 199','-50%'],
+    [m.art,'Editor\'s Value Buy','—','R2 799','R4 999','-44%'],
+    [m.art,'Premium Choice','—','R9 999','R14 499','-31%'],
+    [m.art,'Best Under R500','—','R449','R899','-50%'],
+  ]).map(d=>`<div class="deal"><div class="deal-art">${fill(d[0],artc,{dark:dk})}<div class="d mono">${d[5]}</div></div>
+    <div class="deal-body"><div class="rt">${d[2]}</div><h5>${d[1]}</h5>
+    <div class="deal-price"><span class="n">${d[3]}</span><span class="w">${d[4]}</span></div>
+    <button class="cta">View deal</button></div></div>`).join('');
+
+  // price comparison
+  const cmpRows=[
+    ['65" QLED 4K TV','tv','R11 999','R12 499','R13 299','R11 999'],
+    ['14" Ultrabook','laptop','R10 999','R10 499','R11 499','R10 499'],
+    ['Wireless Earbuds','headphone','R1 799','R1 649','R1 899','R1 649'],
+  ];
+  const compare=`<div class="compare">
+    <div class="compare-row h"><span>Product</span><span>Takealot</span><span>Makro</span><span>HiFi Corp</span><span>Best price</span></div>
+    ${cmpRows.map(r=>{const best=r[5];const cell=v=>`<span class="${v===best?'best':'price'}">${v}</span>`;
+      return `<div class="compare-row"><span class="prod"><span class="a">${fill(r[1],artc,{dark:dk})}</span>${r[0]}</span>${cell(r[2])}${cell(r[3])}${cell(r[4])}<span class="best">${best}</span></div>`;}).join('')}
+  </div>`;
+
+  // reviews
+  const reviews=[
+    ['65" QLED 4K TV','Superb colour and brightness for the money — our top big-screen pick this season.',5],
+    ['14" Ultrabook','Genuinely portable, all-day battery, and a keyboard you\'ll actually enjoy.',4],
+    ['ANC Headphones','Class-leading noise cancellation at a price that undercuts the big names.',5],
+  ].map(r=>`<div class="review"><div class="stars" style="font-size:19px;margin-bottom:4px">${'★'.repeat(r[2])}${'☆'.repeat(5-r[2])}</div><h4>${r[0]}</h4><p>${r[1]}</p><div class="rev-by">Editor's verdict · IOL Reviews</div></div>`).join('');
+
+  // videos
+  const videos=`
+    <div class="video lead">${fill('tv','#fff',{dark:true})}<div class="play">▶</div><div class="vcap"><div class="t">TV buying guide 2026: watch before you spend</div><div class="d">08:24 · IOL Reviews</div></div></div>
+    <div class="video">${fill('laptop','#fff',{dark:true})}<div class="play">▶</div><div class="vcap"><div class="t">Laptop deals, tested</div><div class="d">05:10</div></div></div>
+    <div class="video">${fill('headphone','#fff',{dark:true})}<div class="play">▶</div><div class="vcap"><div class="t">ANC shootout</div><div class="d">06:32</div></div></div>`;
+
+  // tips
+  const tips=[
+    ['Check the real “was” price','A “50% off” means little without the true regular price. A quick search shows what it sold for last month.'],
+    ['Compare across retailers','The same model can swing hundreds of rands between stores. Always cross-check.'],
+    ['Watch the total cost','Delivery, cables and extended warranties can quietly erase the saving.'],
+    ['Buy the spec, not the hype','Match the product to how you\'ll actually use it — not the marketing tier.'],
+  ].map((t,i)=>`<div class="tip"><div class="n mono">0${i+1}</div><h5>${t[0]}</h5><p>${t[1]}</p></div>`).join('');
+
+  // promos (paid)
+  const promoColors=sponsored?['#0B0C0F','#1a1c22','#111318']:['#D42128','#111114','#A5151B'];
+  const promos=[['AMPD','Up to 50% off','Storewide electronics'],['Retailer B','Save R2 000','On selected laptops'],['Retailer C','Bundle & save','TV + soundbar deals']].map((p,i)=>`
+    <div class="promo" style="background:linear-gradient(140deg,${promoColors[i]},#000)"><div><div class="rn">${sponsored&&i===0?'AMPD':p[0]}</div><div class="off" style="color:${sponsored?'#D4FF3F':'#fff'}">${p[1]}</div><div style="opacity:.75;font-size:13px;margin-top:4px">${p[2]}</div></div><button class="cta2">Shop now</button></div>`).join('');
+
+  // partnered (paid, labelled)
+  const partnered=[
+    ['How AMPD built SA\'s smartest electronics range','AMPD'],
+    ['5 upgrades that pay for themselves','AMPD'],
+    ['The buyer\'s guide to future-proof tech','AMPD'],
+  ].map(p=>`<div class="part"><div class="a">${fill('tv',artc,{dark:dk})}<span class="flag">Paid Partnership</span></div>
+    <div class="bd"><h5>${p[0]}</h5><div class="m">Sponsored by ${sponsored?'AMPD':'category sponsor'}</div></div></div>`).join('');
+
+  // trending products strip
+  const tprod=['tv','laptop','phone','headphone','watch','soundbar'].map((a,i)=>`<div class="tp"><div class="a">${fill(a,artc,{dark:dk})}</div><h6>${['4K Smart TV','Ultrabook','Smartphone','ANC Buds','Smartwatch','Soundbar'][i]}</h6><div class="n mono">${['R7 499','R10 499','R11 299','R1 649','R1 899','R2 299'][i]}</div></div>`).join('');
+
+  // related
+  const related=[
+    ['tv','Black Friday TV deals: the full editorial guide','Deal Roundup · 6 min'],
+    ['phone','Best phone deals across every network','Buying Guide · 7 min'],
+    ['laptop','Work-from-home tech that\'s actually on sale','Roundup · 5 min'],
+  ].map(r=>`<a class="rel"><div class="a">${fill(r[0],artc,{dark:dk})}</div><div><h5>${r[1]}</h5><div class="m">${r[2]}</div></div></a>`).join('');
+
+  // sponsor / editor spotlight — flips: brand feature (default) ↔ product deal ↔ editorial
+  const brandMode=sponsored&&STATE.sponsorMode!=='product';
+  const productMode=sponsored&&STATE.sponsorMode==='product';
+  const priceBlock=brandMode?'':`<div class="price-row" style="margin-bottom:8px"><span class="price-now" style="color:${sponsored?'#fff':'inherit'}">R7 499</span><span class="price-was"><span class="w">R11 999</span><span class="s">Save 37%</span></span></div>
+          <div style="font-size:11.5px;color:#9E9CA6;margin-bottom:20px">${productMode?'Price &amp; offer supplied by AMPD.':'Price correct at time of publishing.'}</div>`;
+  const spotlight=`
+    <section class="csec"><div class="wrap">
+      <div class="csec-head"><div><div class="eye">${sponsored?'Sponsor Spotlight':"Editor's Featured Pick"}</div>
+        <h2>${brandMode?'A word from AMPD':productMode?"AMPD's headline offer":'The one our editors rate'}</h2>
+        <p>${brandMode?'A branded editorial feature — produced with the sponsor, clearly labelled, sitting alongside independent journalism. No product feed needed.':productMode?'A paid product spotlight from our sponsor — clearly labelled.':"A single, editorially-chosen highlight — no feed required, just our editors' judgement."}</p></div>
+        ${sponsored?'<span class="ad-label solid">'+(brandMode?'Sponsored Feature':'Sponsored Spotlight')+'</span>':'<span>'+tracked('',false)+'</span>'}</div>
+      <div class="echoice"><div class="a">${fill(isCE?'tv':m.art,artc,{dark:true})}${productMode?'<div class="disc" style="position:absolute;top:16px;left:16px;background:var(--red);color:#fff;font:700 15px/1 var(--mono);padding:10px 13px;border-radius:100px">-37%</div>':''}</div>
+        <div class="bd"><div class="ribbon">${brandMode?'In partnership with AMPD':productMode?'AMPD Exclusive':"Editor's Pick"}</div>
+          <h3>${brandMode?'Smarter tech, for the way South Africa really lives':productMode?'65" QLED 4K Smart TV — the big-screen pick of Black Friday':m.label+" — the season's standout"}</h3>
+          <p>${brandMode?'This Black Friday, AMPD is helping South Africans upgrade with confidence — expert advice, real support and a range built for everyday life. Discover their story and what to look for before you buy.':productMode?"AMPD's headline offer this Black Friday — reference-grade brightness and a genuinely good smart platform.":"Reference-grade brightness and a genuinely good smart platform — our editors' top big-screen pick this season."}</p>
+          ${priceBlock}
+          <div class="car-cta"><button class="btn-amber" style="${sponsored?'background:#D4FF3F':''}">${brandMode?'Discover AMPD':productMode?'Shop at AMPD':'Read our take'}</button>${brandMode?'<button class="btn-ghost" style="color:#fff;border-color:rgba(255,255,255,.35)">Read the feature</button>':''}</div>
+        </div></div>
+    </div></section>`;
+
+  const claim=!isCE?`<section class="csec" style="padding-top:20px"><div class="wrap" style="padding:20px 0 0">
+    <div class="claim"><div><div class="eye">Option 2 · Category Sponsorship</div>
+      <h3>Own ${m.label} this Black Friday</h3>
+      <p>Take exclusive title of this destination — takeover branding, 750 000 ROS impressions and 3 partnered articles — exactly as shown on the Consumer Electronics page.</p>
+      <div class="price">R150 000 <s>excl. VAT · value R360 000</s></div></div>
+      <div style="display:flex;flex-direction:column;gap:12px"><button class="btn-amber" onclick="document.getElementById('protoPanel')&&showView('hub');setTimeout(()=>document.getElementById('packages')?.scrollIntoView({behavior:'smooth'}),80)">See packages</button>
+      <button class="btn-ghost" style="color:#fff;border-color:rgba(255,255,255,.4)" onclick="STATE.sponsored=true;showView('category','consumer-electronics')">Preview a takeover →</button></div>
+    </div></div></section>`:'';
+
+  app.innerHTML=`
+  ${strip}
+  <div class="cat ${sponsored?'sponsored':''}">
+
+    <!-- HERO -->
+    <section class="cat-hero"><div class="wrap"><div class="cat-hero-grid">
+      <div>
+        <span class="cat-eye">${sponsored?'◈ AMPD × IOL':'Black Friday Destination'} · ${m.label}</span>
+        <h1>${isCE?'Tech that\'s<br><em>actually</em> a deal.':m.label.replace(' & ',' &<br>')}</h1>
+        <p>${m.hero} ${sponsored?'Brought to you by AMPD — with IOL\'s independent editorial coverage clearly separated from paid placements.':'Buying guides, expert reviews and editor-curated picks from the IOL Deals Desk — independent of any sponsor.'}</p>
+        <div class="cat-hero-cta"><button class="btn-amber" style="${sponsored?'background:#D4FF3F':''}" onclick="$('#catGuides')?.scrollIntoView({behavior:'smooth'})">Read the buying guides</button>
+          <button class="btn-ghost" onclick="$('#catTopDeals')?.scrollIntoView({behavior:'smooth'})">See the deals module</button></div>
+        <div style="margin-top:20px">${tracked('',true)}</div>
+      </div>
+      <div class="hero-art-well">${fill(m.art,artc,{dark:true})}${sponsored?'<div class="disc mono">-38%</div>':''}
+        <div class="cap">${sponsored?`<div class="t">65" QLED 4K Smart TV</div><div class="pr">R7 499 <s>R11 999</s></div>`:`<div class="t">${m.label} buying guide</div><div class="pr" style="font-size:14px;color:#C7C5CE;font-family:var(--ui)">Independent · editor-written</div>`}</div></div>
+    </div></div></section>
+
+    <!-- LEADERBOARD AD -->
+    <div class="wrap" style="padding:26px 32px 0"><div class="ad-slot ad-lead adzone" style="width:100%"><span class="adtag">Leaderboard</span><div><div class="lab">Leaderboard · 728×90 / 970×90</div><div class="dim">Sponsor display unit</div></div></div></div>
+
+    <!-- WHAT IOL DELIVERS -->
+    <div class="wrap" style="padding:22px 32px 0"><div class="deliver-note">
+      <span class="dn-k"><span class="ed"></span>Produced by IOL</span><span>Editorial, sponsor branding, partnered content &amp; newsletter — all delivered by us.</span>
+      <span class="dn-sep"></span>
+      <span class="dn-k"><span class="op"></span>Optional</span><span>The <b>Live Product Deals</b> module activates only if a retail partner supplies a product feed.</span>
+    </div></div>
+
+    <!-- SPONSOR / EDITOR SPOTLIGHT (flips: brand feature ↔ product deal ↔ editorial) -->
+    ${spotlight}
+
+    <!-- OPTIONAL SHOWCASE: LIVE PRODUCT DEALS (the one "what we could do" pillar) -->
+    <section class="csec alt" id="catTopDeals"><div class="wrap">
+      <div class="csec-head"><div><div class="eye">Optional module · Example only</div><h2>Live Product Deals</h2>
+        <p>An example of what we can switch on for a retail or e-commerce partner able to supply a live product feed — not part of the standard editorial package.</p></div></div>
+      <div class="opt-wrap">
+        <div class="opt-flag">◇ Optional — requires a partner product feed</div>
+        <div class="opt-note">When a sponsor is an e-commerce retailer and can provide a feed, this becomes a live, filterable grid of their deals. <b>For editorial and non-retail sponsors we leave it off</b> and lead with the buying guides below — so the page is never dependent on a client delivering products.</div>
+        <div class="deals-rail">
+          <div class="deals-grid">${dealsHTML}</div>
+          <div class="ad-slot ad-mpu adzone" style="width:100%;height:520px"><span class="adtag">Sticky Sidebar · 300×600</span><div><div class="lab">Sticky Sidebar</div><div class="dim">300×600</div></div></div>
+        </div>
+      </div>
+    </div></section>
+
+    <!-- BUYING GUIDES -->
+    <section class="csec" id="catGuides"><div class="wrap">
+      <div class="csec-head"><div><div class="eye">Buying Guides</div><h2>Independent buying guides</h2>
+        <p>Editorial, never sponsored — our reviewers pick the winners across ${m.label.toLowerCase()}.</p></div></div>
+      <div class="bg-tabs">${bgTabs}</div>
+      <div class="bg-panel" id="bgPanel">${bgPanel(0)}</div>
+    </div></section>
+
+    <!-- IN-ARTICLE AD -->
+    <div class="wrap"><div class="ad-slot adzone" style="width:100%;height:120px"><span class="adtag">In-Article Display</span><div><div class="lab">In-Article Display · Native</div><div class="dim">Responsive unit within editorial flow</div></div></div></div>
+
+    <!-- SPONSOR PROMOTIONAL PANELS -->
+    <section class="csec"><div class="wrap">
+      <div class="csec-head"><div><div class="eye">Sponsor Promotions</div><h2>${sponsored?'From AMPD':'Sponsor promotional panels'}</h2>
+        <p>Branded promotional creative supplied by the sponsor — no product feed required.</p></div><span class="ad-label">Paid placements</span></div>
+      <div class="promos adzone"><span class="adtag">Retailer Promotion Blocks</span>${promos}</div>
+    </div></section>
+
+    <!-- EXPERT RECOMMENDATIONS -->
+    <section class="csec alt"><div class="wrap">
+      <div class="csec-head"><div><div class="eye">Expert Recommendations</div><h2>Our editors' verdict</h2>
+        <p>Independent recommendations from the IOL Reviews desk — opinion, clearly ours.</p></div><a class="clink">All reviews →</a></div>
+      <div class="reviews">${reviews}</div>
+    </div></section>
+
+    <!-- VIDEOS -->
+    <section class="csec alt"><div class="wrap">
+      <div class="csec-head"><div><div class="eye">Video Reviews</div><h2>Watch before you buy</h2></div></div>
+      <div class="videos">${videos}</div>
+    </div></section>
+
+    <!-- SHOPPING TIPS -->
+    <section class="csec"><div class="wrap">
+      <div class="csec-head"><div><div class="eye">Shopping Tips</div><h2>Spend smart this Black Friday</h2></div></div>
+      <div class="tips">${tips}</div>
+    </div></section>
+
+    <!-- PARTNERED CONTENT -->
+    <section class="csec alt"><div class="wrap">
+      <div class="csec-head"><div><div class="eye">Partnered Content</div><h2>${sponsored?'From AMPD':'Sponsored stories'}</h2>
+        <p>Paid editorial, produced with the sponsor and clearly labelled as such.</p></div><span class="ad-label solid">Sponsored</span></div>
+      <div class="partnered adzone"><span class="adtag">Native Sponsored Modules</span>${partnered}</div>
+    </div></section>
+
+    <!-- NEWSLETTER -->
+    <section class="csec"><div class="wrap">
+      <div class="news-panel adzone"><span class="adtag">Sponsored Newsletter Panel</span>
+        <div><div class="eye">Newsletter</div><h3>The daily ${m.label} deal, in your inbox</h3>
+          <p>One email each morning through November — the day's best buying advice and our editors' pick, straight to your inbox.</p></div>
+        <div class="news-form"><input placeholder="Your email address"><button style="${sponsored?'background:#D4FF3F;color:#0B0C0F':''}">Subscribe</button></div>
+      </div>
+    </div></section>
+
+    <!-- POPULAR SEARCHES + RELATED -->
+    <section class="csec"><div class="wrap"><div class="pop-wrap">
+      <div><div class="csec-head" style="margin-bottom:20px"><div><div class="eye">Popular Searches</div><h2 style="font-size:26px">People are searching</h2></div></div>
+        <div class="pop-tags">${m.pop.map(p=>`<a class="pop-tag">${p}</a>`).join('')}</div></div>
+      <div><div class="csec-head" style="margin-bottom:20px"><div><div class="eye">Related Articles</div><h2 style="font-size:26px">More to read</h2></div></div>
+        <div class="rel-list">${related}</div></div>
+    </div></div></section>
+
+    ${claim}
+  </div>
+  ${FOOTER()}
+  `;
+  window.scrollTo(0,0);
+}
+function switchGuide(btn,key,idx){
+  document.querySelectorAll('.bg-tab').forEach(b=>b.classList.remove('on'));btn.classList.add('on');
+  const guides={
+    'Best TVs':[['tv','#0ea5e9','The 5 best TVs to buy this Black Friday','Tech Desk · 9 min'],['tv','#8b5cf6','OLED vs QLED: which is worth it?','Reviews · 6 min'],['soundbar','#f59e0b','Best soundbars to pair with a new TV','Audio · 5 min']],
+    'Laptop Buying Guide':[['laptop','#10b981','Which laptop for which person?','Tech Desk · 8 min'],['laptop','#6366f1','Best student laptops under R12 000','Guides · 5 min'],['laptop','#ef4444','Gaming laptops: the real-world picks','Gaming · 7 min']],
+    'Phone Deals':[['phone','#0ea5e9','iPhone vs Samsung: the upgrade call','Mobile · 7 min'],['phone','#22c55e','Best mid-range phones on deal','Mobile · 5 min'],['router','#f59e0b','Contract vs prepaid: the maths','Telecoms · 6 min']],
+    'Headphone Deals':[['headphone','#8b5cf6','Best noise-cancelling headphones','Audio · 6 min'],['headphone','#0ea5e9','True-wireless earbuds, ranked','Audio · 5 min'],['soundbar','#ef4444','Budget audio that punches up','Reviews · 4 min']],
+  };
+  const dk=STATE.sponsored&&key==='consumer-electronics';
+  const set=Object.values(guides)[idx];const g=Object.keys(guides)[idx];
+  $('#bgPanel').innerHTML=`
+    <div class="bg-lead"><div class="a">${fill(set[0][0],set[0][1])}</div>
+      <div class="bd"><div style="margin-bottom:12px">${tracked('this week')}</div><h3>${set[0][2]}</h3>
+      <p>Our editors test, compare and rank — then tell you the one to buy and the ones to skip. Independent of any sponsor.</p>
+      <div class="byl"><b>By ${set[0][3].split(' · ')[0]}</b> • ${set[0][3].split(' · ')[1]}</div></div></div>
+    ${set.slice(1).map(s=>`<a class="bg-side"><div class="a">${fill(s[0],s[1])}</div><div><h5>${s[2]}</h5><div class="m">${s[3]}</div></div></a>`).join('')}
+    <a class="bg-side"><div class="a">${fill(set[0][0],set[0][1])}</div><div><h5>More ${g.toLowerCase()}</h5><div class="m">See the full list →</div></div></a>
+    <a class="bg-side"><div class="a">${fill(set[1][0],set[1][1])}</div><div><h5>${g}: editor's shortlist</h5><div class="m">Ranked picks</div></div></a>`;
+}
+
+/* ============================================================
+   RETAILERS VIEW
+   ============================================================ */
+function renderRetailers(){
+  app.innerHTML=`
+  <section class="ret-hero"><div class="wrap">
+    <div class="eye eyebrow" style="color:var(--amber)">Shop by Retailer</div>
+    <h1>Because you don't shop<br>by category — you shop by store.</h1>
+    <p>Some shoppers want "a TV". Many more want "Takealot", "Sixty60" or "Makro". The Retailers tab meets them where their heads already are — and gives each store a natural home for a promotion.</p>
+  </div></section>
+  <section class="sec"><div class="wrap">
+    <div class="sec-head"><div class="l"><div class="sec-eye eyebrow">Live retailer hubs</div><h2 class="sec-title">Every major SA retailer, one place</h2></div>
+      <span class="ad-label">Retailer names illustrative · prototype</span></div>
+    <div class="ret-grid">
+      ${RETAILERS.map(r=>`<div class="ret-card"><div class="ret-band" style="background:linear-gradient(135deg,${r.c},${r.c}cc)"><div class="wm">${r.n}</div></div>
+        <div class="bd"><div class="cat">${r.cat}</div><div class="live"><span class="n mono">${rand(40,320)}</span><span class="l">live deals tracked</span></div>
+        <button class="go">Browse ${r.n} deals →</button></div></div>`).join('')}
+    </div>
+    <div class="disc" style="margin-top:30px;background:#fff;border-color:var(--line);color:var(--txt-soft)"><b>Editorial note.</b> Retailer names appear for illustration only. In production, each retailer hub is a clearly-labelled commercial placement — the IOL newsroom's independent deal coverage stays separate from any paid retailer promotion.</div>
+  </div></section>
+  ${FOOTER()}`;
+  window.scrollTo(0,0);
+}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+function FOOTER(){return `<footer class="foot"><div class="wrap">
+  <div class="foot-top">
+    <div style="max-width:320px"><span class="foot-logo"><img class="foot-logo-img" src="https://iol.co.za/_next/static/media/iol.2d0c9660.svg" alt="IOL" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><svg class="iolmark" style="display:none;height:30px;color:#111" viewBox="0 0 122 40" xmlns="http://www.w3.org/2000/svg"><path d="M2 0 L12 0 L2 21 Z" fill="#ED1C24"/><path d="M2 40 L2 24 L14 0 L22 0 L22 40 Z" fill="currentColor"/><rect x="32" y="0" width="40" height="40" rx="20" fill="currentColor"/><rect x="43" y="9" width="18" height="22" rx="9" fill="#fff"/><path d="M82 0 H100 V26 H120 V40 H82 Z" fill="currentColor"/></svg></span>
+      <p style="margin-top:14px;font-size:13.5px;color:#8B8892">South Africa's Black Friday, covered by a newsroom. Independent deal journalism, expert reviews and honest buying guides.</p></div>
+    <div class="foot-cols">
+      <div class="foot-col"><h6>Black Friday</h6><a onclick="showView('hub')">The Deals Desk</a><a onclick="showView('retailers')">Retailers</a><a onclick="showView('category','consumer-electronics')">Electronics</a><a onclick="showView('hub');setTimeout(()=>document.getElementById('packages')?.scrollIntoView({behavior:'smooth'}),60)">Advertise</a></div>
+      <div class="foot-col"><h6>Sections</h6><a>News</a><a>Business</a><a>Lifestyle</a><a>Tech</a></div>
+      <div class="foot-col"><h6>Company</h6><a>About IOL</a><a>Advertising</a><a>Editorial policy</a><a>Contact</a></div>
+    </div>
+  </div>
+  <div class="disc"><b>Editorial independence.</b> Deal selections, buying guides and reviews are produced independently by the IOL Deals Desk. Sponsored placements, partnered content and promotional panels are paid for and clearly labelled. Any prices shown are illustrative in this prototype.</div>
+  <div class="foot-bottom"><span>© 2026 Independent Online (IOL). A prototype for stakeholder review — not a live commercial offer.</span><span>Built by Volt.Africa</span></div>
+</div></footer>`;}
+
+/* ============================================================
+   COUNTDOWN · CAROUSEL · CONTROLS · ROUTER
+   ============================================================ */
+let cdTimer;
+function startCountdown(){
+  clearInterval(cdTimer);
+  const target=new Date('2026-11-27T00:00:00+02:00').getTime();
+  function tick(){
+    const now=Date.now();let diff=Math.max(0,target-now);
+    const d=Math.floor(diff/864e5);diff-=d*864e5;
+    const h=Math.floor(diff/36e5);diff-=h*36e5;
+    const mi=Math.floor(diff/6e4);diff-=mi*6e4;
+    const s=Math.floor(diff/1e3);
+    const set=(id,v)=>{const el=$('#'+id);if(el)el.textContent=String(v).padStart(2,'0');};
+    set('cdD',d);set('cdH',h);set('cdM',mi);set('cdS',s);
+  }
+  tick();cdTimer=setInterval(tick,1000);
+}
+function moveCar(dir){const n=FEATURED.length;STATE.carIndex=(STATE.carIndex+dir+n)%n;goCar(STATE.carIndex);}
+function goCar(i){STATE.carIndex=i;const t=$('#carTrack');if(t)t.style.transform=`translateX(-${i*100}%)`;
+  document.querySelectorAll('.car-dot').forEach((d,j)=>d.classList.toggle('on',j===i));}
+
+function toggleZones(){document.body.classList.toggle('zones');$('#swZones').classList.toggle('on');}
+function toggleSponsor(){STATE.sponsored=!STATE.sponsored;$('#swSpon').classList.toggle('on',STATE.sponsored);
+  if(STATE.view==='category'&&STATE.cat==='consumer-electronics')renderCategory('consumer-electronics');}
+function toggleMode(){STATE.sponsorMode=STATE.sponsorMode==='product'?'brand':'product';$('#swMode').classList.toggle('on',STATE.sponsorMode==='product');
+  if(STATE.view==='category')renderCategory(STATE.cat);}
+
+function showView(view,cat){
+  STATE.view=view;STATE.cat=cat||null;
+  if(view==='hub')renderHub();
+  else if(view==='retailers')renderRetailers();
+  else if(view==='category')renderCategory(cat);
+  buildTabs();
+  if(view!=='hub'&&view!=='retailers')window.scrollTo(0,0);
+}
+
+/* INIT */
+(function init(){
+  const now=new Date();
+  const dW=['SUNDAY','MONDAY','TUESDAY','WEDNESDAY','THURSDAY','FRIDAY','SATURDAY'];
+  const mN=['JANUARY','FEBRUARY','MARCH','APRIL','MAY','JUNE','JULY','AUGUST','SEPTEMBER','OCTOBER','NOVEMBER','DECEMBER'];
+  const dt=$('#todayDate');if(dt)dt.textContent=`${dW[now.getDay()]}, ${mN[now.getMonth()]} ${now.getDate()}, ${now.getFullYear()}`;
+  buildTabs();
+  renderHub();
+  // auto-advance carousel
+  setInterval(()=>{if(STATE.view==='hub')moveCar(1);},7000);
+})();
+</script>
+</body>
+</html>
