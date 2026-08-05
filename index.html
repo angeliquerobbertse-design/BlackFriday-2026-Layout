@@ -283,6 +283,17 @@ body.zones .adtag{display:block}
 .ins-cell .lbl{font:700 12px/1 var(--ui);letter-spacing:.1em;text-transform:uppercase;color:#fff;margin:14px 0 8px}
 .ins-cell .txt{font-size:13.5px;color:#F4DEDB;line-height:1.45}
 .ins-foot{margin-top:26px;font-size:12px;color:#E0AEAA;display:flex;align-items:center;gap:8px}
+/* Did you know? rotating fact card */
+.dyk{margin-top:34px}
+.dyk-head{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:14px}
+.dyk-eye{font:800 12px/1 var(--ui);letter-spacing:.16em;text-transform:uppercase;color:var(--amber)}
+.dyk-nav{display:flex;align-items:center;gap:12px}
+.dyk-nav button{width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.28);color:#fff;font-size:18px;display:grid;place-items:center;transition:.15s}
+.dyk-nav button:hover{background:#fff;color:var(--iol)}
+.dyk-count{font-weight:600;font-size:13px;color:#F4DEDB;min-width:60px;text-align:center;letter-spacing:.04em}
+.dyk-card{background:rgba(0,0,0,.22);border:1px solid rgba(255,255,255,.18);border-radius:var(--r-l);padding:34px 38px;display:flex;gap:34px;align-items:center;min-height:158px;transition:opacity .3s ease}
+.dyk-stat{font-family:var(--dsp);font-weight:900;font-size:clamp(36px,4.6vw,58px);line-height:.95;color:var(--amber);flex:none;width:280px}
+.dyk-text{font-size:18px;line-height:1.5;color:#fff}
 
 /* ============================================================
    SPONSORSHIP PACKAGES
@@ -688,6 +699,8 @@ body.zones .adtag{display:block}
   .claim{padding:30px 22px}
   /* packages / insights */
   .packs .wrap{padding:48px 16px}.insights .wrap{padding:44px 16px}
+  .dyk-card{flex-direction:column;align-items:flex-start;gap:14px;padding:24px 20px;min-height:0}
+  .dyk-stat{width:auto}.dyk-text{font-size:16px}
   .pack{padding:30px 24px}.pack-price .amt{font-size:34px}
   /* proto panel */
   .proto{right:12px;bottom:12px}
@@ -863,6 +876,20 @@ const TRENDING = [
   {t:'iPhone vs Samsung: the smarter Black Friday upgrade',m:'Buying Guide · 2.1k reading now'},
 ];
 
+/* "Did you know?" — Black Friday 2025 (SA) facts */
+const DIDYOUKNOW = [
+  ['R3 million','The largest single Black Friday purchase recorded in South Africa in 2025 — driven by luxury travel and premium electronics.'],
+  ['10 million+','Grocery transactions completed over the Black Friday weekend — worth around R3 billion.'],
+  ['#1 app','Checkers Sixty60 had its biggest week ever, becoming SA’s most-downloaded shopping app over Black Friday.'],
+  ['+15%','South Africans spent more over the Black Friday weekend than during the January payday weekend.'],
+  ['R1.86 billion','Processed by Peach Payments alone — across more than 2.6 million online transactions.'],
+  ['R1 million+','Shoppers made million-rand purchases digitally — a sign of how far confidence in e-commerce has grown.'],
+  ['+5%','Transaction volumes rose versus 2024, and average spend per shopper grew too — more items, and pricier ones.'],
+  ['Weeks early','Black Friday is no longer a single day — shoppers plan for weeks, turning November into a full season.'],
+  ['R117.9 billion','South Africa’s total retail sales for November 2025 — up 3.6% year-on-year, inflation-adjusted.'],
+  ['Mobile-first','Digital wallets and Buy Now, Pay Later drove larger online baskets than in-store purchases.'],
+];
+
 /* retailers */
 const RETAILERS = [
   {n:'Takealot',c:'#0A9CE0',cat:'Everything'},{n:'Checkers Sixty60',c:'#E2231A',cat:'Groceries'},
@@ -878,7 +905,7 @@ const RETAILERS = [
    ============================================================ */
 const $=(s,r=document)=>r.querySelector(s);
 const app=$('#app');
-let STATE={view:'hub',cat:null,sponsored:true,sponsorMode:'brand',carIndex:0};
+let STATE={view:'hub',cat:null,sponsored:true,sponsorMode:'brand',carIndex:0,dykIndex:0};
 
 const rand=(a,b)=>Math.floor(Math.random()*(b-a+1))+a;
 const R=n=>'R'+n.toLocaleString('en-ZA');
@@ -1047,7 +1074,12 @@ function renderHub(){
       <div class="ins-cell"><div class="stat">▲</div><div class="lbl">Beauty &amp; Personal Care</div><div class="txt">Experienced strong online growth as gifting and self-care shifted to digital.</div></div>
       <div class="ins-cell hot"><div class="stat">Fastest</div><div class="lbl">Mobile &amp; Telecoms</div><div class="txt">Became one of the fastest-growing in-store categories of the season.</div></div>
     </div>
-    <div class="ins-foot">◇ Source: 2025 South African Black Friday retail research, aggregated. Illustrative figures shown for prototype.</div>
+    <div class="dyk">
+      <div class="dyk-head"><span class="dyk-eye">◆ Did you know? · Black Friday 2025</span>
+        <div class="dyk-nav"><button onclick="moveDyk(-1)" aria-label="Previous">‹</button><span class="dyk-count mono" id="dykCount">01 / 10</span><button onclick="moveDyk(1)" aria-label="Next">›</button></div></div>
+      <div class="dyk-card" id="dykCard"><div class="dyk-stat" id="dykStat"></div><div class="dyk-text" id="dykText"></div></div>
+    </div>
+    <div class="ins-foot">◇ Sources: South African Black Friday 2025 reporting (BankservAfrica, Peach Payments, Shoprite/Checkers, Stats SA), aggregated. Category rationale figures illustrative.</div>
   </div></section>
 
   <!-- SPONSORSHIP PACKAGES -->
@@ -1123,7 +1155,7 @@ function renderHub(){
 
   ${FOOTER()}
   `;
-  startCountdown(); STATE.carIndex=0;
+  startCountdown(); STATE.carIndex=0; STATE.dykIndex=0; goDyk(0);
 }
 
 /* ============================================================
@@ -1483,6 +1515,12 @@ function moveCar(dir){const n=FEATURED.length;STATE.carIndex=(STATE.carIndex+dir
 function goCar(i){STATE.carIndex=i;const t=$('#carTrack');if(t)t.style.transform=`translateX(-${i*100}%)`;
   document.querySelectorAll('.car-dot').forEach((d,j)=>d.classList.toggle('on',j===i));}
 
+function goDyk(i){STATE.dykIndex=(i+DIDYOUKNOW.length)%DIDYOUKNOW.length;const f=DIDYOUKNOW[STATE.dykIndex];
+  const s=$('#dykStat'),t=$('#dykText'),c=$('#dykCount'),card=$('#dykCard');if(!s)return;
+  if(card){card.style.opacity=0;setTimeout(()=>{s.textContent=f[0];t.textContent=f[1];c.textContent=String(STATE.dykIndex+1).padStart(2,'0')+' / '+String(DIDYOUKNOW.length).padStart(2,'0');card.style.opacity=1;},160);}
+  else{s.textContent=f[0];t.textContent=f[1];}}
+function moveDyk(d){goDyk((STATE.dykIndex||0)+d);}
+
 function toggleZones(){document.body.classList.toggle('zones');$('#swZones').classList.toggle('on');}
 function toggleSponsor(){STATE.sponsored=!STATE.sponsored;$('#swSpon').classList.toggle('on',STATE.sponsored);
   if(STATE.view==='category'&&STATE.cat==='consumer-electronics')renderCategory('consumer-electronics');}
@@ -1508,6 +1546,8 @@ function showView(view,cat){
   renderHub();
   // auto-advance carousel
   setInterval(()=>{if(STATE.view==='hub')moveCar(1);},7000);
+  // auto-advance did-you-know
+  setInterval(()=>{if(STATE.view==='hub')moveDyk(1);},6000);
 })();
 </script>
 </body>
