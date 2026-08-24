@@ -81,6 +81,12 @@ h1,h2,h3,h4{font-family:var(--dsp);font-weight:600;line-height:1.02;letter-spaci
 
 /* ===== BLACK FRIDAY STICKY SUB-NAV (Destinations) ===== */
 .bfsub{position:sticky;top:0;z-index:50;background:var(--ink);border-bottom:1px solid #2A2A32}
+.bfburger{display:none;margin-left:auto;background:transparent;border:1px solid rgba(255,255,255,.28);border-radius:8px;color:#fff;font:700 12.5px/1 var(--ui);letter-spacing:.06em;padding:9px 14px;cursor:pointer}
+.bfmenu{display:none;position:absolute;left:0;right:0;top:100%;background:#0C0C0E;border-top:1px solid #26262F;max-height:72vh;overflow:auto;padding:6px;box-shadow:0 20px 40px rgba(0,0,0,.5)}
+.bfmenu.open{display:block}
+.bfmenu a{display:block;padding:14px 18px;color:#E7E5EC;font:600 15px/1 var(--ui);border-radius:8px;cursor:pointer}
+.bfmenu a.on{color:#fff;background:rgba(212,33,40,.18)}
+.bfmenu a:active{background:rgba(255,255,255,.06)}
 .bfsub-inner{max-width:var(--wrap);margin:0 auto;display:flex;align-items:center;gap:0;height:54px;padding:0 14px}
 .bfsub .brand{display:flex;align-items:center;gap:9px;padding-right:16px;margin-right:6px;border-right:1px solid #2E2E38;flex:none}
 .bfsub .brand .bolt{color:var(--amber);font-size:17px}
@@ -123,13 +129,13 @@ body.zones .adtag{display:block}
    radial-gradient(120% 90% at 82% -10%,rgba(246,178,60,.30),transparent 55%),
    radial-gradient(90% 80% at 8% 120%,rgba(212,33,40,.42),transparent 60%);}
 .hub-hero::after{content:"";position:absolute;inset:0;opacity:.5;background-image:radial-gradient(rgba(255,255,255,.05) 1px,transparent 1px);background-size:4px 4px;mix-blend-mode:overlay}
-.hub-hero .wrap{position:relative;z-index:2;padding:56px 32px 46px}
+.hub-hero .wrap{position:relative;z-index:2;padding:30px 32px 46px}
 .hero-top{display:flex;align-items:center;gap:14px;margin-bottom:26px}
 .hero-badge{display:flex;align-items:center;gap:9px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);border-radius:100px;padding:8px 15px;font:700 11px/1 var(--ui);letter-spacing:.18em;text-transform:uppercase}
 .hero-badge .v{color:var(--green);font-size:13px}
 .hero-live{display:flex;align-items:center;gap:8px;font:600 12px/1 var(--ui);letter-spacing:.12em;text-transform:uppercase;color:#E7E5EC}
 .hero-live .d{width:8px;height:8px;border-radius:50%;background:var(--red);animation:pulse 1.4s infinite}
-.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:end}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:start}
 .hero-kicker{font-family:var(--dsp);font-style:italic;font-weight:500;font-size:22px;color:var(--amber);margin-bottom:8px}
 .hero-h1{font-size:clamp(56px,7vw,104px);font-weight:900;line-height:.9;letter-spacing:-.03em}
 .hero-h1 em{font-style:italic;font-weight:500;color:var(--amber)}
@@ -440,15 +446,16 @@ body.zones .adtag{display:block}
 .bg-tab{padding:10px 18px;border-radius:100px;font-weight:600;font-size:13.5px;background:var(--c-card);border:1px solid var(--c-line);color:var(--c-soft)}
 .bg-tab.on{background:var(--c-ink);color:var(--c-bg);border-color:var(--c-ink)}
 .cat.sponsored .bg-tab.on{background:var(--c-accent);color:var(--c-on-accent);border-color:var(--c-accent)}
-.bg-panel{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:20px}
-.bg-lead{grid-row:span 2;background:var(--c-card);border:1px solid var(--c-line);border-radius:var(--r-l);overflow:hidden;display:flex;flex-direction:column}
+.bg-panel{display:grid;grid-template-columns:1.55fr 1fr;gap:16px}
+.bg-lead{background:var(--c-card);border:1px solid var(--c-line);border-radius:var(--r-l);overflow:hidden;display:flex;flex-direction:column}
 .bg-lead .a{aspect-ratio:16/10;position:relative}
 .bg-lead .bd{padding:26px 28px;flex:1;display:flex;flex-direction:column}
 .bg-lead h3{font-size:26px;line-height:1.05;margin-bottom:12px;color:var(--c-ink)}
 .bg-lead p{color:var(--c-soft);font-size:14.5px;margin-bottom:16px}
-.bg-side{background:var(--c-card);border:1px solid var(--c-line);border-radius:var(--r-m);padding:18px 20px;display:flex;gap:16px;align-items:center;transition:.2s}
+.bg-sides{display:flex;flex-direction:column;gap:12px}
+.bg-side{flex:1;background:var(--c-card);border:1px solid var(--c-line);border-radius:var(--r-m);padding:16px 18px;display:flex;gap:16px;align-items:center;transition:.2s}
 .bg-side:hover{border-color:var(--c-accent);transform:translateX(3px)}
-.bg-side .a{width:64px;height:64px;border-radius:10px;overflow:hidden;position:relative;flex:none}
+.bg-side .a{width:60px;height:60px;border-radius:10px;overflow:hidden;position:relative;flex:none}
 .bg-side h5{font:600 14.5px/1.2 var(--ui);color:var(--c-ink);margin-bottom:6px}
 .bg-side .m{font-size:12px;color:var(--c-mute)}
 .byl{display:flex;align-items:center;gap:9px;margin-top:auto;font-size:12.5px;color:var(--c-mute)}
@@ -575,6 +582,13 @@ body.zones .adtag{display:block}
 .ad-slot{background:repeating-linear-gradient(45deg,color-mix(in srgb,var(--c-ink) 4%,transparent),color-mix(in srgb,var(--c-ink) 4%,transparent) 12px,transparent 12px,transparent 24px);border:1px dashed var(--c-line);border-radius:var(--r-m);display:grid;place-items:center;text-align:center;color:var(--c-mute)}
 .ad-slot .lab{font:700 11px/1 var(--ui);letter-spacing:.14em;text-transform:uppercase}
 .ad-slot .dim{font-family:var(--mono);font-size:11px;margin-top:6px}
+/* dev-only: ad placeholders hidden in the reader view, revealed by the prototype "ad zones" toggle */
+.ad-slot{display:none}
+body.zones .ad-slot{display:grid}
+.ad-holder{display:none}
+body.zones .ad-holder{display:block}
+.deals-rail{display:grid;grid-template-columns:1fr;gap:24px;align-items:start}
+body.zones .deals-rail{grid-template-columns:1fr 300px}
 .ad-lead{height:110px;margin:0 auto}
 .ad-mpu{aspect-ratio:1/1;max-width:300px}
 
@@ -654,6 +668,9 @@ body.zones .adtag{display:block}
   .wrap{padding:0 16px}
   .sec{padding:38px 0}
   .cat .csec{padding:34px 0}
+  /* BF sub-nav → hamburger */
+  .bfsub .bfarrow,.bfsub .bfscroll{display:none}
+  .bfburger{display:inline-block}
   .sec-head,.cat .csec-head{flex-direction:column;align-items:flex-start;gap:10px}
   .sec-title{font-size:26px}
   .hero-top,.car-cta,.cat-hero-cta,.chips{flex-wrap:wrap}
@@ -664,7 +681,7 @@ body.zones .adtag{display:block}
   .iolmark,.mast-logo-img{height:40px}
   .iolnav a{font-size:12.5px;padding:0 11px}
   /* hero */
-  .hub-hero .wrap{padding:34px 16px 30px}
+  .hub-hero .wrap{padding:20px 16px 30px}
   .hero-kicker{font-size:18px}.hero-sub{font-size:15px}
   .countdown{padding:20px 16px 18px}
   .cd-cell{padding:12px 4px}.cd-cell .n{font-size:30px}
@@ -770,7 +787,9 @@ body.zones .adtag{display:block}
     <button class="bfarrow" onclick="scrollTabs(-1)">‹</button>
     <div class="bfscroll"><div class="bftabs" id="bftabs"></div></div>
     <button class="bfarrow" onclick="scrollTabs(1)">›</button>
+    <button class="bfburger" onclick="toggleBfMenu()" aria-label="Open sections">☰&nbsp;Sections</button>
   </div>
+  <div class="bfmenu" id="bfmenu"></div>
 </div>
 
 <!-- ══════════════ MAIN ══════════════ -->
@@ -779,8 +798,9 @@ body.zones .adtag{display:block}
 <!-- ══════════════ FLOATING PROTOTYPE CONTROLS ══════════════ -->
 <div class="proto">
   <div class="proto-panel hide" id="protoPanel">
-    <h5>Prototype Controls</h5>
-    <div class="proto-row">Show commercial zones <div class="switch" id="swZones" onclick="toggleZones()"></div></div>
+    <h5>Prototype · dev view</h5>
+    <div class="proto-row">Show ad zones <div class="switch" id="swZones" onclick="toggleZones()"></div></div>
+    <div class="proto-row">Activate Retailers (needs feed) <div class="switch" id="swRet" onclick="toggleRetailers()"></div></div>
     <div class="proto-row">Sponsor takeover (Electronics) <div class="switch on" id="swSpon" onclick="toggleSponsor()"></div></div>
     <div class="proto-row">Spotlight: product deal <div class="switch" id="swMode" onclick="toggleMode()"></div></div>
     <div class="proto-row" style="cursor:pointer" onclick="showView('category','consumer-electronics')">Open sponsored category →</div>
@@ -904,7 +924,7 @@ const RETAILERS = [
    ============================================================ */
 const $=(s,r=document)=>r.querySelector(s);
 const app=$('#app');
-let STATE={view:'hub',cat:null,sponsored:true,sponsorMode:'brand',carIndex:0,dykIndex:0};
+let STATE={view:'hub',cat:null,sponsored:true,sponsorMode:'brand',retailersActive:false,carIndex:0,dykIndex:0};
 
 const rand=(a,b)=>Math.floor(Math.random()*(b-a+1))+a;
 const R=n=>'R'+n.toLocaleString('en-ZA');
@@ -917,14 +937,15 @@ function tracked(_label,dark){return `<span class="tracked ${dark?'dark':''}">${
 
 /* ---------- BUILD STICKY SUB-NAV TABS ---------- */
 function buildTabs(){
-  $('#bftabs').innerHTML=DESTS.map(d=>{
-    const on=(d.view==='hub'&&STATE.view==='hub')||(d.view==='retailers'&&STATE.view==='retailers')||(STATE.view==='category'&&STATE.cat===d.key);
-    const owned=d.owned?'owned':'';
-    const lock=(!d.view&&!d.owned)?'<span class="lock">◇</span>':'';
-    const action=d.view==='hub'?"showView('hub')":d.view==='retailers'?"showView('retailers')":`showView('category','${d.key}')`;
-    return `<button class="bftab ${on?'on':''} ${owned}" onclick="${action}">${d.label}${lock}</button>`;
-  }).join('');
+  const items=DESTS.filter(d=>d.key!=='retailers'||STATE.retailersActive);
+  const isOn=d=>(d.view==='hub'&&STATE.view==='hub')||(d.view==='retailers'&&STATE.view==='retailers')||(STATE.view==='category'&&STATE.cat===d.key);
+  const act=d=>d.view==='hub'?"showView('hub')":d.view==='retailers'?"showView('retailers')":`showView('category','${d.key}')`;
+  $('#bftabs').innerHTML=items.map(d=>`<button class="bftab ${isOn(d)?'on':''} ${d.owned?'owned':''}" onclick="${act(d)}">${d.label}</button>`).join('');
+  const menu=$('#bfmenu');
+  if(menu) menu.innerHTML=items.map(d=>`<a class="${isOn(d)?'on':''}" onclick="${act(d)};closeBfMenu()">${d.label}</a>`).join('');
 }
+function toggleBfMenu(){$('#bfmenu')?.classList.toggle('open');}
+function closeBfMenu(){$('#bfmenu')?.classList.remove('open');}
 function scrollTabs(dir){$('#bftabs').scrollBy({left:dir*280,behavior:'smooth'});}
 
 /* ============================================================
@@ -933,10 +954,9 @@ function scrollTabs(dir){$('#bftabs').scrollBy({left:dir*280,behavior:'smooth'})
 function renderHub(){
   const destCards=DESTS.filter(d=>!d.view).map(d=>{
     const artmap={'groceries-fmcg':'coffee','consumer-electronics':'tv','beauty-personal-care':'lipstick','major-appliances':'fridge','small-kitchen-appliances':'airfryer','fashion-apparel':'shirt','health-wellness-pharmacy':'pill','gaming':'controller','homeware-home-organisation':'lamp','mobile-phones-telecoms':'phone'};
-    const status=d.owned?`<span class="dstatus owned">● Sponsored</span>`:`<span class="dstatus">◇ Available</span>`;
     return `<button class="dcard" onclick="showView('category','${d.key}')">
       <div class="dcard-art">${fill(artmap[d.key],d.owned?'#D4FF3F':'#D42128',{dark:d.owned})}</div>
-      <div class="dcard-b"><div class="dcard-t">${d.label}</div>${status}</div>
+      <div class="dcard-b"><div class="dcard-t">${d.label}</div></div>
     </button>`;
   }).join('');
 
@@ -989,15 +1009,10 @@ function renderHub(){
   <!-- HERO -->
   <section class="hub-hero">
     <div class="wrap">
-      <div class="hero-top">
-        <div class="hero-badge">◈ IOL Black Friday 2026</div>
-        <div class="hero-live"><span class="d"></span>Live now · deals refreshing</div>
-      </div>
       <div class="hero-grid">
         <div>
           <div class="hero-kicker">The Deals Desk presents</div>
-          <h1 class="hero-h1">Black&nbsp;Friday,<br><em>read like news.</em></h1>
-          <p class="hero-sub">South Africa's shopping season, covered by a newsroom. Independent deal journalism, expert reviews and honest buying guides — so you spend on the strength of the facts, not the hype.</p>
+          <h1 class="hero-h1">Black&nbsp;Friday<br>2026.</h1>
           <div class="integrity">
             <span class="k"><span class="ed"></span>Editorial</span><span>independently chosen, never sponsored</span>
             <span class="sep"></span>
@@ -1012,7 +1027,6 @@ function renderHub(){
             <div class="cd-cell"><div class="n" id="cdM">00</div><div class="u">Min</div></div>
             <div class="cd-cell"><div class="n" id="cdS">00</div><div class="u">Sec</div></div>
           </div>
-          <div class="cd-foot"><span>Doors open <b>Fri 27 Nov</b></span><span>Hub live all November</span></div>
         </div>
       </div>
     </div>
@@ -1020,16 +1034,6 @@ function renderHub(){
 
   <!-- TICKER -->
   <div class="ticker adzone"><span class="adtag">Retailer Promotion Blocks</span><div class="ticker-track">${ticker}</div></div>
-
-  <!-- DESTINATIONS -->
-  <section class="sec"><div class="wrap">
-    <div class="sec-head"><div class="l">
-      <div class="sec-eye eyebrow">Shopping Destinations</div>
-      <h2 class="sec-title">Ten editorial destinations,<br>each an exclusive home for one brand.</h2>
-      <p class="sec-desc">Every destination is its own newsroom-grade shopping section — and its own single-sponsor opportunity. Consumer Electronics is shown fully sponsored below.</p>
-    </div><button class="sec-link" onclick="showView('category','consumer-electronics')">See a sponsored destination →</button></div>
-    <div class="dgrid">${destCards}</div>
-  </div></section>
 
   <!-- FEATURED CAROUSEL -->
   <section class="sec" style="padding-top:8px"><div class="wrap">
@@ -1060,27 +1064,6 @@ function renderHub(){
       <div class="trend-list">${trend}</div></div>
   </div></div></section>
 
-  <!-- INSIGHTS -->
-  <section class="insights"><div class="wrap">
-    <div class="ins-head"><div class="eye eyebrow">Shopping Insights · Why these ten</div>
-      <h2>The destinations are built on real 2025 behaviour</h2>
-      <p>These aren't arbitrary categories. Each editorial destination maps to how South Africans actually shopped last Black Friday — so sponsors buy audience intent, not guesswork.</p></div>
-    <div class="ins-grid">
-      <div class="ins-cell hot"><div class="stat">+35–38%</div><div class="lbl">Online retail growth</div><div class="txt">SA online retail grew roughly 35–38% year-on-year across the 2025 Black Friday period.</div></div>
-      <div class="ins-cell"><div class="stat">+15%</div><div class="lbl">vs January payday</div><div class="txt">Black Friday spend rose about 15% compared with the traditional January payday peak.</div></div>
-      <div class="ins-cell"><div class="stat">#1</div><div class="lbl">Groceries &amp; FMCG</div><div class="txt">Delivered the highest shopping frequency of any category — repeat, habitual buying.</div></div>
-      <div class="ins-cell"><div class="stat">Top</div><div class="lbl">Consumer Electronics</div><div class="txt">Achieved the highest average basket values — the premium-spend destination.</div></div>
-      <div class="ins-cell"><div class="stat">▲</div><div class="lbl">Beauty &amp; Personal Care</div><div class="txt">Experienced strong online growth as gifting and self-care shifted to digital.</div></div>
-      <div class="ins-cell hot"><div class="stat">Fastest</div><div class="lbl">Mobile &amp; Telecoms</div><div class="txt">Became one of the fastest-growing in-store categories of the season.</div></div>
-    </div>
-    <div class="dyk">
-      <div class="dyk-head"><span class="dyk-eye">◆ Did you know? · Black Friday 2025</span>
-        <div class="dyk-nav"><button onclick="moveDyk(-1)" aria-label="Previous">‹</button><span class="dyk-count mono" id="dykCount">01 / 10</span><button onclick="moveDyk(1)" aria-label="Next">›</button></div></div>
-      <div class="dyk-card" id="dykCard"><div class="dyk-stat" id="dykStat"></div><div class="dyk-text" id="dykText"></div></div>
-    </div>
-    <div class="ins-foot">◇ Sources: South African Black Friday 2025 reporting (BankservAfrica, Peach Payments, Shoprite/Checkers, Stats SA), aggregated. Category rationale figures illustrative.</div>
-  </div></section>
-
   <!-- MOST READ -->
   <section class="sec"><div class="wrap">
     <div class="sec-head"><div class="l"><div class="sec-eye eyebrow">Most Read Shopping Stories</div>
@@ -1090,7 +1073,7 @@ function renderHub(){
 
   ${FOOTER()}
   `;
-  startCountdown(); STATE.carIndex=0; STATE.dykIndex=0; goDyk(0);
+  startCountdown(); STATE.carIndex=0;
 }
 
 /* ============================================================
@@ -1121,19 +1104,14 @@ function renderCategory(key){
   const artc=sponsored?'#D4FF3F':'#D42128';
   const dk=sponsored;
 
-  // sponsor strip vs available strip
+  // sponsor branding strip — only shown when the category is actually sponsored (reader-facing)
   const strip=sponsored?`
     <div class="spon-strip"><div class="wrap">
-      <div class="lockup"><span class="presented">This destination presented by</span>
+      <div class="lockup"><span class="presented">In partnership with</span>
         <span class="ampd"><span class="b">◈</span>AMPD</span>
         <span class="stag">South Africa's electronics authority</span></div>
-      <span class="ad-label solid">Category Sponsor · Paid Partnership</span>
-    </div></div>`:`
-    <div class="spon-strip"><div class="wrap">
-      <div class="lockup"><span class="presented">Exclusive sponsorship</span>
-        <span class="ampd" style="font-size:18px;color:#71757F">Your brand here</span></div>
-      <span class="available">◇ This destination is available — R150 000</span>
-    </div></div>`;
+      <span class="ad-label solid">Sponsored</span>
+    </div></div>`:'';
 
   // buying guides tabs (CE gets full set)
   const guides={
@@ -1149,9 +1127,10 @@ function renderCategory(key){
       <div class="bd"><div style="margin-bottom:12px">${tracked('this week')}</div><h3>${set[0][2]}</h3>
       <p>Our editors test, compare and rank — then tell you the one to buy and the ones to skip. Independent of any sponsor.</p>
       <div class="byl"><b>By ${set[0][3].split(' · ')[0]}</b> • ${set[0][3].split(' · ')[1]}</div></div></div>
+    <div class="bg-sides">
     ${set.slice(1).map(s=>`<a class="bg-side"><div class="a">${fill(s[0],s[1])}</div><div><h5>${s[2]}</h5><div class="m">${s[3]}</div></div></a>`).join('')}
     <a class="bg-side"><div class="a">${fill(set[0][0],set[0][1])}</div><div><h5>More ${g.toLowerCase()}</h5><div class="m">See the full list →</div></div></a>
-    <a class="bg-side"><div class="a">${fill(set[1][0],set[1][1])}</div><div><h5>${g}: editor's shortlist</h5><div class="m">Ranked picks</div></div></a>`;
+    <a class="bg-side"><div class="a">${fill(set[1][0],set[1][1])}</div><div><h5>${g}: editor's shortlist</h5><div class="m">Ranked picks</div></div></a></div>`;
   }
 
   // top deals
@@ -1165,10 +1144,9 @@ function renderCategory(key){
     [m.art,'Editor\'s Value Buy','—','R2 799','R4 999','-44%'],
     [m.art,'Premium Choice','—','R9 999','R14 499','-31%'],
     [m.art,'Best Under R500','—','R449','R899','-50%'],
-  ]).map(d=>`<div class="deal"><div class="deal-art">${fill(d[0],artc,{dark:dk})}<div class="d mono">${d[5]}</div></div>
-    <div class="deal-body"><div class="rt">${d[2]}</div><h5>${d[1]}</h5>
-    <div class="deal-price"><span class="n">${d[3]}</span><span class="w">${d[4]}</span></div>
-    <button class="cta">View deal</button></div></div>`).join('');
+  ]).map(d=>`<div class="deal"><div class="deal-art">${fill(d[0],artc,{dark:dk})}</div>
+    <div class="deal-body"><div class="rt">${d[2]==='—'?'IOL Deals Desk':d[2]}</div><h5>${d[1]}</h5>
+    <button class="cta">Read more</button></div></div>`).join('');
 
   // price comparison
   const cmpRows=[
@@ -1235,7 +1213,7 @@ function renderCategory(key){
     <section class="csec"><div class="wrap">
       <div class="csec-head"><div><div class="eye">${sponsored?'Sponsor Spotlight':"Editor's Featured Pick"}</div>
         <h2>${brandMode?'A word from AMPD':productMode?"AMPD's headline offer":'The one our editors rate'}</h2>
-        <p>${brandMode?'A branded editorial feature — produced with the sponsor, clearly labelled, sitting alongside independent journalism. No product feed needed.':productMode?'A paid product spotlight from our sponsor — clearly labelled.':"A single, editorially-chosen highlight — no feed required, just our editors' judgement."}</p></div>
+        <p>${brandMode?'In partnership with AMPD.':productMode?'In partnership with AMPD.':"Our editors' standout pick this Black Friday."}</p></div>
         ${sponsored?'<span class="ad-label solid">'+(brandMode?'Sponsored Feature':'Sponsored Spotlight')+'</span>':'<span>'+tracked('',false)+'</span>'}</div>
       <div class="echoice"><div class="a">${fill(isCE?'tv':m.art,artc,{dark:true})}${productMode?'<div class="disc" style="position:absolute;top:16px;left:16px;background:var(--red);color:#fff;font:700 15px/1 var(--mono);padding:10px 13px;border-radius:100px">-37%</div>':''}</div>
         <div class="bd"><div class="ribbon">${brandMode?'In partnership with AMPD':productMode?'AMPD Exclusive':"Editor's Pick"}</div>
@@ -1246,13 +1224,7 @@ function renderCategory(key){
         </div></div>
     </div></section>`;
 
-  const claim=!isCE?`<section class="csec" style="padding-top:20px"><div class="wrap" style="padding:20px 0 0">
-    <div class="claim"><div><div class="eye">Option 2 · Category Sponsorship</div>
-      <h3>Own ${m.label} this Black Friday</h3>
-      <p>Take exclusive title of this destination — takeover branding, 750 000 ROS impressions and 3 partnered articles — exactly as shown on the Consumer Electronics page.</p>
-      <div class="price">R150 000 <s>excl. VAT · value R360 000</s></div></div>
-      <div style="display:flex;flex-direction:column;gap:12px"><button class="btn-amber" onclick="STATE.sponsored=true;showView('category','consumer-electronics')">Preview a takeover →</button></div>
-    </div></div></section>`:'';
+  const claim='';
 
   app.innerHTML=`
   ${strip}
@@ -1265,37 +1237,26 @@ function renderCategory(key){
         <h1>${isCE?'Tech that\'s<br><em>actually</em> a deal.':m.label.replace(' & ',' &<br>')}</h1>
         <p>${m.hero} ${sponsored?'Brought to you by AMPD — with IOL\'s independent editorial coverage clearly separated from paid placements.':'Buying guides, expert reviews and editor-curated picks from the IOL Deals Desk — independent of any sponsor.'}</p>
         <div class="cat-hero-cta"><button class="btn-amber" style="${sponsored?'background:#D4FF3F':''}" onclick="$('#catGuides')?.scrollIntoView({behavior:'smooth'})">Read the buying guides</button>
-          <button class="btn-ghost" onclick="$('#catTopDeals')?.scrollIntoView({behavior:'smooth'})">See the deals module</button></div>
+          ${STATE.retailersActive?`<button class="btn-ghost" onclick="$('#catTopDeals')?.scrollIntoView({behavior:'smooth'})">See the deals</button>`:''}</div>
         <div style="margin-top:20px">${tracked('',true)}</div>
       </div>
       <div class="hero-art-well">${fill(m.art,artc,{dark:true})}${sponsored?'<div class="disc mono">-38%</div>':''}
         <div class="cap">${sponsored?`<div class="t">65" QLED 4K Smart TV</div><div class="pr">R7 499 <s>R11 999</s></div>`:`<div class="t">${m.label} buying guide</div><div class="pr" style="font-size:14px;color:#C7C5CE;font-family:var(--ui)">Independent · editor-written</div>`}</div></div>
     </div></div></section>
 
-    <!-- LEADERBOARD AD -->
-    <div class="wrap" style="padding:26px 32px 0"><div class="ad-slot ad-lead adzone" style="width:100%"><span class="adtag">Leaderboard</span><div><div class="lab">Leaderboard · 728×90 / 970×90</div><div class="dim">Sponsor display unit</div></div></div></div>
-
-    <!-- WHAT IOL DELIVERS -->
-    <div class="wrap" style="padding:22px 32px 0"><div class="deliver-note">
-      <span class="dn-k"><span class="ed"></span>Produced by IOL</span><span>Editorial, sponsor branding, partnered content &amp; newsletter — all delivered by us.</span>
-      <span class="dn-sep"></span>
-      <span class="dn-k"><span class="op"></span>Optional</span><span>The <b>Live Product Deals</b> module activates only if a retail partner supplies a product feed.</span>
-    </div></div>
+    <!-- LEADERBOARD AD (dev: revealed by ad-zones toggle) -->
+    <div class="wrap ad-holder" style="padding:26px 32px 0"><div class="ad-slot ad-lead adzone" style="width:100%"><span class="adtag">Leaderboard</span><div><div class="lab">Leaderboard · 728×90 / 970×90</div><div class="dim">Sponsor display unit</div></div></div></div>
 
     <!-- SPONSOR / EDITOR SPOTLIGHT (flips: brand feature ↔ product deal ↔ editorial) -->
     ${spotlight}
 
-    <!-- OPTIONAL SHOWCASE: LIVE PRODUCT DEALS (the one "what we could do" pillar) -->
+    <!-- TODAY'S TOP DEALS -->
     <section class="csec alt" id="catTopDeals"><div class="wrap">
-      <div class="csec-head"><div><div class="eye">Optional module · Example only</div><h2>Live Product Deals</h2>
-        <p>An example of what we can switch on for a retail or e-commerce partner able to supply a live product feed — not part of the standard editorial package.</p></div></div>
-      <div class="opt-wrap">
-        <div class="opt-flag">◇ Optional — requires a partner product feed</div>
-        <div class="opt-note">When a sponsor is an e-commerce retailer and can provide a feed, this becomes a live, filterable grid of their deals. <b>For editorial and non-retail sponsors we leave it off</b> and lead with the buying guides below — so the page is never dependent on a client delivering products.</div>
-        <div class="deals-rail">
-          <div class="deals-grid">${dealsHTML}</div>
-          <div class="ad-slot ad-mpu adzone" style="width:100%;height:520px"><span class="adtag">Sticky Sidebar · 300×600</span><div><div class="lab">Sticky Sidebar</div><div class="dim">300×600</div></div></div>
-        </div>
+      <div class="csec-head"><div><div class="eye">Today's Deals</div><h2>Top ${m.label} deals</h2>
+        <p>The best ${m.label.toLowerCase()} deals our editors have spotted this Black Friday.</p></div>${STATE.retailersActive?'<a class="clink">All deals →</a>':''}</div>
+      <div class="deals-rail">
+        <div class="deals-grid">${dealsHTML}</div>
+        <div class="ad-slot ad-mpu adzone" style="width:100%;height:520px"><span class="adtag">Sticky Sidebar · 300×600</span><div><div class="lab">Sticky Sidebar</div><div class="dim">300×600</div></div></div>
       </div>
     </div></section>
 
@@ -1307,13 +1268,13 @@ function renderCategory(key){
       <div class="bg-panel" id="bgPanel">${bgPanel(0)}</div>
     </div></section>
 
-    <!-- IN-ARTICLE AD -->
-    <div class="wrap"><div class="ad-slot adzone" style="width:100%;height:120px"><span class="adtag">In-Article Display</span><div><div class="lab">In-Article Display · Native</div><div class="dim">Responsive unit within editorial flow</div></div></div></div>
+    <!-- IN-ARTICLE AD (dev: revealed by ad-zones toggle) -->
+    <div class="wrap ad-holder"><div class="ad-slot adzone" style="width:100%;height:120px"><span class="adtag">In-Article Display</span><div><div class="lab">In-Article Display · Native</div><div class="dim">Responsive unit within editorial flow</div></div></div></div>
 
     <!-- SPONSOR PROMOTIONAL PANELS -->
     <section class="csec"><div class="wrap">
-      <div class="csec-head"><div><div class="eye">Sponsor Promotions</div><h2>${sponsored?'From AMPD':'Sponsor promotional panels'}</h2>
-        <p>Branded promotional creative supplied by the sponsor — no product feed required.</p></div><span class="ad-label">Paid placements</span></div>
+      <div class="csec-head"><div><div class="eye">Promotions</div><h2>${sponsored?'From AMPD':'This week’s offers'}</h2>
+        <p>Deals and offers from our retail partners.</p></div><span class="ad-label">Sponsored</span></div>
       <div class="promos adzone"><span class="adtag">Retailer Promotion Blocks</span>${promos}</div>
     </div></section>
 
@@ -1339,7 +1300,7 @@ function renderCategory(key){
     <!-- PARTNERED CONTENT -->
     <section class="csec alt"><div class="wrap">
       <div class="csec-head"><div><div class="eye">Partnered Content</div><h2>${sponsored?'From AMPD':'Sponsored stories'}</h2>
-        <p>Paid editorial, produced with the sponsor and clearly labelled as such.</p></div><span class="ad-label solid">Sponsored</span></div>
+        <p>Stories produced in partnership with our sponsor.</p></div><span class="ad-label solid">Sponsored</span></div>
       <div class="partnered adzone"><span class="adtag">Native Sponsored Modules</span>${partnered}</div>
     </div></section>
 
@@ -1381,9 +1342,10 @@ function switchGuide(btn,key,idx){
       <div class="bd"><div style="margin-bottom:12px">${tracked('this week')}</div><h3>${set[0][2]}</h3>
       <p>Our editors test, compare and rank — then tell you the one to buy and the ones to skip. Independent of any sponsor.</p>
       <div class="byl"><b>By ${set[0][3].split(' · ')[0]}</b> • ${set[0][3].split(' · ')[1]}</div></div></div>
+    <div class="bg-sides">
     ${set.slice(1).map(s=>`<a class="bg-side"><div class="a">${fill(s[0],s[1])}</div><div><h5>${s[2]}</h5><div class="m">${s[3]}</div></div></a>`).join('')}
     <a class="bg-side"><div class="a">${fill(set[0][0],set[0][1])}</div><div><h5>More ${g.toLowerCase()}</h5><div class="m">See the full list →</div></div></a>
-    <a class="bg-side"><div class="a">${fill(set[1][0],set[1][1])}</div><div><h5>${g}: editor's shortlist</h5><div class="m">Ranked picks</div></div></a>`;
+    <a class="bg-side"><div class="a">${fill(set[1][0],set[1][1])}</div><div><h5>${g}: editor's shortlist</h5><div class="m">Ranked picks</div></div></a></div>`;
 }
 
 /* ============================================================
@@ -1394,17 +1356,14 @@ function renderRetailers(){
   <section class="ret-hero"><div class="wrap">
     <div class="eye eyebrow" style="color:var(--amber)">Shop by Retailer</div>
     <h1>Because you don't shop<br>by category — you shop by store.</h1>
-    <p>Some shoppers want "a TV". Many more want "Takealot", "Sixty60" or "Makro". The Retailers tab meets them where their heads already are — and gives each store a natural home for a promotion.</p>
   </div></section>
   <section class="sec"><div class="wrap">
-    <div class="sec-head"><div class="l"><div class="sec-eye eyebrow">Live retailer hubs</div><h2 class="sec-title">Every major SA retailer, one place</h2></div>
-      <span class="ad-label">Retailer names illustrative · prototype</span></div>
+    <div class="sec-head"><div class="l"><div class="sec-eye eyebrow">By retailer</div><h2 class="sec-title">Every major SA retailer, one place</h2></div></div>
     <div class="ret-grid">
       ${RETAILERS.map(r=>`<div class="ret-card"><div class="ret-band" style="background:linear-gradient(135deg,${r.c},${r.c}cc)"><div class="wm">${r.n}</div></div>
-        <div class="bd"><div class="cat">${r.cat}</div><div class="live"><span class="n mono">${rand(40,320)}</span><span class="l">live deals tracked</span></div>
+        <div class="bd"><div class="cat">${r.cat}</div><div class="live"><span class="n mono">${rand(40,320)}</span><span class="l">deals live now</span></div>
         <button class="go">Browse ${r.n} deals →</button></div></div>`).join('')}
     </div>
-    <div class="disc" style="margin-top:30px;background:#fff;border-color:var(--line);color:var(--txt-soft)"><b>Editorial note.</b> Retailer names appear for illustration only. In production, each retailer hub is a clearly-labelled commercial placement — the IOL newsroom's independent deal coverage stays separate from any paid retailer promotion.</div>
   </div></section>
   ${FOOTER()}`;
   window.scrollTo(0,0);
@@ -1418,12 +1377,11 @@ function FOOTER(){return `<footer class="foot"><div class="wrap">
     <div style="max-width:320px"><span class="foot-logo"><img class="foot-logo-img" src="https://iol.co.za/_next/static/media/iol.2d0c9660.svg" alt="IOL" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><svg class="iolmark" style="display:none;height:30px;color:#111" viewBox="0 0 122 40" xmlns="http://www.w3.org/2000/svg"><path d="M2 0 L12 0 L2 21 Z" fill="#ED1C24"/><path d="M2 40 L2 24 L14 0 L22 0 L22 40 Z" fill="currentColor"/><rect x="32" y="0" width="40" height="40" rx="20" fill="currentColor"/><rect x="43" y="9" width="18" height="22" rx="9" fill="#fff"/><path d="M82 0 H100 V26 H120 V40 H82 Z" fill="currentColor"/></svg></span>
       <p style="margin-top:14px;font-size:13.5px;color:#8B8892">South Africa's Black Friday, covered by a newsroom. Independent deal journalism, expert reviews and honest buying guides.</p></div>
     <div class="foot-cols">
-      <div class="foot-col"><h6>Black Friday</h6><a onclick="showView('hub')">The Deals Desk</a><a onclick="showView('retailers')">Retailers</a><a onclick="showView('category','consumer-electronics')">Electronics</a></div>
+      <div class="foot-col"><h6>Black Friday</h6><a onclick="showView('hub')">The Deals Desk</a><a onclick="showView('category','consumer-electronics')">Electronics</a></div>
       <div class="foot-col"><h6>Sections</h6><a>News</a><a>Business</a><a>Lifestyle</a><a>Tech</a></div>
       <div class="foot-col"><h6>Company</h6><a>About IOL</a><a>Advertising</a><a>Editorial policy</a><a>Contact</a></div>
     </div>
   </div>
-  <div class="disc"><b>Editorial independence.</b> Deal selections, buying guides and reviews are produced independently by the IOL Deals Desk. Sponsored placements, partnered content and promotional panels are paid for and clearly labelled. Any prices shown are illustrative in this prototype.</div>
   <div class="foot-bottom"><span>© 2026 Independent Online (IOL). A prototype for stakeholder review — not a live commercial offer.</span><span>Built by Volt.Africa</span></div>
 </div></footer>`;}
 
@@ -1456,12 +1414,15 @@ function goDyk(i){STATE.dykIndex=(i+DIDYOUKNOW.length)%DIDYOUKNOW.length;const f
 function moveDyk(d){goDyk((STATE.dykIndex||0)+d);}
 
 function toggleZones(){document.body.classList.toggle('zones');$('#swZones').classList.toggle('on');}
+function toggleRetailers(){STATE.retailersActive=!STATE.retailersActive;$('#swRet').classList.toggle('on',STATE.retailersActive);
+  if(!STATE.retailersActive&&STATE.view==='retailers'){showView('hub');}else{buildTabs();if(STATE.view==='category')renderCategory(STATE.cat);}}
 function toggleSponsor(){STATE.sponsored=!STATE.sponsored;$('#swSpon').classList.toggle('on',STATE.sponsored);
   if(STATE.view==='category'&&STATE.cat==='consumer-electronics')renderCategory('consumer-electronics');}
 function toggleMode(){STATE.sponsorMode=STATE.sponsorMode==='product'?'brand':'product';$('#swMode').classList.toggle('on',STATE.sponsorMode==='product');
   if(STATE.view==='category')renderCategory(STATE.cat);}
 
 function showView(view,cat){
+  if(view==='retailers'&&!STATE.retailersActive){view='hub';cat=null;}
   STATE.view=view;STATE.cat=cat||null;
   if(view==='hub')renderHub();
   else if(view==='retailers')renderRetailers();
