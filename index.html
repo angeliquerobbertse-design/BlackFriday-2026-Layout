@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>IOL Black Friday 2026 — The Deals Desk</title>
+<title>IOL Black Friday 2026</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600&display=swap" rel="stylesheet">
 <style>
 /* ============================================================
-   IOL · BLACK FRIDAY 2026 — "THE DEALS DESK"
+   IOL · BLACK FRIDAY 2026
    Bespoke identity. Masthead = standard IOL. Below = campaign / sponsor.
    ============================================================ */
 :root{
@@ -441,6 +441,27 @@ body.zones .adtag{display:block}
 .deal .cta{margin-top:12px;background:var(--c-accent);color:var(--c-on-accent);font-weight:700;font-size:12.5px;padding:10px;border-radius:100px;text-align:center}
 .deal .cta:hover{filter:brightness(1.08)}
 
+/* Advice pillar: hide product-only sections */
+.cat.advice .adv-hide{display:none}
+
+/* Black Friday Tracker (sponsored, paid client inclusion) */
+.tracker-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(330px,1fr));gap:20px}
+.tracker{background:var(--c-card,#fff);border:1px solid var(--c-line,#E5DFD5);border-left:4px solid var(--tk,#1E9E6A);border-radius:var(--r-l,18px);padding:22px 24px}
+.tracker-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:14px;flex-wrap:wrap}
+.tracker-brand{display:flex;align-items:baseline;gap:9px;font-weight:800;font-size:16px;color:var(--c-ink,#0C0C0E)}
+.tracker-brand .tk-dot{width:10px;height:10px;border-radius:50%;background:var(--tk);align-self:center}
+.tracker-brand .tk-kind{font:600 11.5px/1 var(--ui);color:var(--c-mute,#8A8894)}
+.tracker-live{display:flex;align-items:center;gap:7px;font:700 11px/1 var(--ui);letter-spacing:.06em;text-transform:uppercase;color:var(--tk)}
+.tracker-live .tk-pulse{width:8px;height:8px;border-radius:50%;background:var(--tk);animation:pulse 1.4s infinite}
+.tracker-list{display:flex;flex-direction:column;margin-bottom:6px}
+.tracker-row{display:grid;grid-template-columns:34px 128px 1fr;align-items:center;gap:10px;padding:11px 0;border-top:1px solid var(--c-line,#Eee)}
+.tracker-row:first-child{border-top:0}
+.tk-rank{font-family:var(--mono);font-weight:700;color:var(--tk);font-size:14px}
+.tk-store{font-weight:700;font-size:13.5px;color:var(--c-ink,#0C0C0E)}
+.tk-deal{font-size:13px;color:var(--c-soft,#55535C)}
+.tracker-foot{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-top:14px;margin-top:8px;border-top:1px solid var(--c-line,#EEE)}
+.tracker-cta{font-weight:700;font-size:13px;color:var(--tk);cursor:pointer}
+
 /* buying guide tabs */
 .bg-tabs{display:flex;gap:8px;margin-bottom:24px;flex-wrap:wrap}
 .bg-tab{padding:10px 18px;border-radius:100px;font-weight:600;font-size:13.5px;background:var(--c-card);border:1px solid var(--c-line);color:var(--c-soft)}
@@ -803,7 +824,7 @@ body.zones .deals-rail{grid-template-columns:1fr 300px}
     <div class="proto-row">Activate Retailers (needs feed) <div class="switch" id="swRet" onclick="toggleRetailers()"></div></div>
     <div class="proto-row">Sponsor takeover (Electronics) <div class="switch on" id="swSpon" onclick="toggleSponsor()"></div></div>
     <div class="proto-row">Spotlight: product deal <div class="switch" id="swMode" onclick="toggleMode()"></div></div>
-    <div class="proto-row" style="cursor:pointer" onclick="showView('category','consumer-electronics')">Open sponsored category →</div>
+    <div class="proto-row" style="cursor:pointer" onclick="showView('category','electronics')">Open sponsored category →</div>
   </div>
   <button class="proto-toggle" onclick="document.getElementById('protoPanel').classList.toggle('hide')"><span class="g"></span>Prototype</button>
 </div>
@@ -815,17 +836,32 @@ body.zones .deals-rail{grid-template-columns:1fr 300px}
 const DESTS = [
   {key:'deals', label:'Deals', view:'hub'},
   {key:'retailers', label:'Retailers', view:'retailers'},
-  {key:'groceries-fmcg', label:'Groceries & FMCG'},
-  {key:'consumer-electronics', label:'Consumer Electronics', owned:true},
-  {key:'beauty-personal-care', label:'Beauty & Personal Care'},
-  {key:'major-appliances', label:'Major Appliances'},
-  {key:'small-kitchen-appliances', label:'Small Kitchen Appliances'},
-  {key:'fashion-apparel', label:'Fashion & Apparel'},
-  {key:'health-wellness-pharmacy', label:'Health, Wellness & Pharmacy'},
-  {key:'gaming', label:'Gaming'},
-  {key:'homeware-home-organisation', label:'Homeware & Home Organisation'},
-  {key:'mobile-phones-telecoms', label:'Mobile Phones & Telecoms'},
+  {key:'electronics', label:'Black Friday Electronics', owned:true},
+  {key:'appliances', label:'Black Friday Appliances'},
+  {key:'advice', label:'Black Friday Advice'},
 ];
+
+/* per-pillar buying guides (shared by renderCategory + switchGuide) */
+const GUIDES = {
+  electronics:{
+    'Best TVs':[['tv','#0ea5e9','The 5 best TVs to buy this Black Friday','Tech Desk · 9 min'],['tv','#8b5cf6','OLED vs QLED: which is worth it?','Reviews · 6 min'],['soundbar','#f59e0b','Best soundbars to pair with a new TV','Audio · 5 min']],
+    'Laptops':[['laptop','#10b981','Which laptop for which person?','Tech Desk · 8 min'],['laptop','#6366f1','Best student laptops under R12 000','Guides · 5 min'],['laptop','#ef4444','Gaming laptops: the real-world picks','Gaming · 7 min']],
+    'Phones':[['phone','#0ea5e9','iPhone vs Samsung: the upgrade call','Mobile · 7 min'],['phone','#22c55e','Best mid-range phones on deal','Mobile · 5 min'],['router','#f59e0b','Contract vs prepaid: the maths','Telecoms · 6 min']],
+    'Audio':[['headphone','#8b5cf6','Best noise-cancelling headphones','Audio · 6 min'],['headphone','#0ea5e9','True-wireless earbuds, ranked','Audio · 5 min'],['soundbar','#ef4444','Budget audio that punches up','Reviews · 4 min']],
+  },
+  appliances:{
+    'Fridges & Freezers':[['fridge','#0ea5e9','The fridge buying guide 2026','Reviews · 8 min'],['fridge','#8b5cf6','Side-by-side vs top-freezer: which fits','Guides · 5 min'],['fridge','#f59e0b','When to repair vs replace','Advice · 4 min']],
+    'Laundry':[['fridge','#10b981','Washing machines, explained','Reviews · 7 min'],['fridge','#6366f1','Front vs top loader: the real cost','Guides · 5 min'],['fridge','#ef4444','Tumble dryers worth the money','Reviews · 5 min']],
+    'Air Fryers':[['airfryer','#f59e0b','Air fryers, ranked','Reviews · 6 min'],['airfryer','#22c55e','Single vs dual-basket: which to buy','Guides · 4 min'],['airfryer','#8b5cf6','The accessories actually worth it','Guides · 3 min']],
+    'Coffee & Kitchen':[['coffee','#0ea5e9','Coffee machine buying guide','Reviews · 6 min'],['coffee','#ef4444','Bean-to-cup vs capsule: the maths','Guides · 5 min'],['airfryer','#6366f1','Blenders & kettles: the picks','Reviews · 4 min']],
+  },
+  advice:{
+    'When to Buy':[['lamp','#0ea5e9','Is Black Friday actually the cheapest day?','Editorial · 6 min'],['lamp','#8b5cf6','The categories that drop hardest','Guides · 5 min'],['watch','#f59e0b','Early vs day-of: timing your buy','Advice · 4 min']],
+    'Spot a Fake Deal':[['lamp','#ef4444','How to spot a fake “was” price','Editorial · 5 min'],['laptop','#22c55e','Reading the spec, not the hype','Guides · 5 min'],['phone','#6366f1','The discount tricks to ignore','Advice · 4 min']],
+    'Budget Smart':[['lamp','#10b981','Set a Black Friday budget that holds','Advice · 5 min'],['watch','#0ea5e9','Total cost: delivery, warranties, extras','Guides · 4 min'],['lamp','#8b5cf6','Needs vs wants: the 24-hour rule','Advice · 3 min']],
+    'Pay & Protect':[['router','#f59e0b','Paying safely online this Black Friday','Advice · 5 min'],['phone','#ef4444','Card-linked deals & how they work','Guides · 4 min'],['lamp','#22c55e','Your rights if a deal goes wrong','Advice · 4 min']],
+  },
+};
 
 /* inline SVG product art (self-contained, no external images) */
 const ART = {
@@ -855,20 +891,20 @@ const TICKER = [
   'Explainer: How to spot a fake “was” price',
   'Buying guide: Air fryers, ranked',
   'Comparison: iPhone vs Samsung — the smarter upgrade',
-  'From the Deals Desk: what to expect on the day',
+  'From the IOL newsroom: what to expect on the day',
   'Editor’s pick of the day — updated through November',
 ];
 
 /* featured carousel — editorial features (buying guides & roundups) */
 const FEATURED = [
-  {ret:'Deal Roundup',art:'controller',color:'#D42128',title:'The 30 best Black Friday deals in South Africa, ranked',copy:'Our Deals Desk sifts the “specials” from the genuinely good buys — an independent, editor-curated shortlist, updated through November.',byline:'IOL Deals Desk',meta:'12 min read'},
+  {ret:'Deal Roundup',art:'controller',color:'#D42128',title:'The 30 best Black Friday deals in South Africa, ranked',copy:'Our editors sift the “specials” from the genuinely good buys — an independent, editor-curated shortlist, updated through November.',byline:'IOL Editorial',meta:'12 min read'},
   {ret:'Buying Guide',art:'tv',color:'#111114',title:'How to buy a TV this Black Friday without overpaying',copy:'What actually matters — panel, size, smart platform — and the traps to avoid when a “half price” TV isn’t. Expert, independent advice.',byline:'IOL Tech Desk',meta:'9 min read'},
   {ret:'Best Under R500',art:'headphone',color:'#D42128',title:'23 genuinely good gifts for under R500',copy:'Thoughtful, useful and actually affordable — our editors’ pick of the best small buys for every person on your list.',byline:'IOL Lifestyle',meta:'7 min read'},
 ];
 
 /* editor picks */
 const PICKS = {
-  lead:{cat:'Deal Roundup',art:'controller',color:'#D42128',title:'The 30 best Black Friday deals in South Africa, chosen by our editors',copy:'Our Deals Desk sifts the noise to surface the genuinely good buys — independently chosen, never sponsored. Refreshed through November.',byline:'IOL Deals Desk',meta:'12 min read'},
+  lead:{cat:'Deal Roundup',art:'controller',color:'#D42128',title:'The 30 best Black Friday deals in South Africa, chosen by our editors',copy:'Our editors sift the noise to surface the genuinely good buys — independently chosen, never sponsored. Refreshed through November.',byline:'IOL Editorial',meta:'12 min read'},
   items:[
     {cat:'Buying Guide',art:'tv',color:'#E2951C',title:'Which TV should you actually buy this Black Friday?',byline:'Tech Desk',meta:'Expert guide'},
     {cat:'Best Under R500',art:'headphone',color:'#1E9E6A',title:'23 genuinely good gifts for under R500',byline:'Lifestyle',meta:'Roundup'},
@@ -889,7 +925,7 @@ const SAVINGS = [
 /* trending */
 const TRENDING = [
   {t:'Takealot vs Makro: who really has the cheapest electronics?',m:'Price Comparison · 4.2k reading now'},
-  {t:'"Fake" Black Friday deals to avoid — spotted by our Deals Desk',m:'Investigation · 3.8k reading now'},
+  {t:'"Fake" Black Friday deals to avoid — spotted by our editors',m:'Investigation · 3.8k reading now'},
   {t:'Best premium picks: splurge-worthy buys that are actually discounted',m:'Roundup · 2.9k reading now'},
   {t:'Checkers Sixty60 grocery deals: the R500 basket challenge',m:'Groceries & FMCG · 2.4k reading now'},
   {t:'iPhone vs Samsung: the smarter Black Friday upgrade',m:'Buying Guide · 2.1k reading now'},
@@ -933,7 +969,7 @@ function fill(art,color,{disc,dark,cls=''}={}){
   return `<div class="fill ${dark?'dk':''} ${cls}" style="--k:${color}">${ART[art]||''}${disc?`<div class="disc">${disc}</div>`:''}</div>`;
 }
 const TRACK_ICON=`<svg viewBox="0 0 24 24" fill="none"><path d="M12 20h9" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><path d="M16.5 3.5a2 2 0 0 1 3 3L7 19l-4 1 1-4 12.5-12.5Z" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/></svg>`;
-function tracked(_label,dark){return `<span class="tracked ${dark?'dark':''}">${TRACK_ICON} IOL Deals Desk</span>`;}
+function tracked(_label,dark){return `<span class="tracked ${dark?'dark':''}">${TRACK_ICON} IOL Editorial</span>`;}
 
 /* ---------- BUILD STICKY SUB-NAV TABS ---------- */
 function buildTabs(){
@@ -951,6 +987,34 @@ function scrollTabs(dir){$('#bftabs').scrollBy({left:dir*280,behavior:'smooth'})
 /* ============================================================
    HUB (Black Friday landing)
    ============================================================ */
+/* ============================================================
+   BLACK FRIDAY TRACKERS  (sponsored, paid client inclusions)
+   Illustrative sponsors — real client trackers slot in here.
+   ============================================================ */
+const TRACKERS = [
+  {name:'Summit Bank', kind:'Card-linked deal tracker', accent:'#1E9E6A',
+   items:[['Takealot','Electronics — up to 50% off'],['iStore','Apple — up to R4 000 off'],['Makro','Big appliances — up to 45% off']],
+   cta:'See all deals for Summit cardholders'},
+  {name:'HomePlus', kind:'Appliance sale tracker', accent:'#E2951C',
+   items:[['Hirsch’s','Fridges — up to 40% off'],['Game','Small kitchen — up to 55% off'],['Builders','Home — up to 35% off']],
+   cta:'Track the biggest appliance deals'},
+  {name:'GadgetWatch', kind:'Tech price tracker', accent:'#3B82F6',
+   items:[['Incredible Connection','Laptops — up to R6 000 off'],['HiFi Corp','TVs — up to 42% off'],['Vodacom','Phones — deals daily'],],
+   cta:'Follow the biggest tech drops'},
+];
+function renderTracker(t, compact){
+  return `<div class="tracker" style="--tk:${t.accent}">
+    <div class="tracker-head">
+      <div class="tracker-brand"><span class="tk-dot"></span>${t.name}<span class="tk-kind">${t.kind}</span></div>
+      <span class="tracker-live"><span class="tk-pulse"></span>Live · updated hourly</span>
+    </div>
+    <div class="tracker-list">
+      ${t.items.map((it,i)=>`<div class="tracker-row"><span class="tk-rank">${String(i+1).padStart(2,'0')}</span><span class="tk-store">${it[0]}</span><span class="tk-deal">${it[1]}</span></div>`).join('')}
+    </div>
+    <div class="tracker-foot">${compact?'<span></span>':'<span class="ad-label">Sponsored</span>'}<a class="tracker-cta">${t.cta} →</a></div>
+  </div>`;
+}
+
 function renderHub(){
   const destCards=DESTS.filter(d=>!d.view).map(d=>{
     const artmap={'groceries-fmcg':'coffee','consumer-electronics':'tv','beauty-personal-care':'lipstick','major-appliances':'fridge','small-kitchen-appliances':'airfryer','fashion-apparel':'shirt','health-wellness-pharmacy':'pill','gaming':'controller','homeware-home-organisation':'lamp','mobile-phones-telecoms':'phone'};
@@ -971,7 +1035,7 @@ function renderHub(){
         <p>${f.copy}</p>
         <div style="margin:6px 0 22px">${tracked('',true)}</div>
         <div class="car-meta">By ${f.byline} · ${f.meta}</div>
-        <div class="car-cta"><button class="btn-amber">Read the guide</button><button class="btn-ghost">More from the Deals Desk</button></div>
+        <div class="car-cta"><button class="btn-amber">Read the guide</button><button class="btn-ghost">More from IOL</button></div>
       </div>
     </div>`).join('');
 
@@ -1003,7 +1067,7 @@ function renderHub(){
     {c:'Best Under R500',art:'headphone',color:'#111114',t:'21 clever gifts that punch above R500'},
     {c:'Buying Guide',art:'coffee',color:'#D42128',t:'How to buy a coffee machine you won\'t regret'},
     {c:'Investigation',art:'phone',color:'#111114',t:'The "was-price" trick: how to read a real discount'},
-  ].map(m=>`<div class="mr"><div class="mr-art">${fill(m.art,m.color)}</div><div class="c">${m.c}</div><h5>${m.t}</h5><div class="m">IOL Deals Desk</div></div>`).join('');
+  ].map(m=>`<div class="mr"><div class="mr-art">${fill(m.art,m.color)}</div><div class="c">${m.c}</div><h5>${m.t}</h5><div class="m">IOL Editorial</div></div>`).join('');
 
   app.innerHTML=`
   <!-- HERO -->
@@ -1011,13 +1075,8 @@ function renderHub(){
     <div class="wrap">
       <div class="hero-grid">
         <div>
-          <div class="hero-kicker">The Deals Desk presents</div>
+          <div class="hero-kicker">IOL Editorial</div>
           <h1 class="hero-h1">Black&nbsp;Friday<br>2026.</h1>
-          <div class="integrity">
-            <span class="k"><span class="ed"></span>Editorial</span><span>independently chosen, never sponsored</span>
-            <span class="sep"></span>
-            <span class="k"><span class="sp"></span>Sponsored</span><span>clearly labelled, always</span>
-          </div>
         </div>
         <div class="countdown">
           <div class="cd-label">◷ Black Friday countdown</div>
@@ -1027,6 +1086,7 @@ function renderHub(){
             <div class="cd-cell"><div class="n" id="cdM">00</div><div class="u">Min</div></div>
             <div class="cd-cell"><div class="n" id="cdS">00</div><div class="u">Sec</div></div>
           </div>
+          <div class="cd-foot" style="justify-content:center"><span>Section live <b>1–30 November 2026</b></span></div>
         </div>
       </div>
     </div>
@@ -1037,7 +1097,7 @@ function renderHub(){
 
   <!-- FEATURED CAROUSEL -->
   <section class="sec" style="padding-top:8px"><div class="wrap">
-    <div class="sec-head"><div class="l"><div class="sec-eye eyebrow">The Deals Desk · Featured</div>
+    <div class="sec-head"><div class="l"><div class="sec-eye eyebrow">IOL Editorial · Featured</div>
       <h2 class="sec-title">Featured this Black Friday</h2>
       <p class="sec-desc">Our editors' buying guides and roundups — independent journalism to help you spend well, whatever the retailers are advertising.</p></div></div>
     <div class="carousel"><div class="car-view"><div class="car-track" id="carTrack">${car}</div></div>
@@ -1055,14 +1115,20 @@ function renderHub(){
     <div class="picks">${picks}</div>
   </div></section>
 
-  <!-- EDITOR'S DEAL PICKS + TRENDING -->
-  <section class="sec" style="padding-top:8px"><div class="wrap"><div class="split">
-    <div><div class="sec-head" style="margin-bottom:14px"><div class="l"><div class="sec-eye eyebrow">Editor's Deal Picks</div><h2 class="sec-title" style="font-size:30px">Hand-picked by the Deals Desk</h2></div></div>
-      <p style="font-size:12.5px;color:var(--txt-mute);margin:-2px 0 14px">A small, curated set our editors have spotted and stand behind. Prices correct at time of publishing.</p>
-      <div class="savings-list">${savings}</div></div>
-    <div><div class="sec-head" style="margin-bottom:18px"><div class="l"><div class="sec-eye eyebrow">Trending Offers</div><h2 class="sec-title" style="font-size:30px">Most-read right now</h2></div></div>
-      <div class="trend-list">${trend}</div></div>
-  </div></div></section>
+  <!-- TRENDING -->
+  <section class="sec" style="padding-top:8px"><div class="wrap">
+    <div class="sec-head"><div class="l"><div class="sec-eye eyebrow">Trending</div><h2 class="sec-title">Most-read right now</h2></div></div>
+    <div class="trend-list">${trend}</div>
+  </div></section>
+
+  <!-- BLACK FRIDAY TRACKERS (sponsored · paid client inclusions) -->
+  <section class="sec" style="padding-top:8px"><div class="wrap">
+    <div class="sec-head"><div class="l"><div class="sec-eye eyebrow">Black Friday Trackers</div>
+      <h2 class="sec-title">The biggest sales, tracked live</h2>
+      <p class="sec-desc">Sponsored trackers keep readers on top of the biggest Black Friday deals — updated through the month by our partners. Banks and retailers can sponsor a tracker within the section.</p></div>
+      <span class="ad-label">Sponsored</span></div>
+    <div class="tracker-grid">${TRACKERS.map(t=>renderTracker(t)).join('')}</div>
+  </div></section>
 
   <!-- MOST READ -->
   <section class="sec"><div class="wrap">
@@ -1082,24 +1148,20 @@ function renderHub(){
 function catMeta(key){
   const d=DESTS.find(x=>x.key===key)||{label:key};
   const map={
-    'consumer-electronics':{art:'tv',hero:'The screens, sound and tech worth the spend.',pop:['65" TV','Soundbar','Laptop','Wireless Earbuds','Smartwatch','Projector','Monitor','Tablet']},
-    'groceries-fmcg':{art:'coffee',hero:'The trolley-fillers and pantry stock-ups that add up.',pop:['Coffee','Cleaning Bulk','Snacks','Baby','Pet Food','Beverages']},
-    'beauty-personal-care':{art:'lipstick',hero:'Skincare, fragrance and gifting, beautifully discounted.',pop:['Skincare','Fragrance','Haircare','Gift Sets','Makeup']},
-    'major-appliances':{art:'fridge',hero:'Fridges, washers and the big-ticket upgrades.',pop:['Fridge','Washing Machine','Dishwasher','Tumble Dryer','Freezer']},
-    'small-kitchen-appliances':{art:'airfryer',hero:'Air fryers, coffee and countertop favourites.',pop:['Air Fryer','Coffee Machine','Blender','Kettle','Microwave']},
-    'fashion-apparel':{art:'shirt',hero:'Wardrobe refreshes and footwear steals.',pop:['Sneakers','Denim','Activewear','Outerwear','Kids']},
-    'health-wellness-pharmacy':{art:'pill',hero:'Supplements, wellness and pharmacy essentials.',pop:['Vitamins','Fitness','Oral Care','First Aid','Wellness']},
-    'gaming':{art:'controller',hero:'Consoles, chairs and titles for the win.',pop:['Console','Gaming Chair','Headset','Titles','Graphics Card']},
-    'homeware-home-organisation':{art:'lamp',hero:'Lighting, storage and the calm, sorted home.',pop:['Lighting','Storage','Bedding','Décor','Cookware']},
-    'mobile-phones-telecoms':{art:'phone',hero:'Handsets, contracts and connectivity deals.',pop:['iPhone','Samsung','Router','Contract','Prepaid']},
+    'electronics':{art:'tv',hero:'The screens, sound and tech worth the spend.',h1:'Tech that’s<br><em>actually</em> a deal.',pop:['65" TV','Soundbar','Laptop','Wireless Earbuds','Smartwatch','Monitor']},
+    'appliances':{art:'fridge',hero:'Fridges, washers and countertop upgrades — the big-ticket buys done right.',h1:'Big-ticket buys,<br><em>done right.</em>',pop:['Fridge','Washing Machine','Air Fryer','Coffee Machine','Dishwasher','Microwave']},
+    'advice':{art:'lamp',hero:'How to shop the season smart — and spot a deal that isn’t.',h1:'Shop smart.<br><em>Spend better.</em>',pop:['Best time to buy','Spotting fake deals','Budgeting','Payment safety'],advice:true},
   };
-  return {...d,...(map[key]||{art:'tv',hero:'The season\'s best, editorially chosen.',pop:['Deals']})};
+  return {...d,...(map[key]||{art:'tv',hero:'The season\'s best, editorially chosen.',h1:m=>key,pop:['Deals']})};
 }
 
 function renderCategory(key){
   const m=catMeta(key);
-  const isCE=key==='consumer-electronics';
-  const sponsored=isCE&&STATE.sponsored;
+  const isElectronics=key==='electronics';
+  const isAppliances=key==='appliances';
+  const isAdvice=!!m.advice;
+  const canSponsor=isElectronics;
+  const sponsored=canSponsor&&STATE.sponsored;
   const accent=sponsored?'#D4FF3F':'#D42128';
   const artc=sponsored?'#D4FF3F':'#D42128';
   const dk=sponsored;
@@ -1114,12 +1176,7 @@ function renderCategory(key){
     </div></div>`:'';
 
   // buying guides tabs (CE gets full set)
-  const guides={
-    'Best TVs':[['tv','#0ea5e9','The 5 best TVs to buy this Black Friday','Tech Desk · 9 min'],['tv','#8b5cf6','OLED vs QLED: which is worth it?','Reviews · 6 min'],['soundbar','#f59e0b','Best soundbars to pair with a new TV','Audio · 5 min']],
-    'Laptop Buying Guide':[['laptop','#10b981','Which laptop for which person?','Tech Desk · 8 min'],['laptop','#6366f1','Best student laptops under R12 000','Guides · 5 min'],['laptop','#ef4444','Gaming laptops: the real-world picks','Gaming · 7 min']],
-    'Phone Deals':[['phone','#0ea5e9','iPhone vs Samsung: the upgrade call','Mobile · 7 min'],['phone','#22c55e','Best mid-range phones on deal','Mobile · 5 min'],['router','#f59e0b','Contract vs prepaid: the maths','Telecoms · 6 min']],
-    'Headphone Deals':[['headphone','#8b5cf6','Best noise-cancelling headphones','Audio · 6 min'],['headphone','#0ea5e9','True-wireless earbuds, ranked','Audio · 5 min'],['soundbar','#ef4444','Budget audio that punches up','Reviews · 4 min']],
-  };
+  const guides=GUIDES[key]||GUIDES.electronics;
   const gk=Object.keys(guides);
   const bgTabs=gk.map((g,i)=>`<button class="bg-tab ${i===0?'on':''}" onclick="switchGuide(this,'${key}',${i})">${g}</button>`).join('');
   function bgPanel(idx){const set=guides[gk[idx]];const g=gk[idx];return `
@@ -1134,7 +1191,7 @@ function renderCategory(key){
   }
 
   // top deals
-  const dealsHTML=(isCE?[
+  const dealsHTML=(isElectronics?[
     ['tv','65" QLED 4K Smart TV','AMPD','R11 999','R18 999','-37%'],
     ['laptop','14" Ultrabook 16GB/512GB','AMPD','R10 499','R16 999','-38%'],
     ['headphone','Noise-Cancelling Headphones','AMPD','R1 649','R3 299','-50%'],
@@ -1145,7 +1202,7 @@ function renderCategory(key){
     [m.art,'Premium Choice','—','R9 999','R14 499','-31%'],
     [m.art,'Best Under R500','—','R449','R899','-50%'],
   ]).map(d=>`<div class="deal"><div class="deal-art">${fill(d[0],artc,{dark:dk})}</div>
-    <div class="deal-body"><div class="rt">${d[2]==='—'?'IOL Deals Desk':d[2]}</div><h5>${d[1]}</h5>
+    <div class="deal-body"><div class="rt">${d[2]==='—'?'IOL Editorial':d[2]}</div><h5>${d[1]}</h5>
     <button class="cta">Read more</button></div></div>`).join('');
 
   // price comparison
@@ -1215,7 +1272,7 @@ function renderCategory(key){
         <h2>${brandMode?'A word from AMPD':productMode?"AMPD's headline offer":'The one our editors rate'}</h2>
         <p>${brandMode?'In partnership with AMPD.':productMode?'In partnership with AMPD.':"Our editors' standout pick this Black Friday."}</p></div>
         ${sponsored?'<span class="ad-label solid">'+(brandMode?'Sponsored Feature':'Sponsored Spotlight')+'</span>':'<span>'+tracked('',false)+'</span>'}</div>
-      <div class="echoice"><div class="a">${fill(isCE?'tv':m.art,artc,{dark:true})}${productMode?'<div class="disc" style="position:absolute;top:16px;left:16px;background:var(--red);color:#fff;font:700 15px/1 var(--mono);padding:10px 13px;border-radius:100px">-37%</div>':''}</div>
+      <div class="echoice"><div class="a">${fill(m.art,artc,{dark:true})}${productMode?'<div class="disc" style="position:absolute;top:16px;left:16px;background:var(--red);color:#fff;font:700 15px/1 var(--mono);padding:10px 13px;border-radius:100px">-37%</div>':''}</div>
         <div class="bd"><div class="ribbon">${brandMode?'In partnership with AMPD':productMode?'AMPD Exclusive':"Editor's Pick"}</div>
           <h3>${brandMode?'Smarter tech, for the way South Africa really lives':productMode?'65" QLED 4K Smart TV — the big-screen pick of Black Friday':m.label+" — the season's standout"}</h3>
           <p>${brandMode?'This Black Friday, AMPD is helping South Africans upgrade with confidence — expert advice, real support and a range built for everyday life. Discover their story and what to look for before you buy.':productMode?"AMPD's headline offer this Black Friday — reference-grade brightness and a genuinely good smart platform.":"Reference-grade brightness and a genuinely good smart platform — our editors' top big-screen pick this season."}</p>
@@ -1228,16 +1285,16 @@ function renderCategory(key){
 
   app.innerHTML=`
   ${strip}
-  <div class="cat ${sponsored?'sponsored':''}">
+  <div class="cat ${sponsored?'sponsored':''} ${isAdvice?'advice':''}">
 
     <!-- HERO -->
     <section class="cat-hero"><div class="wrap"><div class="cat-hero-grid">
       <div>
-        <span class="cat-eye">${sponsored?'◈ AMPD × IOL':'Black Friday Destination'} · ${m.label}</span>
-        <h1>${isCE?'Tech that\'s<br><em>actually</em> a deal.':m.label.replace(' & ',' &<br>')}</h1>
-        <p>${m.hero} ${sponsored?'Brought to you by AMPD — with IOL\'s independent editorial coverage clearly separated from paid placements.':'Buying guides, expert reviews and editor-curated picks from the IOL Deals Desk — independent of any sponsor.'}</p>
-        <div class="cat-hero-cta"><button class="btn-amber" style="${sponsored?'background:#D4FF3F':''}" onclick="$('#catGuides')?.scrollIntoView({behavior:'smooth'})">Read the buying guides</button>
-          ${STATE.retailersActive?`<button class="btn-ghost" onclick="$('#catTopDeals')?.scrollIntoView({behavior:'smooth'})">See the deals</button>`:''}</div>
+        <span class="cat-eye">${sponsored?'◈ AMPD × IOL':isAdvice?'IOL Editorial':'Black Friday Pillar'} · ${m.label}</span>
+        <h1>${m.h1||m.label}</h1>
+        <p>${m.hero} ${sponsored?'Brought to you by AMPD — with IOL\'s independent editorial coverage clearly separated from paid placements.':isAdvice?'Practical, independent guidance from the IOL newsroom — no sponsor required.':'Buying guides, expert reviews and editor-curated picks from IOL’s newsroom — independent of any sponsor.'}</p>
+        <div class="cat-hero-cta"><button class="btn-amber" style="${sponsored?'background:#D4FF3F':''}" onclick="$('#catGuides')?.scrollIntoView({behavior:'smooth'})">${isAdvice?'Read the advice':'Read the buying guides'}</button>
+          ${STATE.retailersActive&&!isAdvice?`<button class="btn-ghost" onclick="$('#catTopDeals')?.scrollIntoView({behavior:'smooth'})">See the deals</button>`:''}</div>
         <div style="margin-top:20px">${tracked('',true)}</div>
       </div>
       <div class="hero-art-well">${fill(m.art,artc,{dark:true})}${sponsored?'<div class="disc mono">-38%</div>':''}
@@ -1248,22 +1305,29 @@ function renderCategory(key){
     <div class="wrap ad-holder" style="padding:26px 32px 0"><div class="ad-slot ad-lead adzone" style="width:100%"><span class="adtag">Leaderboard</span><div><div class="lab">Leaderboard · 728×90 / 970×90</div><div class="dim">Sponsor display unit</div></div></div></div>
 
     <!-- SPONSOR / EDITOR SPOTLIGHT (flips: brand feature ↔ product deal ↔ editorial) -->
-    ${spotlight}
+    ${isAdvice?'':spotlight}
 
     <!-- TODAY'S TOP DEALS -->
-    <section class="csec alt" id="catTopDeals"><div class="wrap">
-      <div class="csec-head"><div><div class="eye">Today's Deals</div><h2>Top ${m.label} deals</h2>
-        <p>The best ${m.label.toLowerCase()} deals our editors have spotted this Black Friday.</p></div>${STATE.retailersActive?'<a class="clink">All deals →</a>':''}</div>
+    <section class="csec alt adv-hide" id="catTopDeals"><div class="wrap">
+      <div class="csec-head"><div><div class="eye">Today's Deals</div><h2>Top ${m.label.replace('Black Friday ','')} deals</h2>
+        <p>The best deals our editors have spotted this Black Friday.</p></div>${STATE.retailersActive?'<a class="clink">All deals →</a>':''}</div>
       <div class="deals-rail">
         <div class="deals-grid">${dealsHTML}</div>
         <div class="ad-slot ad-mpu adzone" style="width:100%;height:520px"><span class="adtag">Sticky Sidebar · 300×600</span><div><div class="lab">Sticky Sidebar</div><div class="dim">300×600</div></div></div>
       </div>
     </div></section>
 
+    <!-- BLACK FRIDAY TRACKER (sponsored · paid client inclusion) -->
+    <section class="csec adv-hide"><div class="wrap">
+      <div class="csec-head"><div><div class="eye">Black Friday Tracker</div><h2>The biggest sales, tracked live</h2>
+        <p>A sponsored tracker keeps readers on the biggest ${m.label.replace('Black Friday ','').toLowerCase()} deals — updated through the month by our partner.</p></div><span class="ad-label">Sponsored</span></div>
+      ${renderTracker(TRACKERS[isAppliances?1:0], true)}
+    </div></section>
+
     <!-- BUYING GUIDES -->
     <section class="csec" id="catGuides"><div class="wrap">
-      <div class="csec-head"><div><div class="eye">Buying Guides</div><h2>Independent buying guides</h2>
-        <p>Editorial, never sponsored — our reviewers pick the winners across ${m.label.toLowerCase()}.</p></div></div>
+      <div class="csec-head"><div><div class="eye">${isAdvice?'Advice':'Buying Guides'}</div><h2>${isAdvice?'Shop smart: advice & how-to':'Independent buying guides'}</h2>
+        <p>${isAdvice?'Practical, independent advice from the IOL newsroom.':'Editorial, never sponsored — our reviewers pick the winners.'}</p></div></div>
       <div class="bg-tabs">${bgTabs}</div>
       <div class="bg-panel" id="bgPanel">${bgPanel(0)}</div>
     </div></section>
@@ -1272,21 +1336,21 @@ function renderCategory(key){
     <div class="wrap ad-holder"><div class="ad-slot adzone" style="width:100%;height:120px"><span class="adtag">In-Article Display</span><div><div class="lab">In-Article Display · Native</div><div class="dim">Responsive unit within editorial flow</div></div></div></div>
 
     <!-- SPONSOR PROMOTIONAL PANELS -->
-    <section class="csec"><div class="wrap">
+    <section class="csec adv-hide"><div class="wrap">
       <div class="csec-head"><div><div class="eye">Promotions</div><h2>${sponsored?'From AMPD':'This week’s offers'}</h2>
         <p>Deals and offers from our retail partners.</p></div><span class="ad-label">Sponsored</span></div>
       <div class="promos adzone"><span class="adtag">Retailer Promotion Blocks</span>${promos}</div>
     </div></section>
 
     <!-- EXPERT RECOMMENDATIONS -->
-    <section class="csec alt"><div class="wrap">
+    <section class="csec alt adv-hide"><div class="wrap">
       <div class="csec-head"><div><div class="eye">Expert Recommendations</div><h2>Our editors' verdict</h2>
         <p>Independent recommendations from the IOL Reviews desk — opinion, clearly ours.</p></div><a class="clink">All reviews →</a></div>
       <div class="reviews">${reviews}</div>
     </div></section>
 
     <!-- VIDEOS -->
-    <section class="csec alt"><div class="wrap">
+    <section class="csec alt adv-hide"><div class="wrap">
       <div class="csec-head"><div><div class="eye">Video Reviews</div><h2>Watch before you buy</h2></div></div>
       <div class="videos">${videos}</div>
     </div></section>
@@ -1298,19 +1362,10 @@ function renderCategory(key){
     </div></section>
 
     <!-- PARTNERED CONTENT -->
-    <section class="csec alt"><div class="wrap">
+    <section class="csec alt adv-hide"><div class="wrap">
       <div class="csec-head"><div><div class="eye">Partnered Content</div><h2>${sponsored?'From AMPD':'Sponsored stories'}</h2>
         <p>Stories produced in partnership with our sponsor.</p></div><span class="ad-label solid">Sponsored</span></div>
       <div class="partnered adzone"><span class="adtag">Native Sponsored Modules</span>${partnered}</div>
-    </div></section>
-
-    <!-- NEWSLETTER -->
-    <section class="csec"><div class="wrap">
-      <div class="news-panel adzone"><span class="adtag">Sponsored Newsletter Panel</span>
-        <div><div class="eye">Newsletter</div><h3>The daily ${m.label} deal, in your inbox</h3>
-          <p>One email each morning through November — the day's best buying advice and our editors' pick, straight to your inbox.</p></div>
-        <div class="news-form"><input placeholder="Your email address"><button style="${sponsored?'background:#D4FF3F;color:#0B0C0F':''}">Subscribe</button></div>
-      </div>
     </div></section>
 
     <!-- POPULAR SEARCHES + RELATED -->
@@ -1329,13 +1384,8 @@ function renderCategory(key){
 }
 function switchGuide(btn,key,idx){
   document.querySelectorAll('.bg-tab').forEach(b=>b.classList.remove('on'));btn.classList.add('on');
-  const guides={
-    'Best TVs':[['tv','#0ea5e9','The 5 best TVs to buy this Black Friday','Tech Desk · 9 min'],['tv','#8b5cf6','OLED vs QLED: which is worth it?','Reviews · 6 min'],['soundbar','#f59e0b','Best soundbars to pair with a new TV','Audio · 5 min']],
-    'Laptop Buying Guide':[['laptop','#10b981','Which laptop for which person?','Tech Desk · 8 min'],['laptop','#6366f1','Best student laptops under R12 000','Guides · 5 min'],['laptop','#ef4444','Gaming laptops: the real-world picks','Gaming · 7 min']],
-    'Phone Deals':[['phone','#0ea5e9','iPhone vs Samsung: the upgrade call','Mobile · 7 min'],['phone','#22c55e','Best mid-range phones on deal','Mobile · 5 min'],['router','#f59e0b','Contract vs prepaid: the maths','Telecoms · 6 min']],
-    'Headphone Deals':[['headphone','#8b5cf6','Best noise-cancelling headphones','Audio · 6 min'],['headphone','#0ea5e9','True-wireless earbuds, ranked','Audio · 5 min'],['soundbar','#ef4444','Budget audio that punches up','Reviews · 4 min']],
-  };
-  const dk=STATE.sponsored&&key==='consumer-electronics';
+  const guides=GUIDES[key]||GUIDES.electronics;
+  const dk=STATE.sponsored&&key==='electronics';
   const set=Object.values(guides)[idx];const g=Object.keys(guides)[idx];
   $('#bgPanel').innerHTML=`
     <div class="bg-lead"><div class="a">${fill(set[0][0],set[0][1])}</div>
@@ -1377,7 +1427,7 @@ function FOOTER(){return `<footer class="foot"><div class="wrap">
     <div style="max-width:320px"><span class="foot-logo"><img class="foot-logo-img" src="https://iol.co.za/_next/static/media/iol.2d0c9660.svg" alt="IOL" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><svg class="iolmark" style="display:none;height:30px;color:#111" viewBox="0 0 122 40" xmlns="http://www.w3.org/2000/svg"><path d="M2 0 L12 0 L2 21 Z" fill="#ED1C24"/><path d="M2 40 L2 24 L14 0 L22 0 L22 40 Z" fill="currentColor"/><rect x="32" y="0" width="40" height="40" rx="20" fill="currentColor"/><rect x="43" y="9" width="18" height="22" rx="9" fill="#fff"/><path d="M82 0 H100 V26 H120 V40 H82 Z" fill="currentColor"/></svg></span>
       <p style="margin-top:14px;font-size:13.5px;color:#8B8892">South Africa's Black Friday, covered by a newsroom. Independent deal journalism, expert reviews and honest buying guides.</p></div>
     <div class="foot-cols">
-      <div class="foot-col"><h6>Black Friday</h6><a onclick="showView('hub')">The Deals Desk</a><a onclick="showView('category','consumer-electronics')">Electronics</a></div>
+      <div class="foot-col"><h6>Black Friday</h6><a onclick="showView('hub')">Home</a><a onclick="showView('category','electronics')">Electronics</a></div>
       <div class="foot-col"><h6>Sections</h6><a>News</a><a>Business</a><a>Lifestyle</a><a>Tech</a></div>
       <div class="foot-col"><h6>Company</h6><a>About IOL</a><a>Advertising</a><a>Editorial policy</a><a>Contact</a></div>
     </div>
@@ -1417,7 +1467,7 @@ function toggleZones(){document.body.classList.toggle('zones');$('#swZones').cla
 function toggleRetailers(){STATE.retailersActive=!STATE.retailersActive;$('#swRet').classList.toggle('on',STATE.retailersActive);
   if(!STATE.retailersActive&&STATE.view==='retailers'){showView('hub');}else{buildTabs();if(STATE.view==='category')renderCategory(STATE.cat);}}
 function toggleSponsor(){STATE.sponsored=!STATE.sponsored;$('#swSpon').classList.toggle('on',STATE.sponsored);
-  if(STATE.view==='category'&&STATE.cat==='consumer-electronics')renderCategory('consumer-electronics');}
+  if(STATE.view==='category'&&STATE.cat==='electronics')renderCategory('electronics');}
 function toggleMode(){STATE.sponsorMode=STATE.sponsorMode==='product'?'brand':'product';$('#swMode').classList.toggle('on',STATE.sponsorMode==='product');
   if(STATE.view==='category')renderCategory(STATE.cat);}
 
